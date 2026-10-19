@@ -13,7 +13,12 @@ Public-surface audit of [johnmarianony.com](https://www.johnmarianony.com/) focu
 
 ## How to read the findings
 
-See [AUDIT.md](./AUDIT.md) for the full scored report, peer comparison, and prioritized roadmap.
+See [AUDIT.md](./AUDIT.md) for:
+
+- **Score explanations** — weighted criteria behind each of the six pillar scores  
+- **Phased roadmap** — Phase 0 trust stop-loss → Phase 1 conversion rebuild → Phase 2 polish  
+
+Open the Cursor canvas **John Mariano Portfolio Audit** for the interactive tabbed version.
 
 ## Method (snapshot: Oct 19, 2026)
 
