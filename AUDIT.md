@@ -276,6 +276,27 @@ Wix Phases 0–2 clear the **mid-70s**. A scratch rebuild clears the **high 80s 
 
 ---
 
+---
+
+## Model sites (what to steal)
+
+Full steal/skip notes: canvas **Model sites** tab.
+
+| Gap | Model | Steal |
+| --- | --- | --- |
+| Homepage skim | [Teresa Phan](https://www.teresaphan.com/) | ≤6 cases; metric on every card |
+| Clearance framing | [Michael Seufer](https://www.michaelseufer.com/portfolio) | Sterilized artifacts; screens on request |
+| Deep defense case | [Ryan Khoury — Proteus](https://ryankhoury.com/case-studies/proteus) | Limited public view; by-the-numbers; method |
+| Positioning / 508 | [Ronald Schnier](https://ronaldschnier.com/) | Opening thesis; a11y as practice |
+| No-screenshot cases | [Jon Haines — ISI](https://jonhaines.design/uxcalibur/work/isi-defense) | Redrawn diagrams; compliance as design |
+| Artifact density | [Ellie Krysl — ISR](https://www.elliekrysl.net/portfolio/defense-isr) | Compact arc + validation moment |
+
+**Moodboard mashup:** Phan skim + Seufer clearance + Khoury/Haines depth + Schnier thesis + Krysl artifacts.
+
+**Review order (~35 min):** Phan → Seufer → Proteus → Haines → Schnier Standards.
+
+---
+
 ## Limits
 
 No analytics, no Wix editor access, no full screen-reader pass beyond Lighthouse.
