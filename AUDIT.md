@@ -276,8 +276,6 @@ Wix Phases 0–2 clear the **mid-70s**. A scratch rebuild clears the **high 80s 
 
 ---
 
----
-
 ## Model sites (what to steal)
 
 Full steal/skip notes: canvas **Model sites** tab.
