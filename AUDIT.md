@@ -1,98 +1,212 @@
 # Portfolio Audit — johnmarianony.com
 
 **Date:** Oct 19, 2026  
-**Audience assumption:** Hiring managers / design directors screening Platform Experience or senior UX strategy candidates  
+**Audience:** Hiring managers / design directors screening Platform Experience or senior UX strategy candidates  
 **Verdict:** Strong federal story. Weak interview machine. Packaging—not experience—is the gap.
 
-## Scores (0–100 judgment)
+Interactive deep dive: use the companion canvas in Cursor for tabbed **Score explanations** and **Roadmap**.
 
-| Pillar | Score |
-| --- | ---: |
-| Hiring conversion | 46 |
-| Competitive peer set | 44 |
-| UX / design craft | 58 |
-| Content / voice | 52 |
-| Accessibility | 62 |
-| Perf / SEO / tech | 68 |
+---
 
-## P0 blockers
+## Scoring model
 
-1. Case pages still show Wix placeholder: **“Create Your First Project / Manage Projects.”**
-2. `/accessibility-statement` still has bracket placeholders for accessibility coordinator name/phone/email—high credibility risk for a 508-aware federal UX lead.
-3. Homepage lists ~14 equal-weight projects (feature-level Siemens + 2013 ESPN next to DoD/State/DOI).
-4. Resume metrics ($1M+, 40% faster delivery, 6 mo → 2 wk) are buried; hero is generic UX poetry.
-5. Soft CTA; `/contact-2` is essentially a Jim Henson quote + thank you.
+Scores are **calibrated judgment (0–100)** for interview conversion—not raw Lighthouse copies.
 
-## Pillar notes
+| Band | Meaning |
+| --- | --- |
+| 70+ | Reliably competitive with strong peers |
+| 50–69 | Mixed; good material, packaging leaks |
+| 40–49 | Interesting but risky to forward |
+| &lt;40 | Actively harms candidacy |
 
-### 1. Hiring conversion
+**Target after roadmap:** mid-70s on hiring / peers / craft / content; ~80+ on a11y & tech.
 
-**Works:** Clearance + NN/g + Accenture Federal Services; DOI / State / Defense / TS audit cases have real substance; Kobs testimonial is the right altitude.
+| Pillar | Score | Projected after roadmap |
+| --- | ---: | ---: |
+| Hiring conversion | 46 | 74–78 |
+| Competitive peer set | 44 | 70–76 |
+| UX / design craft | 58 | 74–80 |
+| Content / voice | 52 | 72–78 |
+| Accessibility | 62 | 80–86 |
+| Perf / SEO / tech | 68 | 78–84 |
 
-**Breaks:** Generic hero; weak contact path; “search Mariano” certification friction; testimonial typos (“ona”).
+---
 
-### 2. Competitive benchmark
+## Score explanations
 
-| Portfolio | Pattern | Vs John |
+### 1 — Hiring conversion · 46
+
+**Question:** Will a cold visit turn into an interview conversation?
+
+**Why 46:** You have rare credentials, interview-grade federal cases, and a practice-director testimonial—but page order and finish quality fight the close. The first screen sells a slogan; proof and CTA arrive late. Template residue can end evaluation before DOI/Defense depth is read.
+
+| Criterion | Points | Evidence |
 | --- | --- | --- |
-| [Teresa Phan](https://www.teresaphan.com/) | 6 curated projects with metrics on cards | Leads with outcomes |
-| [Ellie Krysl — Defense ISR](https://www.elliekrysl.net/portfolio/defense-isr) | Artifact-forward single deep case | Stronger visual evidence |
-| [Michael Seufer](https://www.michaelseufer.com/portfolio) | Sterilized artifacts; cleared screens on request | Clearer clearance storytelling |
-| [Ronald Schnier](https://ronaldschnier.com/) | Sharp positioning sentence | Stronger POV |
-| **John Mariano** | Volume over curation | Best raw federal depth; weakest packaging |
+| Credentials / relevance | 9/12 | TS/SCI + NN/g + AFS excellent; not a crisp hero thesis |
+| Proof in first scroll | 6/20 | Resume metrics buried; cards lack outcome chips |
+| Case depth once opened | 14/20 | DOI / State / Defense / TS audit are interview-grade |
+| CTA / next step | 5/20 | Soft “reach out”; `/contact-2` is quote + thank you |
+| Trust / polish | 4/20 | Wix placeholders, a11y-statement brackets, typos |
+| Path to interview | 8/8 | LinkedIn + resume PDF exist as secondary paths |
 
-### 3. UX / design craft
+**Band meaning:** 40–49 = “interesting but risky to forward.”
 
-- IA: hero → about → flat gallery → about again → soft CTA.
-- Keep 4–6 flagships: TS portal audit, DOI, State Total Experience, Defense modernization, one Adobe narrative, one Siemens modernization (not five splinters).
-- Archive/collapse: Road Loans, ESPN 2013, Stop Button / Tabular Editor as solo cases.
-- DOI and Defense writing are strong once opened; homepage teasers often slip into agency marketing voice.
+---
 
-### 4. Content / positioning / brand voice
+### 2 — Competitive benchmark · 44
 
-- Right lane (“Platform Experience Strategist”), weak hero.
-- Voice splits between sharp first-person cases and AI/template fluff (“top-notch solutions”).
-- About foregrounding Midjourney + Wix AI can read as taste risk on a design portfolio.
-- Brand test: without the nav name, first viewport could belong to many UX sites.
+**Question:** Against adjacent federal / complex-systems portfolios, do you win the skim?
+
+**Why 44:** Peers show fewer, sharper signals—not more years. Phan puts metrics on cards; Krysl leads with artifacts; Seufer names the clearance pattern; Schnier opens with a distinctive POV. Your federal depth is as strong or stronger; packaging loses the skim.
+
+| Criterion | Points | Evidence |
+| --- | --- | --- |
+| Curation discipline | 5/20 | ~14 equal tiles vs peers’ 4–6 |
+| Outcome visibility | 6/20 | Impact inside long pages, not on cards |
+| Cleared-work pattern | 10/20 | Disclaimer present; Seufer clearer |
+| Visual evidence density | 8/20 | Wix gallery defaults |
+| Positioning sharpness | 9/20 | Right lane; generic hero poetry |
+| Relative experience depth | 6/6 | Federal platform leadership is a real edge |
+
+**Peers:** [Teresa Phan](https://www.teresaphan.com/) · [Ellie Krysl](https://www.elliekrysl.net/portfolio/defense-isr) · [Michael Seufer](https://www.michaelseufer.com/portfolio) · [Ronald Schnier](https://ronaldschnier.com/)
+
+---
+
+### 3 — UX / design craft · 58
+
+**Question:** Does the site itself demonstrate senior product/UX judgment?
+
+**Why 58:** Flagship case craft is solid (constraints, microjourneys, dual-path UX, mentorship, reuse). The site shell undercuts it—duplicate About sections, feature-level Siemens tiles next to strategy leads, marketing teasers, template gallery chrome. Mid-band because content quality is real once you dig.
+
+| Criterion | Points | Evidence |
+| --- | --- | --- |
+| Information architecture | 8/20 | Hero → about → flat grid → about again |
+| Case narrative structure | 14/20 | DOI/Defense strong; teasers weaker |
+| Seniority signaling | 9/20 | Feature studies dilute altitude |
+| Visual system / taste | 10/20 | Competent Wix; not distinctive |
+| Interaction / empty states | 7/10 | Placeholders + unfinished contact |
+| Mobile / responsive basics | 10/10 | Viewport OK; structure holds |
+
+---
+
+### 4 — Content / positioning / brand voice · 52
+
+**Question:** Is there a distinctive POV a hiring panel can repeat?
+
+**Why 52:** Resume summary and best case writing beat the marketing layer. First-person strategist voice mixes with agency boilerplate (“top-notch solutions”). About leans on Midjourney/Wix AI—honest, but can read as taste risk. Fails the “remove the nav name” brand test.
+
+| Criterion | Points | Evidence |
+| --- | --- | --- |
+| Positioning clarity | 11/20 | Right title; hero doesn’t carry it |
+| Voice consistency | 8/20 | Strong cases vs template/AI teasers |
+| Differentiation | 8/20 | Could belong to many UX sites |
+| Proof language | 12/20 | Numbers exist; not systematized |
+| About / bio craft | 7/12 | Useful bio; AI paragraph competes |
+| Social proof polish | 6/8 | Right quote; needs edit |
 
 **Draft positioning:** Platform experience lead for mission-critical federal systems—TS/SCI cleared, NN/g certified—turning ambiguous multi-app ecosystems into measurable modernization outcomes.
 
-### 5. Accessibility
+---
 
-Lighthouse a11y **84**, but:
+### 5 — Accessibility · 62
 
-- Statement placeholders contradict claimed WCAG 2.1 AA commitment
-- Contrast fail on “View Projects”
-- Heading order skips (H1 → H4)
-- Gallery `item-link-wrapper` links fail discernible name
-- Undersized testimonial avatar targets
+**Question:** Does the site meet the accessibility bar your federal work claims?
 
-### 6. Performance / SEO / technical health
+**Why 62:** Lighthouse a11y 84 looks fine until credibility context: you advertise 508 / IDEA fluency, yet the accessibility statement still has coordinator placeholders, and automated checks fail contrast, heading order, and gallery link names. Pulled down more by credibility contradiction than catastrophic usability.
 
-| Signal | Result |
-| --- | --- |
-| Performance | 70 |
-| SEO | 92 (missing meta description) |
-| Best practices | 100 |
-| LCP | 7.1 s |
-| FCP | 1.8 s |
-| TTI | 8.3 s |
-| Homepage HTML | ~991 KB |
-| Title | `Portfolio \| John Mariano` (generic) |
-| HTTPS / HSTS / apex→www | Good |
-| Platform | Wix Thunderbolt |
+| Criterion | Points | Evidence |
+| --- | --- | --- |
+| Automated baseline (LH) | 14/20 | 84 OK; contrast/headings/links fail |
+| Statement integrity | 4/20 | Bracket placeholders |
+| Semantic structure | 10/15 | lang/title OK; heading skips |
+| Interactive a11y | 8/15 | Unnamed gallery wrappers; small targets |
+| Claims vs evidence | 6/15 | AA claim overreaches |
+| Keyboard / SR depth | 10/15 | Not fully manually tested |
+
+---
+
+### 6 — Performance / SEO / technical health · 68
+
+**Question:** Is the technical foundation helping or taxing first impression?
+
+**Why 68:** Best Practices 100, SEO 92, HTTPS/HSTS/sitemaps healthy. Drag is performance: mobile LCP **7.1s**, TTI **8.3s**, ~991KB Wix HTML. SEO misses easy wins (no meta description; generic title). Highest pillar because infrastructure is competent—just not sharp in the first seconds.
+
+| Criterion | Points | Evidence |
+| --- | --- | --- |
+| Core Web Vitals proxy | 8/25 | LCP 7.1s / TTI 8.3s |
+| SEO essentials | 16/20 | Canonical/robots good; title/desc weak |
+| Security / hosting | 18/20 | HTTPS, HSTS, apex→www |
+| Asset discipline | 10/15 | Oversized images; unused JS ~128KB |
+| Platform constraints | 8/10 | Wix fine; caps elite ceiling |
+| Indexable structure | 8/10 | Cases in sitemap |
+
+**Lighthouse (mobile):** Perf 70 · A11y 84 · BP 100 · SEO 92
+
+---
 
 ## Roadmap
 
-| Priority | Change | Effort |
-| --- | --- | --- |
-| P0 | Remove “Create Your First Project” blocks on every case | Low |
-| P0 | Rewrite accessibility statement; remove bracket placeholders | Low |
-| P0 | Curate homepage to 4–6 flagship cases | Medium |
-| P1 | Hero = brand + role thesis + 3 proof metrics + one CTA | Medium |
-| P1 | Put outcomes on project cards | Medium |
-| P1 | Real contact path (email / LinkedIn / calendar); fix testimonial typos | Low |
-| P2 | Meta description + title; contrast; headings; gallery names; image weight | Medium |
+**Definition of done:** A Design Director answers in 30 seconds—who you are, level, 2–3 outcomes, how to talk next—without hitting a placeholder, unfinished contact page, or equal-weight 2013 tile.
+
+### Phase 0 — Trust stop-loss
+
+*Goal: Remove anything that makes a senior reviewer doubt finish quality before they read your best work.*
+
+| ID | Work item | What to do | Effort | Done when |
+| --- | --- | --- | --- | --- |
+| 0.1 | Purge Wix placeholders | Delete “Create Your First Project / Manage Projects” on every case | Low | No case contains that copy |
+| 0.2 | Rewrite a11y statement | Remove bracket fields; honest WCAG intent + your email; don’t claim AA if still failing | Low | Zero `[placeholder]` strings |
+| 0.3 | Quick polish | Fix Kobs typos; direct credential link; kill “top-notch” teaser | Low | No obvious typos / search friction |
+| 0.4 | Contact MVP | Email, LinkedIn, resume, optional calendar—replace quote page | Low | One clear primary action |
+
+### Phase 1 — Conversion rebuild
+
+*Goal: Homepage as interview machine. Target: Hiring ~74, Peers ~72, Craft ~76, Content ~74.*
+
+| ID | Work item | What to do | Effort | Done when |
+| --- | --- | --- | --- | --- |
+| 1.1 | Lock positioning | One thesis in hero + About + meta | Low | Same thesis everywhere |
+| 1.2 | Rebuild hero | Brand + headline + support + 3 proof chips + one CTA | Medium | Passes 30s test without scroll |
+| 1.3 | Curate 4–6 flagships | Keep TS audit, DOI, State, Defense, one Adobe, one Siemens; archive ESPN/Road Loans/feature splinters | Medium | ≤6 homepage cases |
+| 1.4 | Outcome chips | Role + 1 metric per card | Medium | Every card has proof line |
+| 1.5 | Case template | Context · Constraint · Role · Approach · Outcomes · Artifacts · Clearance note | Medium | Shared structure; no fluff intros |
+| 1.6 | One About | Collapse dual bios; demote AI-tools paragraph | Low | Single About |
+| 1.7 | CTA system | Primary email/calendar; secondary LinkedIn + resume; repeat after cases | Low | CTA in hero + end |
+
+### Phase 2 — Polish & discovery
+
+*Goal: A11y credibility, SEO, mobile speed. Target: A11y ~82, Tech ~80.*
+
+| ID | Work item | What to do | Effort | Done when |
+| --- | --- | --- | --- | --- |
+| 2.1 | A11y remediation | Contrast, headings, gallery names, touch targets; re-test | Medium | LH a11y ≥90 |
+| 2.2 | SEO package | Role-specific title + meta + og tags | Low | Unique title + description |
+| 2.3 | Performance diet | Fewer modules; compress images; lazy-load | Medium | Mobile LCP trending &lt;~4s |
+| 2.4 | Secondary pages | Keep/kill podcasts; finish linked pages | Low | No thin linked pages |
+| 2.5 | Analytics (optional) | CTA clicks, case opens, resume downloads | Low | 30-day visibility |
+
+### If you only do five things
+
+1. Delete placeholders  
+2. Fix accessibility statement  
+3. Cut to five cases  
+4. Put three metrics in the hero  
+5. Make contact real  
+
+That alone moves hiring conversion out of the 40s.
+
+### Suggested homepage case set
+
+| Order | Case | Card proof line (draft) |
+| ---: | --- | --- |
+| 1 | TS intel portal heuristic audit | 8-week adoption audit → 2-year roadmap + quick wins |
+| 2 | DOI — designing within constraints | Policy → platform-aligned UX; assets reused; contract extended |
+| 3 | State — Total Experience | 15 platforms evaluated → executive decision framework |
+| 4 | Defense platform modernization | +65% satisfaction · 500+ eng hours saved · dual-path UX |
+| 5 | Adobe — onboarding **or** Summit | 6 mo → 2 wk **or** Summit interactive pitch |
+| 6 | Siemens STAR-CCM+ (single narrative) | Inclusive research shifted roadmap; $1M+ bad bets avoided |
+
+---
 
 ## Limits
 
