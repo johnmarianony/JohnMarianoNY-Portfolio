@@ -30,6 +30,21 @@ Scores are **calibrated judgment (0–100)** for interview conversion—not raw 
 | Accessibility | 62 | 80–86 |
 | Perf / SEO / tech | 68 | 78–84 |
 
+### Visual pass addenda (Oct 19, 2026)
+
+From [Visual site audit](bc-8c13d128-eb1e-5836-8da4-61b8118952b6). Screenshots under `/opt/cursor/artifacts/audit-screenshots/`.
+
+| Finding | Severity | Note |
+| --- | --- | --- |
+| DOI case ships live Lorem Ipsum (“News Title 3,” “ACT VELIT,” fake About modules) | **Critical** | Flagship page looks unfinished — delete/hide immediately |
+| “Create Your First Project” Wix residue on cases | Critical | Same trust class |
+| Desktop hamburger at ~1440px | High | Hides IA for hiring managers |
+| State/DOI cases text-heavy; few process artifacts | High | Siemens shows UI; federal flagships should too (sterilized) |
+| Mid-word card truncation (“desig…”) | Medium | Looks unfinished |
+| Duplicate Siemens thumbnails | Medium | Weak scan differentiation |
+| “Powered by Wix” + `/portfolio-collections/…` URLs | Medium | Template seniority tax |
+| Mobile layout / tap targets | Positive | Generally solid |
+
 ---
 
 ## Score explanations
@@ -46,7 +61,7 @@ Scores are **calibrated judgment (0–100)** for interview conversion—not raw 
 | Proof in first scroll | 6/20 | Resume metrics buried; cards lack outcome chips |
 | Case depth once opened | 14/20 | DOI / State / Defense / TS audit are interview-grade |
 | CTA / next step | 5/20 | Soft “reach out”; `/contact-2` is quote + thank you |
-| Trust / polish | 4/20 | Wix placeholders, a11y-statement brackets, typos |
+| Trust / polish | 3/20 | Wix placeholders, DOI Lorem Ipsum, a11y-statement brackets, typos |
 | Path to interview | 8/8 | LinkedIn + resume PDF exist as secondary paths |
 
 **Band meaning:** 40–49 = “interesting but risky to forward.”
@@ -155,9 +170,11 @@ Scores are **calibrated judgment (0–100)** for interview conversion—not raw 
 | ID | Work item | What to do | Effort | Done when |
 | --- | --- | --- | --- | --- |
 | 0.1 | Purge Wix placeholders | Delete “Create Your First Project / Manage Projects” on every case | Low | No case contains that copy |
+| 0.1b | Remove DOI Lorem Ipsum block | Delete news/“ABOUT US”/“ACT VELIT” template modules at bottom of DOI case | Low | No filler Latin or “News Title” on live pages |
 | 0.2 | Rewrite a11y statement | Remove bracket fields; honest WCAG intent + your email; don’t claim AA if still failing | Low | Zero `[placeholder]` strings |
-| 0.3 | Quick polish | Fix Kobs typos; direct credential link; kill “top-notch” teaser | Low | No obvious typos / search friction |
-| 0.4 | Contact MVP | Email, LinkedIn, resume, optional calendar—replace quote page | Low | One clear primary action |
+| 0.3 | Quick polish | Fix Kobs typos; direct credential link; kill “top-notch” teaser; fix mid-word card truncation; unique Siemens thumbs | Low | No obvious typos / truncation / duplicate thumbs |
+| 0.4 | Contact MVP | Email, LinkedIn, resume, optional calendar—replace quote page; elevate Contact beside Resume | Low | One clear primary action |
+| 0.5 | Desktop nav | Replace hamburger with horizontal nav above ~1024px | Medium | Primary links visible without a click |
 
 ### Phase 1 — Conversion rebuild
 
