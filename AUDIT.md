@@ -208,6 +208,74 @@ That alone moves hiring conversion out of the 40s.
 
 ---
 
+---
+
+## Net-new site (greenfield) — how scores improve further
+
+Wix Phases 0–2 clear the **mid-70s**. A scratch rebuild clears the **high 80s / low 90s** by removing template tax and owning craft, a11y, and performance.
+
+| Pillar | Today | After Wix | After net-new |
+| --- | ---: | ---: | ---: |
+| Hiring conversion | 46 | 74–78 | **86** |
+| Competitive peers | 44 | 70–76 | **84** |
+| UX / design craft | 58 | 74–80 | **88** |
+| Content / voice | 52 | 72–78 | **85** |
+| Accessibility | 62 | 80–86 | **92** |
+| Perf / SEO / tech | 68 | 78–84 | **90** |
+
+### What starting over buys
+
+| Wix cap | Net-new gain | Score impact |
+| --- | --- | --- |
+| Template residue / gallery chrome | Custom case components; zero editor leftovers | Hiring trust |
+| Generic visual system | Brand-first type, atmosphere, intentional motion | Craft + peers |
+| LCP ~7s / heavy JS | Static pages; controlled images | Tech → ~90 |
+| A11y bolted on | Semantic HTML + focus/contrast designed in | A11y → low 90s |
+| Flat project dump | Editorial IA (featured → cases → method → about → contact) | Hiring + content |
+| Weak contact | First-class contact/calendar with UI states | Close rate |
+
+### Recommended stack
+
+**Next.js + TypeScript + Tailwind + shadcn/ui**, cases as **MDX** (or structured content files). No CMS for v1. Host on Vercel / Netlify / Cloudflare. Designer can iterate in code.
+
+### Information architecture
+
+| Route | Job |
+| --- | --- |
+| `/` | Brand + thesis + 3 proofs + CTA + 4–6 featured cases |
+| `/work` | Optional archive beyond featured |
+| `/work/[slug]` | Standard case template + sterilized artifacts |
+| `/approach` | How you lead platforms under constraint |
+| `/about` | Bio, clearance, NN/g, awards; AI note secondary |
+| `/contact` | Email + LinkedIn + calendar + resume (full states) |
+
+### Greenfield sprints
+
+| Sprint | Deliverable |
+| --- | --- |
+| **G0** Content freeze | Lock 5–6 cases, metrics, positioning, sterilized assets, resume |
+| **G1** Foundation | Scaffold, tokens, type, shell, a11y baseline, contact |
+| **G2** Homepage | Brand-first hero, featured grid + chips, CTA, motion |
+| **G3** Case system | MDX template + 4 flagships + Approach page |
+| **G4** Ship | Rest of cases, SEO/JSON-LD, Lighthouse, domain cutover, analytics |
+
+### Practical recommendation
+
+1. **This week on Wix:** Phase 0 (placeholders, a11y statement, contact) so the live URL stops leaking trust.  
+2. **In parallel:** Greenfield G0–G2 for the real ceiling.  
+3. **Cut over** when homepage + 4 flagships beat production.
+
+### Non-negotiables on net-new
+
+1. ≤6 featured homepage cases  
+2. Cases open with outcomes; clearance noted once, clearly  
+3. Hero is one composition—brand over slogan poetry  
+4. Contact is a finished product surface  
+5. Accessibility statement matches what you shipped  
+6. Voice ban on agency fluff / mismatched “we/our” copy  
+
+---
+
 ## Limits
 
 No analytics, no Wix editor access, no full screen-reader pass beyond Lighthouse.
