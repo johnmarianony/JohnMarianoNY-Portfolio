@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CaseCard } from "@/components/case-card";
+import { Hero } from "@/components/hero";
 import { getFeaturedCases } from "@/content/cases";
 import { site } from "@/content/site";
 
@@ -8,31 +9,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero">
-        <div className="hero__plane" aria-hidden="true" />
-        <div className="container">
-          <p className="sr-only">{site.name} — platform experience strategist</p>
-          <h1 className="hero__brand">{site.name}</h1>
-          <p className="hero__headline">{site.headline}</p>
-          <p className="hero__support">{site.support}</p>
-          <div className="hero__actions">
-            <Link href={site.cta.primary.href} className="btn btn--primary">
-              {site.cta.primary.label}
-            </Link>
-            <Link href={site.cta.secondary.href} className="btn btn--ghost">
-              {site.cta.secondary.label}
-            </Link>
-          </div>
-          <div className="hero__proofs" aria-label="Selected proof points">
-            {site.proofs.map((proof) => (
-              <div key={proof.value} className="proof">
-                <p className="proof__value">{proof.value}</p>
-                <p className="proof__label">{proof.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       <section className="section">
         <div className="container">

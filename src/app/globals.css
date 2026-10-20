@@ -254,31 +254,55 @@ a {
 /* Hero */
 .hero {
   position: relative;
-  min-height: min(100vh, 880px);
+  min-height: min(100svh, 920px);
   display: grid;
   align-items: end;
-  padding: 6rem 0 4rem;
+  padding: 7rem 0 4.5rem;
   overflow: hidden;
 }
 
 .hero__plane {
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(105deg, transparent 35%, color-mix(in oklab, var(--accent) 8%, transparent) 100%),
-    radial-gradient(ellipse 80% 60% at 70% 40%, #2f3d34 0%, transparent 70%);
-  animation: hero-glow 8s ease-in-out infinite alternate;
+  z-index: 0;
 }
 
-@keyframes hero-glow {
+.hero__image {
+  object-fit: cover;
+  object-position: 58% 42%;
+  transform: scale(1.04);
+  animation: hero-drift 18s ease-in-out infinite alternate;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      105deg,
+      color-mix(in oklab, var(--bg) 88%, transparent) 0%,
+      color-mix(in oklab, var(--bg) 72%, transparent) 42%,
+      color-mix(in oklab, var(--bg) 35%, transparent) 100%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--bg) 45%, transparent) 0%,
+      transparent 28%,
+      color-mix(in oklab, var(--bg) 78%, transparent) 100%
+    );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes hero-drift {
   from {
-    opacity: 0.85;
-    transform: scale(1);
+    transform: scale(1.04) translate3d(0, 0, 0);
   }
   to {
-    opacity: 1;
-    transform: scale(1.03);
+    transform: scale(1.08) translate3d(-1.2%, 0.6%, 0);
   }
 }
 
@@ -360,7 +384,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__plane,
+  .hero__image,
   .hero__brand,
   .hero__headline,
   .hero__support,
@@ -368,6 +392,26 @@ a {
   .hero__proofs,
   .case-card {
     animation: none !important;
+  }
+
+  .hero__image {
+    transform: scale(1.04);
+  }
+}
+
+@media (max-width: 719px) {
+  .hero__image {
+    object-position: 70% 40%;
+  }
+
+  .hero__scrim {
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, var(--bg) 55%, transparent) 0%,
+        color-mix(in oklab, var(--bg) 70%, transparent) 45%,
+        color-mix(in oklab, var(--bg) 88%, transparent) 100%
+      );
   }
 }
 
