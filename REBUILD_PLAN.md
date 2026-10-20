@@ -28,7 +28,7 @@
 | Channel | Dominant register | Strengths | Weaknesses |
 | --- | --- | --- | --- |
 | **Homepage / teasers** | Mixed: slogan poetry + grateful intro + agency marketing | Clearance honesty; “Wall Street to Washington” is sticky | “Designing with Purpose Driven By Users”; “top-notch”; third-person “recent project by John Mariano”; over-thanks |
-| **Strong case pages (DOI, Defense)** | First-person strategist | Constraint language (“UX theater”), mentorship, outcomes, systems thinking | Dense; light on punchy openers |
+| **Strong case pages (DOI, DOW)** | First-person strategist | Constraint language (“UX theater”), mentorship, outcomes, systems thinking | Dense; light on punchy openers |
 | **Substack — professional** (e.g. *Designing Through Ambiguity*) | Narrative leadership | Stakes, fog, mentorship, honest “quiet impact” without a launch | Long; needs a metric pull-quote for portfolio |
 | **Substack — AI craft** (*People/Prompts*, *Carbon and Code*) | Ethical practitioner | Clear do/don’t lines; T³ Loop; trust-as-transaction | Framework-heavy; “magic” closers |
 | **Substack — personal** (Sketchbook, recipes, fluff tagline) | Storyteller / dad / artist | Memorable, human | Wrong altitude for portfolio hero |
@@ -55,7 +55,7 @@
 ### Channel routing
 
 - Portfolio homepage ← On the record + case chips  
-- Portfolio cases ← Strategist narrative (tighten DOI/State/Defense; rewrite TS teaser entirely)  
+- Portfolio cases ← Strategist narrative (tighten DOI/State/DOW; rewrite TS teaser entirely; **new** DOW migration MVP for $820M)  
 - `/approach` ← Methods  
 - Writing ↗ ← full Substack voice unchanged  
 - Featured Writing strip (if used) ← only professional/AI-craft posts, never recipe/Inktober on the hiring skim  
@@ -224,18 +224,35 @@ ogImage: /images/cases/doi/og.webp
 
 ### v1 featured set (freeze before build)
 
-1. TS / intel portal heuristic audit  
-2. DOI — designing within constraints  
-3. State — Total Experience  
-4. Defense platform modernization  
-5. Adobe — onboarding **or** Summit (pick one)  
-6. Siemens STAR-CCM+ modernization (**one** narrative)
+1. **DOW — platform design & migration MVP** *(new case · owns $820M / 5-year proof)*  
+2. TS / intel portal heuristic audit  
+3. DOI — designing within constraints  
+4. State — Total Experience  
+5. **DOW — mission-critical platform modernization** *(was “Defense”; +65% / 500+ eng hrs)*  
+6. Simcenter STAR-CCM+ A–Z Workflow  
 
-Archive or invite-only: ESPN 2013, Road Loans, Stop Button / Tabular Editor as solos.
+**Homepage archive (linked from `/work`, not featured chips):** ESPN X Games apps, Adobe Summit/onboarding, Road Loans, Siemens feature splinters. *ESPN stays in the repo; swap with STAR-CCM on the homepage if you prefer.*
+
+### War Department / DOW naming (site-wide)
+
+Public portfolio copy follows current War Department public naming ([Brand Guide](https://www.war.gov/Brand-Guide/), EO 14347 secondary title):
+
+| Do | Don’t |
+| --- | --- |
+| First reference: **War Department** (most copy) or **Department of War** (formal) | “Department of Defense” / “DoD” / “DOD” in new case copy |
+| Second reference / chips: **DOW** (uppercase O — web/AP style per War.gov) | **DoW** on the portfolio (that form is for official department releases) |
+| Client field in MDX: `War Department (DOW)` | Imply the legal statutory name changed (still DoD in statute until Congress acts—no need to footnote on a portfolio card) |
+| Case accent tokens inspired by DOW palette (below) | Reproduce the **DOW logo or seal** — protected; unauthorized on a personal site |
+
+**DOW case accent tokens** (case chrome only—not the whole personal brand):
+
+- Primary Blue `#355e93` · Ocean `#254267` · Space `#15263b` · Steel `#aebfd4` · Hazy `#ebeff5` · Gray `#333333`
 
 ---
 
 ## 5. Design system (brand direction)
+
+**Personal site brand:** start fresh (your decision). Separate from DOW case accents above.
 
 Define in CSS variables before pages:
 
@@ -245,6 +262,7 @@ Define in CSS variables before pages:
 | `--font-display`, `--font-body` | Expressive display + readable body (not Inter/Roboto/Arial) |
 | `--space-*`, `--radius-*` | Tight system; cards only where interaction needs them |
 | Motion | Hero entrance, case hover, page transition — max 3 |
+| `--dow-*` | Optional case-scoped accents for War Department work only |
 
 **Hero budget:** brand name (hero-level) · one headline · one support line · CTA group · one full-bleed visual plane. No stats strip clutter beyond three proof chips tied to the composition.
 
@@ -317,7 +335,7 @@ Deliverables:
 **Exit:** Shared case template live; ≥4 flagship cases complete; Approach page live.
 
 - MDX pipeline + case layout  
-- DOI, State, Defense, TS audit (minimum)  
+- DOW migration MVP ($820M), DOI, State, DOW modernization, TS audit (minimum)  
 - Approach (methods / platform leadership)  
 - About  
 
@@ -371,7 +389,8 @@ Deliverables:
 | `/accessibility-statement` | `/accessibility` |
 | `/portfolio-collections/my-portfolio/user-experience-leadership-for-the-department-of-the-interior` | `/work/doi-platform-constraints` |
 | `/portfolio-collections/my-portfolio/total-experience-project-for-the-department-of-state` | `/work/state-total-experience` |
-| `/portfolio-collections/my-portfolio/mission-critical-defense-platform-…` | `/work/defense-platform` |
+| `/portfolio-collections/my-portfolio/mission-critical-defense-platform-…` | `/work/dow-platform-modernization` |
+| *(new — no Wix URL)* | `/work/dow-platform-migration-mvp` |
 | `/portfolio-collections/my-portfolio/heuristic-audit-of-top-secret-intelligence-portal` | `/work/intel-portal-audit` |
 | Remaining Wix case URLs | Matching `/work/[slug]` or `/work` archive |
 
@@ -399,27 +418,38 @@ Export full list from Wix sitemaps during G0.
 | # | Decision | Value |
 | --- | --- | --- |
 | 1 | **Positioning** | Approved — *Platform experience lead for mission-critical federal systems—TS/SCI cleared, NN/g certified—turning ambiguous multi-app ecosystems into measurable modernization outcomes.* |
-| 3 | **Featured 6** | (1) TS intel portal heuristic audit · (2) DOI — Designing Within Constraints · (3) State — Total Experience · (4) Defense platform modernization · (5) **Simcenter STAR-CCM+ A–Z Workflow** · (6) **ESPN X Games audience apps** *(Adobe Summit / onboarding not in v1 featured set)* |
-| 5 | **Brand** | **Start fresh** — no carry-over of current Wix colors/logo/fonts |
+| 2 | **Proof chips (all three)** | See table below — **confirmed** |
+| 3 | **Featured 6** | (1) **DOW platform migration MVP** *(new · $820M)* · (2) TS intel portal · (3) DOI · (4) State TX · (5) **DOW platform modernization** *(+65%)* · (6) STAR-CCM+ A–Z · ESPN → `/work` archive (swappable) |
+| 5 | **Brand** | **Start fresh** for personal site; DOW cases use War Department naming + accent palette (no official logo/seal) |
 | — | LinkedIn | https://www.linkedin.com/in/john-mariano |
 | — | Blog | https://johnmarianony.substack.com/ (*My Neural Graffiti*) |
 
-### Proof metrics (recommended trio — awaiting your yes)
+### Proof metrics — locked
 
-Hero chips should mix **business win · user/ops outcome · delivery speed**. Your $820M win is chip #1; pair it with two federal outcomes already on the site:
-
-| Chip | Short label (hero) | Why it earns the slot |
+| Chip | Short label (hero) | Owns this |
 | --- | --- | --- |
-| **1 (yours)** | **$820M · 5-year contract** | Platform design & migration MVP (delivery team)—latest, highest-stakes business proof |
-| **2** | **+65% satisfaction · 500+ eng hrs saved** | Defense modernization—measurable user + ops outcome (different shape than dollars) |
-| **3** | **8-week audit → 2-year roadmap** | TS portal—shows compressed discovery that still shapes multi-year modernization |
+| **1** | **$820M · 5-year contract** | **New case:** DOW platform design & migration MVP (delivery team) |
+| **2** | **+65% satisfaction · 500+ eng hrs saved** | DOW mission-critical platform modernization *(confirmed)* |
+| **3** | **8-week audit → 2-year roadmap** | TS intel portal *(confirmed)* |
 
-**Hero phrasing draft for #1:**  
-“Design & requirements for a platform migration MVP that helped win an **$820M, 5-year** contract.”
+**Hero phrasing for #1:**  
+“Design & requirements for a War Department platform migration MVP that helped win an **$820M, 5-year** contract.”
 
-**Backup for #3** (if you prefer career breadth over TS): “Enterprise onboarding cut from **6 months → 2 weeks**.” Prefer the TS chip while that case is featured #1.
+**New case stub (to create in G0/G3):**
 
-**Still needed from you on proofs:** which engagement/agency the $820M MVP maps to (so the matching case page can carry it), and confirmation that chips 2–3 are accurate as you’ll defend them in interviews.
+```yaml
+slug: dow-platform-migration-mvp
+title: Platform Design & Migration MVP
+client: War Department (DOW)
+sector: Federal
+role: UX / platform design & requirements (delivery team)
+proof: "$820M · 5-year contract"
+clearance: sterilized
+featured: true
+order: 1
+```
+
+Body TBD with you (sterilized outcomes, constraint, role)—public page must not claim official DOW endorsement or use seal/logo.
 
 ### Writing strip — most relevant Substack posts
 
@@ -447,5 +477,6 @@ For a **hiring** homepage, feature POV that reinforces platform leadership + AI 
 
 ## 12. Immediate next step
 
-**You:** confirm proof chips 2–3 (or pick the onboarding backup) + which case owns the $820M story.  
-**Then:** scaffold Next.js (G1–G2), ship a preview URL with fresh brand, featured-6 stubs, and Writing strip linking the three Substack posts above.
+**Ready to scaffold** on your go-ahead: Next.js G1–G2 preview with fresh personal brand, featured-6 stubs (DOW MVP first), DOW naming rules baked into case metadata, Writing strip, and proof chips locked above.
+
+**In parallel from you (G0 content):** outline bullets for the new DOW migration MVP case (what you can say publicly); confirm ESPN vs STAR-CCM if you want to swap homepage slot 6.
