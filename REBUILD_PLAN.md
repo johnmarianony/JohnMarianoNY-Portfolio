@@ -105,7 +105,14 @@ After: “Led Total Experience through fog, election clocks, and no chosen platf
 | NN/g cert | Link out (search or direct if available) | Credential proof | About only |
 | X / Instagram / merch / podcasts | Existing handles | Secondary / personal | Footer optional; **not** in primary nav |
 
-**Substack positioning:** Tagline — “Where complex systems, human-centered design, and real life collide.” Use it as *voice channel*, not the homepage hero. Feature posts that reinforce platform/AI-ethics craft (e.g. People/Prompts/Purpose, Carbon and Code) — skip recipe/Inktober as homepage features unless you explicitly want personality beats below the fold.
+**Substack positioning:** Tagline — “Where complex systems, human-centered design, and real life collide.” Use it as *voice channel*, not the homepage hero.
+
+**Homepage Writing strip (locked candidates):**  
+1. [Designing Through Ambiguity](https://johnmarianony.substack.com/p/designing-through-ambiguity-leading)  
+2. [Carbon and Code Pt.4 — My Line in the Sand](https://johnmarianony.substack.com/p/carbon-and-code-part-4-my-line-in)  
+3. [People, Prompts, and Purpose Pt.3](https://johnmarianony.substack.com/p/03-people-prompts-and-purpose-putting)  
+
+Skip recipe/Inktober/Margin Doodles on the hiring skim.
 
 **Cross-linking rules**
 
@@ -385,26 +392,60 @@ Export full list from Wix sitemaps during G0.
 
 ---
 
-## 11. What I need from you before scaffolding
+## 11. Decisions lock (from you · Oct 20, 2026)
 
-**Locked**
+### Locked
 
-- LinkedIn: https://www.linkedin.com/in/john-mariano  
-- Blog: https://johnmarianony.substack.com/ (*My Neural Graffiti*)
+| # | Decision | Value |
+| --- | --- | --- |
+| 1 | **Positioning** | Approved — *Platform experience lead for mission-critical federal systems—TS/SCI cleared, NN/g certified—turning ambiguous multi-app ecosystems into measurable modernization outcomes.* |
+| 3 | **Featured 6** | (1) TS intel portal heuristic audit · (2) DOI — Designing Within Constraints · (3) State — Total Experience · (4) Defense platform modernization · (5) **Simcenter STAR-CCM+ A–Z Workflow** · (6) **ESPN X Games audience apps** *(Adobe Summit / onboarding not in v1 featured set)* |
+| 5 | **Brand** | **Start fresh** — no carry-over of current Wix colors/logo/fonts |
+| — | LinkedIn | https://www.linkedin.com/in/john-mariano |
+| — | Blog | https://johnmarianony.substack.com/ (*My Neural Graffiti*) |
 
-**Still confirm**
+### Proof metrics (recommended trio — awaiting your yes)
 
-1. Confirm **positioning sentence** (or approve draft from audit)  
-2. Confirm **3 proof metrics** you’ll put in the hero  
-3. Confirm **featured 6** (and which Adobe / Siemens variants)  
-4. Preferred **host** (default Vercel) and whether domain DNS is under your control  
-5. Contact preference: email only vs calendar link  
-6. Whether v1 should include **invite deep layer** or wait for G5  
-7. Brand direction: any must-keep colors/logo/fonts from current site  
-8. Optional: **2–3 Substack posts** to feature on the homepage Writing strip (or skip strip in v1 and link Writing only in nav)  
+Hero chips should mix **business win · user/ops outcome · delivery speed**. Your $820M win is chip #1; pair it with two federal outcomes already on the site:
+
+| Chip | Short label (hero) | Why it earns the slot |
+| --- | --- | --- |
+| **1 (yours)** | **$820M · 5-year contract** | Platform design & migration MVP (delivery team)—latest, highest-stakes business proof |
+| **2** | **+65% satisfaction · 500+ eng hrs saved** | Defense modernization—measurable user + ops outcome (different shape than dollars) |
+| **3** | **8-week audit → 2-year roadmap** | TS portal—shows compressed discovery that still shapes multi-year modernization |
+
+**Hero phrasing draft for #1:**  
+“Design & requirements for a platform migration MVP that helped win an **$820M, 5-year** contract.”
+
+**Backup for #3** (if you prefer career breadth over TS): “Enterprise onboarding cut from **6 months → 2 weeks**.” Prefer the TS chip while that case is featured #1.
+
+**Still needed from you on proofs:** which engagement/agency the $820M MVP maps to (so the matching case page can carry it), and confirmation that chips 2–3 are accurate as you’ll defend them in interviews.
+
+### Writing strip — most relevant Substack posts
+
+For a **hiring** homepage, feature POV that reinforces platform leadership + AI ethics—not Margin Doodles / Inktober / recipes.
+
+| Priority | Post | Why |
+| --- | --- | --- |
+| **1** | [*Designing Through Ambiguity*](https://johnmarianony.substack.com/p/designing-through-ambiguity-leading) | State TX leadership narrative—fog, election clocks, quiet impact. Closest match to federal hiring skim. |
+| **2** | [*Carbon and Code Pt.4 — My Line in the Sand*](https://johnmarianony.substack.com/p/carbon-and-code-part-4-my-line-in) | AI ethics / “trust transaction”—backs the About AI beat without tool-name flex. |
+| **3** | [*People, Prompts, and Purpose Pt.3*](https://johnmarianony.substack.com/p/03-people-prompts-and-purpose-putting) | Human-Led · AI-Enhanced · Purpose-Driven + T³ Loop—portable methods language for `/approach`. |
+
+**Runner-up:** [*Human in the Loop Toolkit*](https://johnmarianony.substack.com/p/02-people-prompts-and-purpose-the) if you want HITL framing over the “putting it together” essay.  
+**Skip for homepage strip:** Inktober / Margin Doodles / recipes (keep on Substack; optional personality below the fold later).
+
+### Logistics — proposed defaults (handle together)
+
+| Topic | Proposal for v1 | You can override anytime |
+| --- | --- | --- |
+| **Host** | **Vercel** | Cloudflare Pages / Netlify also fine |
+| **DNS** | You own cutover of `johnmarianony.com` when preview is ready; we prepare redirects first | Confirm you control registrar when we reach G4 |
+| **Contact** | **Email primary** + LinkedIn secondary; mailto fallback so no secrets block launch | Add calendar link when you have a booking URL |
+| **Invite deep layer** | **Wait for G5** — public sterilized cases first | Add `/invite/[token]` after flagship cases ship |
 
 ---
 
 ## 12. Immediate next step
 
-Once you confirm §11, scaffold the Next.js app in this repo (or a clean root), implement G1–G2, and put a preview URL online—while you finish case MDX and sterilized assets in parallel.
+**You:** confirm proof chips 2–3 (or pick the onboarding backup) + which case owns the $820M story.  
+**Then:** scaffold Next.js (G1–G2), ship a preview URL with fresh brand, featured-6 stubs, and Writing strip linking the three Substack posts above.
