@@ -18,7 +18,11 @@ See [AUDIT.md](./AUDIT.md) for:
 - **Score explanations** — weighted criteria behind each of the six pillar scores  
 - **Phased roadmap** — Phase 0 trust stop-loss → Phase 1 conversion rebuild → Phase 2 polish  
 
-Open the Cursor canvas **John Mariano Portfolio Audit** for the interactive tabbed version.
+## Custom rebuild (Wix-agnostic)
+
+See [REBUILD_PLAN.md](./REBUILD_PLAN.md) for the full plan to redesign and rebuild on **Next.js + MDX**, deploy on **Vercel** (or Cloudflare/Netlify), with IA, content model, phases G0–G5, and cutover checklist.
+
+Open the Cursor canvas **Custom Site Rebuild Plan** for the interactive version.
 
 ## Method (snapshot: Oct 19, 2026)
 
