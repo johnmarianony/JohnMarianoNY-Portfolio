@@ -22,7 +22,9 @@ See [AUDIT.md](./AUDIT.md) for:
 
 See [REBUILD_PLAN.md](./REBUILD_PLAN.md) for the full plan to redesign and rebuild on **Next.js + MDX**, deploy on **Vercel** (or Cloudflare/Netlify), with IA, content model, phases G0–G5, and cutover checklist.
 
-Open the Cursor canvas **Custom Site Rebuild Plan** for the interactive version.
+**Voice (§1a):** site vs Substack channel split, rewrite examples, and checklist — also as Cursor canvas **Voice Recommendations**.
+
+Open the Cursor canvas **Custom Site Rebuild Plan** for the interactive rebuild version.
 
 ## Method (snapshot: Oct 19, 2026)
 

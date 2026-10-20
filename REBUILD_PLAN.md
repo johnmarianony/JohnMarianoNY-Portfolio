@@ -17,6 +17,80 @@
 5. **One composition hero** — no card collage, no floating badges, no Wix gallery chrome.
 6. **Voice** — first-person strategist; ban “top-notch / exemplifies our commitment”; AI tools are footnote, not brand.
 7. **Digital identity is a system** — portfolio converts; LinkedIn proofs employment; Substack carries POV/AI craft. Don’t make the site a blog clone.
+8. **Voice follows the channel** — portfolio = “strategist on the record”; Substack = “human in the loop.” Don’t paste Substack fluff onto the homepage.
+
+---
+
+## 1a. Voice guide (site vs blog)
+
+### What your voices are today
+
+| Channel | Dominant register | Strengths | Weaknesses |
+| --- | --- | --- | --- |
+| **Homepage / teasers** | Mixed: slogan poetry + grateful intro + agency marketing | Clearance honesty; “Wall Street to Washington” is sticky | “Designing with Purpose Driven By Users”; “top-notch”; third-person “recent project by John Mariano”; over-thanks |
+| **Strong case pages (DOI, Defense)** | First-person strategist | Constraint language (“UX theater”), mentorship, outcomes, systems thinking | Dense; light on punchy openers |
+| **Substack — professional** (e.g. *Designing Through Ambiguity*) | Narrative leadership | Stakes, fog, mentorship, honest “quiet impact” without a launch | Long; needs a metric pull-quote for portfolio |
+| **Substack — AI craft** (*People/Prompts*, *Carbon and Code*) | Ethical practitioner | Clear do/don’t lines; T³ Loop; trust-as-transaction | Framework-heavy; “magic” closers |
+| **Substack — personal** (Sketchbook, recipes, fluff tagline) | Storyteller / dad / artist | Memorable, human | Wrong altitude for portfolio hero |
+
+**Best sentence you already wrote (portfolio):**  
+> Great UX isn’t about perfect freedom—it’s about strategic influence.
+
+**Best sentence you already wrote (blog):**  
+> This wasn’t just designing screens—it was designing ecosystems.
+
+**Worst patterns to retire on the site:**  
+“top-notch solutions,” “exemplifies our commitment,” “Thank you so much for taking the time…,” third-person project intros, “click above and search Mariano,” Midjourney/Wix AI as About headline.
+
+### Recommended voice split
+
+| Surface | Voice name | Rules |
+| --- | --- | --- |
+| Hero, meta, nav CTAs | **On the record** | One claim. No thanks. No slogans with broken grammar. Credentials as proof, not apology. |
+| Case studies | **Strategist narrative** | Lead with outcome. Name constraint. First person. Specific platforms/acts. End with influence left behind. Borrow Substack’s honesty (fog, election clocks, quiet impact)—compress to scannable sections. |
+| Approach page | **Methods** | Named frameworks (microjourneys, dual-path UX, T³ if you want AI)—short, teachable, like Kobs Methods. |
+| About | **Human, still senior** | 1 short personal beat max (storyteller/mentor). AI = one sentence pointing to Substack ethics posts—not a toolkit name-drop list. |
+| Substack | **Neural Graffiti** | Keep fluff, recipes, Inktober, dad essays. That’s the brand of the blog—not the portfolio. |
+
+### Channel routing
+
+- Portfolio homepage ← On the record + case chips  
+- Portfolio cases ← Strategist narrative (tighten DOI/State/Defense; rewrite TS teaser entirely)  
+- `/approach` ← Methods  
+- Writing ↗ ← full Substack voice unchanged  
+- Featured Writing strip (if used) ← only professional/AI-craft posts, never recipe/Inktober on the hiring skim  
+
+### Rewrite examples (same fact, better voice)
+
+**Hero (replace current)**  
+Before: “Designing with Purpose Driven By Users”  
+After: “I bring clarity to complexity on federal platforms—under constraint, clearance, and delivery pressure.”
+
+**TS portal card (replace agency teaser)**  
+Before: “This project exemplifies our commitment to delivering top-notch solutions…”  
+After: “Eight-week heuristic audit of a classified self-service portal—quick wins for adoption plus a two-year modernization roadmap.”
+
+**About AI beat (replace tool list flex)**  
+Before: “ChatGPT, Midjourney, and WIX AI to build this site…”  
+After: “I use AI as a craft amplifier with a published ethical line—human-led, purpose-driven. I write about that practice on *My Neural Graffiti*.”
+
+**State Total Experience teaser (borrow Substack honesty)**  
+Before: “Unraveled ambiguity to shape a unifying vision…”  
+After: “Led Total Experience through fog, election clocks, and no chosen platform—quiet impact: research and framework left behind when launch wasn’t ready.”
+
+**Substack lines to mine for portfolio pull-quotes**  
+- “This wasn’t just designing screens—it was designing ecosystems.” (*Designing Through Ambiguity*)  
+- “It’s a trust transaction.” (*Carbon and Code* Pt.4)  
+- “Human-Led. AI-Enhanced. Purpose-Driven.” + T³ Loop — Talk, Think, Tweak (*People, Prompts, and Purpose*)
+
+### Voice checklist (every portfolio page)
+
+- [ ] First person (“I”), not “we/our” agency speak  
+- [ ] No gratitude preamble on the homepage  
+- [ ] Outcome or constraint in the first 2 sentences of every case  
+- [ ] One concrete noun from the work (platform, agency, metric, artifact)  
+- [ ] No “top-notch / delve / unique value it contributes”  
+- [ ] AI mentioned only with ethics/context—or link out  
 
 ---
 
