@@ -340,6 +340,11 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
+        src: "/images/cases/star-ccm-az-workflow.jpg",
+        alt: "Siemens STAR-CCM+ portfolio collage — labeled product UI examples",
+        caption: "STAR-CCM+ portfolio collage — labeled product UI examples",
+      },
+      {
         src: "/images/cases/siemens/siemens-star-ccm-user-journey-splash.png",
         alt: "Siemens Simcenter STAR-CCM+ User Journey splash and login",
         caption: "Labeled: STAR-CCM+ User Journey — product entry experience",
@@ -384,11 +389,6 @@ export const cases: CaseStudy[] = [
         alt: "Siemens UX influence timeline from direct work to continued use",
         caption: "Labeled: UX Influence Timeline — impact after departure",
       },
-      {
-        src: "/images/cases/siemens/siemens-star-ccm-collage.png",
-        alt: "Siemens STAR-CCM+ portfolio collage of labeled UI examples",
-        caption: "Labeled: STAR-CCM+ collage — portfolio of shipped UI work",
-      },
     ],
     pullQuote:
       "If the workflow was never defined, every feature is a guess.",
@@ -432,6 +432,11 @@ export const cases: CaseStudy[] = [
       { value: "Live", label: "Immovable event deadlines" },
     ],
     artifacts: [
+      {
+        src: "/images/cases/espn-x-games-apps.jpg",
+        alt: "ESPN applications admin dashboard showing X Games city apps",
+        caption: "ESPN Apps admin — X Games city apps in the publish console",
+      },
       {
         src: "/images/cases/espn/espn-apps-admin-dashboard.jpg",
         alt: "ESPN applications admin dashboard with X Games city apps and 30 for 30",
