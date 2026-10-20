@@ -470,7 +470,7 @@ For a **hiring** homepage, feature POV that reinforces platform leadership + AI 
 | --- | --- | --- |
 | **Host** | **Vercel** | Cloudflare Pages / Netlify also fine |
 | **DNS** | You own cutover of `johnmarianony.com` when preview is ready; we prepare redirects first | Confirm you control registrar when we reach G4 |
-| **Contact** | **Email primary** + LinkedIn secondary; mailto fallback so no secrets block launch | Add calendar link when you have a booking URL |
+| **Contact** | **Email primary:** `john.mariano.ny@gmail.com` + LinkedIn secondary; mailto fallback | Add calendar link when you have a booking URL |
 | **Invite deep layer** | **Wait for G5** — public sterilized cases first | Add `/invite/[token]` after flagship cases ship |
 
 ---
