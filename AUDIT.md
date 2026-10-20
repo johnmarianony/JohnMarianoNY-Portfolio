@@ -312,9 +312,31 @@ Full steal/skip + pillar scores: canvas tabs **Your three + peers** and **Origin
 
 | Site | Built on | Hiring-ish score | Verdict for you |
 | --- | --- | --- | --- |
-| [Jason Kobs](https://jasonkobs.com/) | Custom **PHP 8.3** + jQuery (not a page builder) | ~28 | Personal creative brand; **do not** model IA. Voice/permission only. |
+| [Jason Kobs](https://jasonkobs.com/) | Custom **PHP 8.3** + jQuery | ~28 public | Personal creative brand only. |
+| [portfolio.jasonkobs.com/#john](https://portfolio.jasonkobs.com/#john) | Same custom PHP/Hostinger; **invite hash → `?k=` session unlock** | ~72 invite | Real Design Director portfolio (see below). |
 | [Jacob Alan White](https://www.jacobalanwhite.com/) | **Wix** (same stack family as you) | ~78 | **Best same-tools model**: 3 cases, hard metrics ($8M, 100 agencies, 30%). |
 | [Jaime Vasquez](https://www.behance.net/jvasquez) | **Behance** gallery | ~35 | Brand/logo craft; wrong container for Platform Experience hiring. Put mentorship on *your* site. |
+
+#### Jason Kobs invite portfolio (`#john`) — scraped notes
+
+**How access works:** `#john` client-rewrites to `?k=john` → PHP sets session cookie → 302 `/` with personalized chrome (“Hey, John!” / “Dear John,”). Public visitors get a gate (“I DON’T KNOW WHO YOU ARE”) + SMS ask. Public `/cv/` is a thin resume; unlocked `/cv/` adds project ledger + PDF download.
+
+**IA:** Portfolio (huge filterable archive) · Active Projects · Presentations · Methods · CV.
+
+**Filters:** Workplace (Accenture / 7Summits / …) · Relationship (Employee/Partner/Customer) · Platform (Salesforce, ServiceNow, Microsoft, Jive, WordPress, Custom…).
+
+**Methods (steal):** “User-Action-Impact Framework”; “Technology Specific, Platform Agnostic Design Methodology”; scaling independent thinkers (not cloning himself); Substack + YouTube as thought-leadership outlets.
+
+**Presentations:** Knowledge 2024 (ServiceNow design infusion); Dreamforce / Midwest Dreamin’ (Salesforce + AI/design).
+
+**Case craft (e.g. Tableau):** problem framing, taxonomy/sitemap, 508 contrast catch, audience personalization, before/after, Salesforce redlines, client quote—artifact-dense, conversational voice.
+
+**Unlocked AFS ledger overlaps your world:** DOI Design Lead, Dept. of State, National Security discovery, DLA Agency Connect (ServiceNow), VA RFP, Agentforce/FedGPT demos—plus federal client list (White House through USPS).
+
+**Pillars (invite view):** Hiring ~70 · Peers ~75 · Craft ~78 · Content ~72 · A11y ~55 (508 in cases, not site-as-product) · Tech ~70 (custom, gated).
+
+**Steal for you:** invite/permissioned deep CV for cleared work; Methods page; platform filters; artifact-heavy case template; personalized reviewer greeting.  
+**Skip:** 80+ equal archive tiles as homepage (curate like Jacob/Phan on the public surface).
 
 **Wix reality check:** Jacob shows packaging—not CMS—is your bottleneck. You can climb hiring on Wix (mirror his curation) while planning a Next/Vercel ceiling.
 
