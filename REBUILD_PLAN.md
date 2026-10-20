@@ -478,6 +478,6 @@ For a **hiring** homepage, feature POV that reinforces platform leadership + AI 
 
 ## 12. Immediate next step
 
-**Ready to scaffold** on your go-ahead: Next.js G1–G2 preview with fresh personal brand, featured-6 stubs (DOW MVP first), DOW naming rules baked into case metadata, Writing strip, and proof chips locked above.
+**Scaffolded (G1–G2 in progress):** Next.js app at repo root; `npm run dev` → `http://127.0.0.1:4317`. Homepage, work/cases, approach, about, contact, accessibility, Writing strip, DOW naming on case chrome.
 
-**In parallel from you (G0 content):** outline bullets for the new DOW migration MVP case (what you can say publicly); confirm ESPN vs STAR-CCM if you want to swap homepage slot 6.
+**In parallel from you (G0 content):** expand DOW migration MVP case with public-safe detail; swap ESPN ↔ STAR-CCM for slot 6 if desired; add resume PDF + sterilized images when ready.
