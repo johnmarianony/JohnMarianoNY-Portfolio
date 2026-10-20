@@ -16,6 +16,29 @@
 4. **Outcome-first cases** — every card and case opens with proof, not agency fluff.
 5. **One composition hero** — no card collage, no floating badges, no Wix gallery chrome.
 6. **Voice** — first-person strategist; ban “top-notch / exemplifies our commitment”; AI tools are footnote, not brand.
+7. **Digital identity is a system** — portfolio converts; LinkedIn proofs employment; Substack carries POV/AI craft. Don’t make the site a blog clone.
+
+---
+
+## 1b. Digital identity map (confirmed)
+
+| Property | Canonical URL | Role in system | v1 treatment |
+| --- | --- | --- | --- |
+| **Portfolio** | `johnmarianony.com` (new build) | Hiring conversion / work sample | Primary product |
+| **LinkedIn** | [linkedin.com/in/john-mariano](https://www.linkedin.com/in/john-mariano) | Proof of role, network, recommendations | Header/footer + Contact secondary CTA; JSON-LD `sameAs` |
+| **Blog** | [johnmarianony.substack.com](https://johnmarianony.substack.com/) — *My Neural Graffiti* | POV, AI practice, process essays | External “Writing” link; optional homepage strip of 2–3 featured posts (title + URL, curated in `site.ts`) |
+| Resume PDF | Hosted on new site `/resume.pdf` | Recruiter download | Contact + nav |
+| NN/g cert | Link out (search or direct if available) | Credential proof | About only |
+| X / Instagram / merch / podcasts | Existing handles | Secondary / personal | Footer optional; **not** in primary nav |
+
+**Substack positioning:** Tagline — “Where complex systems, human-centered design, and real life collide.” Use it as *voice channel*, not the homepage hero. Feature posts that reinforce platform/AI-ethics craft (e.g. People/Prompts/Purpose, Carbon and Code) — skip recipe/Inktober as homepage features unless you explicitly want personality beats below the fold.
+
+**Cross-linking rules**
+
+- Portfolio → LinkedIn + Substack (always)
+- LinkedIn featured section → portfolio + 1–2 Substack essays (you update manually)
+- Substack About → portfolio URL after cutover
+- Do **not** embed full Substack feed (keeps LCP clean; avoids blog-first skim)
 
 ---
 
@@ -47,7 +70,7 @@ app/
   invite/[token]/page.tsx      # optional gated deep CV (phase 2)
 content/
   cases/*.mdx
-  site.ts                       # nav, proofs, positioning, social
+  site.ts                       # nav, proofs, positioning, social (LinkedIn + Substack)
 public/
   images/...
   resume.pdf
@@ -65,12 +88,15 @@ components/
 | `/work` | Optional archive | Only if needed; default hide older Siemens splinters |
 | `/work/[slug]` | Case study | Shared template (below) |
 | `/approach` | Methods / platform leadership | Kobs-inspired: how you lead under constraint |
-| `/about` | Bio, clearance framing, NN/g, awards | One About only |
+| `/about` | Bio, clearance framing, NN/g, awards | Links to LinkedIn + Writing |
 | `/contact` | Email · LinkedIn · calendar · resume | Full empty/loading/success/error |
 | `/accessibility` | Honest statement matching shipped a11y | No placeholder brackets |
 | `/invite/[token]` (later) | Permissioned deep CV / extra artifacts | Optional; mirrors `#john` pattern |
+| Writing | External → Substack | Not a local `/blog` in v1 |
 
-**Nav (desktop always visible ≥1024px):** Work · Approach · About · Contact · Resume
+**Nav (desktop always visible ≥1024px):** Work · Approach · About · Writing ↗ · Contact · Resume  
+
+(*Writing* opens Substack in a new tab with clear external affordance.)
 
 ---
 
@@ -82,7 +108,8 @@ components/
 - `positioning` (one sentence)
 - `proofs[]` — three homepage chips (metric + label)
 - `cta` — primary + secondary
-- `social` — LinkedIn, email
+- `social` — LinkedIn, Substack, email
+- `featuredPosts[]` — optional `{ title, url, date }` (2–3 Substack URLs)
 - `featuredCaseSlugs[]` — max 6
 
 ### Case frontmatter (MDX)
@@ -286,6 +313,13 @@ Export full list from Wix sitemaps during G0.
 
 ## 11. What I need from you before scaffolding
 
+**Locked**
+
+- LinkedIn: https://www.linkedin.com/in/john-mariano  
+- Blog: https://johnmarianony.substack.com/ (*My Neural Graffiti*)
+
+**Still confirm**
+
 1. Confirm **positioning sentence** (or approve draft from audit)  
 2. Confirm **3 proof metrics** you’ll put in the hero  
 3. Confirm **featured 6** (and which Adobe / Siemens variants)  
@@ -293,6 +327,7 @@ Export full list from Wix sitemaps during G0.
 5. Contact preference: email only vs calendar link  
 6. Whether v1 should include **invite deep layer** or wait for G5  
 7. Brand direction: any must-keep colors/logo/fonts from current site  
+8. Optional: **2–3 Substack posts** to feature on the homepage Writing strip (or skip strip in v1 and link Writing only in nav)  
 
 ---
 
