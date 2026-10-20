@@ -429,25 +429,46 @@ a {
 }
 
 .case-card {
-  display: block;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--border);
-  transition: border-color 180ms ease, transform 180ms ease;
+  display: grid;
+  gap: 1rem;
+  padding: 0 0 1.75rem;
+  border-top: none;
+  transition: transform 180ms ease;
 }
 
 .case-card:hover,
 .case-card:focus-visible {
-  border-top-color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-.case-card--dow {
-  border-top-color: color-mix(in oklab, var(--dow-blue) 65%, var(--border));
+.case-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
 }
 
-.case-card--dow:hover,
-.case-card--dow:focus-visible {
-  border-top-color: var(--dow-steel);
+.case-card--dow .case-card__media {
+  border-color: color-mix(in oklab, var(--dow-blue) 45%, var(--border));
+}
+
+.case-card__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 320ms ease;
+}
+
+.case-card:hover .case-card__thumb,
+.case-card:focus-visible .case-card__thumb {
+  transform: scale(1.03);
+}
+
+.case-card__body {
+  padding-top: 0.15rem;
 }
 
 .case-card__meta {
@@ -594,6 +615,27 @@ a {
   color: var(--accent);
   font-size: 1.1rem;
   margin: 0 0 1rem;
+}
+
+.case-hero__media {
+  margin-top: 1.75rem;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  aspect-ratio: 16 / 9;
+  max-width: 52rem;
+  background: var(--surface);
+}
+
+.case-hero.dow .case-hero__media {
+  border-color: color-mix(in oklab, var(--dow-blue) 45%, var(--border));
+}
+
+.case-hero__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .prose-block {

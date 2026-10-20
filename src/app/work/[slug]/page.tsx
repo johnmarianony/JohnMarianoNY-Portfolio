@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllCases, getCaseBySlug } from "@/content/cases";
@@ -39,6 +40,19 @@ export default async function CasePage({ params }: Props) {
             ? " · Public details sterilized for clearance"
             : null}
         </p>
+        {study.thumb ? (
+          <div className="case-hero__media">
+            <Image
+              src={study.thumb}
+              alt={study.thumbAlt ?? ""}
+              width={1120}
+              height={630}
+              sizes="(max-width: 1120px) 100vw, 1120px"
+              className="case-hero__thumb"
+              priority
+            />
+          </div>
+        ) : null}
       </header>
 
       <article className="prose-block">

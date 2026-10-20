@@ -13,6 +13,9 @@ export type CaseStudy = {
   tags: string[];
   summary: string;
   dowAccent?: boolean;
+  /** Sterilized artifact thumb under /images/cases/ */
+  thumb?: string;
+  thumbAlt?: string;
   outcomes: string[];
   context: string;
   approach: string[];
@@ -34,6 +37,8 @@ export const cases: CaseStudy[] = [
     platforms: ["Platform migration", "MVP delivery"],
     tags: ["platform", "federal", "DOW", "migration"],
     dowAccent: true,
+    thumb: "/images/cases/dow-platform-migration-mvp.jpg",
+    thumbAlt: "Sterilized platform migration architecture diagram",
     summary:
       "Integral to a delivery team shaping design and requirements for a platform design and migration MVP that helped win an $820M, five-year contract.",
     outcomes: [
@@ -64,6 +69,8 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Self-service portal"],
     tags: ["audit", "adoption", "federal"],
+    thumb: "/images/cases/intel-portal-audit.jpg",
+    thumbAlt: "Sterilized heuristic audit findings board",
     summary:
       "Eight-week heuristic audit of a classified self-service portal—quick wins for adoption plus a two-year modernization roadmap.",
     outcomes: [
@@ -94,6 +101,8 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Power Platform", "USWDS"],
     tags: ["platform", "federal", "mentorship"],
+    thumb: "/images/cases/doi-platform-constraints.jpg",
+    thumbAlt: "Sterilized federal constraint wireframe sheets",
     summary:
       "Enabled platform alignment across federal bureaus through research, mentoring, and wireframe-based strategy—translating federal policy into actionable design constraints.",
     outcomes: [
@@ -124,6 +133,8 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Total Experience", "Multi-platform evaluation"],
     tags: ["strategy", "federal", "leadership"],
+    thumb: "/images/cases/state-total-experience.jpg",
+    thumbAlt: "Sterilized Total Experience ecosystem map",
     summary:
       "Led Total Experience through fog, election clocks, and no chosen platform—quiet impact: research and framework left behind when launch wasn’t ready.",
     outcomes: [
@@ -155,6 +166,8 @@ export const cases: CaseStudy[] = [
     platforms: ["Intelligence / mission platform"],
     tags: ["platform", "federal", "DOW", "research"],
     dowAccent: true,
+    thumb: "/images/cases/dow-platform-modernization.jpg",
+    thumbAlt: "Sterilized dual-path journey modernization diagram",
     summary:
       "Modernized a fragmented mission platform through field research, journey mapping, and dual-path UX strategy—raising satisfaction and recovering engineering time.",
     outcomes: [
@@ -185,6 +198,8 @@ export const cases: CaseStudy[] = [
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
     tags: ["workflow", "research", "enterprise"],
+    thumb: "/images/cases/star-ccm-az-workflow.jpg",
+    thumbAlt: "Sterilized A-to-Z engineering workflow map",
     summary:
       "Initial analysis to understand the most robust end-to-end workflow in the application—because no workflows had ever been clearly defined.",
     outcomes: [
