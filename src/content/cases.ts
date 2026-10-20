@@ -1,3 +1,14 @@
+export type CaseArtifact = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+export type CaseMetric = {
+  value: string;
+  label: string;
+};
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -18,11 +29,20 @@ export type CaseStudy = {
   /** Sterilized artifact thumb under /images/cases/ */
   thumb?: string;
   thumbAlt?: string;
+  metrics?: CaseMetric[];
+  artifacts?: CaseArtifact[];
+  pullQuote?: string;
   outcomes: string[];
   context: string;
   approach: string[];
   reflection: string;
 };
+
+export const processSteps = [
+  { label: "Discover", detail: "Pressure, users, and real constraints" },
+  { label: "Align", detail: "Shared frames leadership can decide on" },
+  { label: "Leave influence", detail: "Assets and judgment that outlast the sprint" },
+] as const;
 
 export const cases: CaseStudy[] = [
   {
@@ -45,6 +65,25 @@ export const cases: CaseStudy[] = [
       "Design and requirements for a platform migration MVP that helped win an $820M, five-year contract.",
     summary:
       "Integral to a delivery team shaping design and requirements for a platform design and migration MVP that helped win an $820M, five-year contract.",
+    metrics: [
+      { value: "$820M", label: "5-year contract the MVP helped win" },
+      { value: "MVP", label: "Platform design & migration path" },
+      { value: "DOW", label: "War Department delivery team" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/dow-platform-migration-mvp.jpg",
+        alt: "Sterilized platform migration architecture diagram",
+        caption: "Target architecture framing for the migration MVP",
+      },
+      {
+        src: "/images/cases/dow-platform-migration-mvp-2.jpg",
+        alt: "Sterilized before-to-after platform consolidation diagram",
+        caption: "From tangled legacy nodes to a clearer target platform",
+      },
+    ],
+    pullQuote:
+      "The win wasn’t a launch screenshot—it was a contract-shaped outcome built under constraint.",
     outcomes: [
       "Design and requirements contributed to an MVP that supported an $820M, 5-year award",
       "Platform migration framing clarified scope under delivery pressure",
@@ -79,6 +118,25 @@ export const cases: CaseStudy[] = [
       "Eight-week heuristic audit of a classified self-service portal—quick wins for adoption plus a two-year modernization roadmap.",
     summary:
       "Eight-week heuristic audit of a classified self-service portal—quick wins for adoption plus a two-year modernization roadmap.",
+    metrics: [
+      { value: "8 weeks", label: "Heuristic audit engagement" },
+      { value: "2 years", label: "Modernization roadmap horizon" },
+      { value: "Adoption", label: "Quick wins sequenced first" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/intel-portal-audit.jpg",
+        alt: "Sterilized heuristic audit findings board",
+        caption: "Findings synthesis — severity without exposing the system",
+      },
+      {
+        src: "/images/cases/intel-portal-audit-2.jpg",
+        alt: "Sterilized quick-wins to multi-year roadmap timeline",
+        caption: "Quick wins now, structural bets across a two-year arc",
+      },
+    ],
+    pullQuote:
+      "Great UX isn’t about perfect freedom—it’s about strategic influence.",
     outcomes: [
       "Quick-win recommendations to improve adoption across the agency",
       "Two-year modernization roadmap grounded in observed UX debt",
@@ -113,6 +171,25 @@ export const cases: CaseStudy[] = [
       "Translated federal policy into design constraints—aligning bureaus, mentoring juniors, and leaving assets that got reused.",
     summary:
       "Enabled platform alignment across federal bureaus through research, mentoring, and wireframe-based strategy—translating federal policy into actionable design constraints.",
+    metrics: [
+      { value: "Policy → UX", label: "Constraints made actionable" },
+      { value: "Reused", label: "Wireframes across DOI efforts" },
+      { value: "Extended", label: "Contract on alignment strength" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/doi-platform-constraints.jpg",
+        alt: "Sterilized federal constraint wireframe sheets",
+        caption: "Wireframe strategy under shared platform rules",
+      },
+      {
+        src: "/images/cases/doi-platform-constraints-2.jpg",
+        alt: "Sterilized mentorship and constraint workshop board",
+        caption: "Workshop boards that made policy legible for designers",
+      },
+    ],
+    pullQuote:
+      "Constraint isn’t the enemy of craft—it’s the brief.",
     outcomes: [
       "Wireframe strategy reused across DOI efforts",
       "Junior designers mentored into constraint-fluent practice",
@@ -147,6 +224,25 @@ export const cases: CaseStudy[] = [
       "Led Total Experience through fog and election clocks—quiet impact when launch wasn’t ready.",
     summary:
       "Led Total Experience through fog, election clocks, and no chosen platform—quiet impact: research and framework left behind when launch wasn’t ready.",
+    metrics: [
+      { value: "TX", label: "Total Experience vision" },
+      { value: "Fog", label: "No stack; shifting leadership" },
+      { value: "Quiet", label: "Impact without a launch" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/state-total-experience.jpg",
+        alt: "Sterilized Total Experience ecosystem map",
+        caption: "HR, admin, and service delivery as one ecosystem",
+      },
+      {
+        src: "/images/cases/state-total-experience-2.jpg",
+        alt: "Sterilized ambiguity-to-clarity strategy board",
+        caption: "From ambiguity fog to a reusable decision framework",
+      },
+    ],
+    pullQuote:
+      "This wasn’t just designing screens—it was designing ecosystems.",
     outcomes: [
       "Unifying vision across HR, admin, and service delivery",
       "Reusable framework influencing later platform decisions",
@@ -182,6 +278,25 @@ export const cases: CaseStudy[] = [
       "Field research and dual-path UX that raised satisfaction and recovered 500+ engineering hours.",
     summary:
       "Modernized a fragmented mission platform through field research, journey mapping, and dual-path UX strategy—raising satisfaction and recovering engineering time.",
+    metrics: [
+      { value: "+65%", label: "User satisfaction lift" },
+      { value: "500+", label: "Engineering hours saved" },
+      { value: "Dual-path", label: "Experts and modern flows" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/dow-platform-modernization.jpg",
+        alt: "Sterilized dual-path journey modernization diagram",
+        caption: "Dual-path UX — power users and modern journeys together",
+      },
+      {
+        src: "/images/cases/dow-platform-modernization-2.jpg",
+        alt: "Sterilized dual-path journey merge map",
+        caption: "Field pins that earned the right to change the workflow",
+      },
+    ],
+    pullQuote:
+      "Modernization sticks when research earns the right to change workflows.",
     outcomes: [
       "+65% user satisfaction",
       "500+ engineering hours saved",
@@ -216,6 +331,25 @@ export const cases: CaseStudy[] = [
       "Mapped the first clear A–Z workflow in STAR-CCM+—where none had ever been defined.",
     summary:
       "Initial analysis to understand the most robust end-to-end workflow in the application—because no workflows had ever been clearly defined.",
+    metrics: [
+      { value: "A→Z", label: "First end-to-end workflow map" },
+      { value: "Gaps", label: "Friction feature teams shipped around" },
+      { value: "Shared", label: "Language for product integrity" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/star-ccm-az-workflow.jpg",
+        alt: "Sterilized A-to-Z engineering workflow map",
+        caption: "The robust path made visible for the first time",
+      },
+      {
+        src: "/images/cases/star-ccm-az-workflow-2.jpg",
+        alt: "Sterilized A-to-Z workflow discovery board with gap markers",
+        caption: "Gap markers where siloed feature work had normalized friction",
+      },
+    ],
+    pullQuote:
+      "If the workflow was never defined, every feature is a guess.",
     outcomes: [
       "Documented A–Z workflow as a shared product reference",
       "Surfaced gaps that feature teams had been shipping around",
@@ -246,6 +380,13 @@ export const cases: CaseStudy[] = [
     tags: ["media", "social", "localization"],
     summary:
       "Built multi-language social apps for ESPN’s global X Games—live content, fan interaction, and platform-native UX.",
+    metrics: [
+      { value: "Global", label: "Multi-language event apps" },
+      { value: "Live", label: "Immovable event deadlines" },
+      { value: "Social", label: "Platform-native fan UX" },
+    ],
+    pullQuote:
+      "Live events teach ruthless prioritization—the audience doesn’t wait.",
     outcomes: [
       "Localized engagement across international event sites",
       "Platform-native patterns for fan interaction",
