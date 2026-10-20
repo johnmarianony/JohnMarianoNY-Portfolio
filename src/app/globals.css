@@ -269,7 +269,7 @@ a {
 
 .hero__image {
   object-fit: cover;
-  object-position: 58% 42%;
+  object-position: 62% 38%;
   transform: scale(1.04);
   animation: hero-drift 18s ease-in-out infinite alternate;
 }
