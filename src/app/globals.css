@@ -420,6 +420,7 @@ a {
   display: grid;
   gap: 1.5rem 1.25rem;
   margin-top: 2rem;
+  grid-template-columns: 1fr;
 }
 
 @media (min-width: 720px) {
@@ -432,8 +433,9 @@ a {
   gap: 2rem 1.35rem;
 }
 
-@media (min-width: 960px) {
-  .case-grid--gallery {
+/* Higher specificity so gallery stays 3-up on desktop (not stuck at 2) */
+@media (min-width: 1024px) {
+  .case-grid.case-grid--gallery {
     grid-template-columns: repeat(3, 1fr);
   }
 }
