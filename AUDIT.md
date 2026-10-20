@@ -295,7 +295,9 @@ Wix Phases 0–2 clear the **mid-70s**. A scratch rebuild clears the **high 80s 
 
 ## Model sites (what to steal)
 
-Full steal/skip notes: canvas **Model sites** tab.
+Full steal/skip + pillar scores: canvas tabs **Your three + peers** and **Original models**.
+
+### Original shortlist
 
 | Gap | Model | Steal |
 | --- | --- | --- |
@@ -306,9 +308,35 @@ Full steal/skip notes: canvas **Model sites** tab.
 | No-screenshot cases | [Jon Haines — ISI](https://jonhaines.design/uxcalibur/work/isi-defense) | Redrawn diagrams; compliance as design |
 | Artifact density | [Ellie Krysl — ISR](https://www.elliekrysl.net/portfolio/defense-isr) | Compact arc + validation moment |
 
-**Moodboard mashup:** Phan skim + Seufer clearance + Khoury/Haines depth + Schnier thesis + Krysl artifacts.
+### Requested peers — how built + pillar read
 
-**Review order (~35 min):** Phan → Seufer → Proteus → Haines → Schnier Standards.
+| Site | Built on | Hiring-ish score | Verdict for you |
+| --- | --- | --- | --- |
+| [Jason Kobs](https://jasonkobs.com/) | Custom **PHP 8.3** + jQuery (not a page builder) | ~28 | Personal creative brand; **do not** model IA. Voice/permission only. |
+| [Jacob Alan White](https://www.jacobalanwhite.com/) | **Wix** (same stack family as you) | ~78 | **Best same-tools model**: 3 cases, hard metrics ($8M, 100 agencies, 30%). |
+| [Jaime Vasquez](https://www.behance.net/jvasquez) | **Behance** gallery | ~35 | Brand/logo craft; wrong container for Platform Experience hiring. Put mentorship on *your* site. |
+
+**Wix reality check:** Jacob shows packaging—not CMS—is your bottleneck. You can climb hiring on Wix (mirror his curation) while planning a Next/Vercel ceiling.
+
+### Platform design space
+
+| Site | Built on | Steal |
+| --- | --- | --- |
+| [Anuradha Vellineni](https://www.folioanu.com/) | Custom / **Vercel** | Platform revenue & adoption ($3B EW, 49% install) |
+| [Justin Kirkwood — Decision Tables](https://www.kirkwoodportfolio.com/case-study-inline-authoring) | Custom | Feature → reusable platform capability; UXQ vs platform avg |
+| [Kat Temple — Now Assist](https://kattemple.com/ai-experience-layer) | Custom | Cross-platform AI pattern + ACV growth |
+
+### Consulting space (frog / Accenture-class)
+
+| Site | Built on | Steal |
+| --- | --- | --- |
+| [Ryan Flynn](http://www.ryfly.com/) (frog Director) | **Squarespace** | Leadership one-liner + 4–5 outcome-tagged client tiles |
+| [Maya Brennan — AIM](https://www.mayabrennan.io/projects/aim) | **Webflow** | Honest reframe after failed tests; Dock/Accenture depth |
+| [Swanand Wagh](https://www.swanandwagh.com/) (frog) | Builder | Metric-in-title case cards; NDA blur discipline |
+
+**This week model:** Jacob homepage density → FolioAnu/Kirkwood platform proof language → Khoury/Haines clearance depth → Flynn leadership skim. **Ignore as structure:** Kobs novelty; Behance as primary URL.
+
+**Moodboard mashup:** Phan skim + Seufer clearance + Khoury/Haines depth + Schnier thesis + Krysl artifacts + **Jacob metric density**.
 
 ---
 
