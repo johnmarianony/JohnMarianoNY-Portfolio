@@ -24,7 +24,7 @@ export default function WorkPage() {
 
       <section className="section" style={{ paddingTop: "1rem" }}>
         <p className="section__eyebrow">Featured</p>
-        <div className="case-grid">
+        <div className="case-grid case-grid--gallery">
           {featured.map((study) => (
             <CaseCard key={study.slug} study={study} />
           ))}

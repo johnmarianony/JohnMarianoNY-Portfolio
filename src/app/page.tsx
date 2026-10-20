@@ -14,12 +14,12 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <p className="section__eyebrow">Selected work</p>
-          <h2 className="section__title">Outcome-first case studies</h2>
+          <h2 className="section__title">Experience marks the spot</h2>
           <p className="section__lede">
-            Six featured engagements—War Department platform work first, then
-            federal and enterprise systems where constraint was the brief.
+            Six featured engagements—image-first, outcome-led. War Department
+            work first; sterilized artifacts in place of cleared screens.
           </p>
-          <div className="case-grid">
+          <div className="case-grid case-grid--gallery">
             {featured.map((study) => (
               <CaseCard key={study.slug} study={study} />
             ))}
