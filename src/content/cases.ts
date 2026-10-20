@@ -365,11 +365,6 @@ export const cases: CaseStudy[] = [
         caption: "Labeled: Web Monitoring Client — clickable prototype work",
       },
       {
-        src: "/images/cases/siemens/siemens-physics-comparison-tool.png",
-        alt: "Siemens STAR-CCM+ staged physics comparison tool",
-        caption: "Labeled: Staged Physics Comparison Tool — Java client feature",
-      },
-      {
         src: "/images/cases/siemens/siemens-job-manager-stop-button.jpg",
         alt: "Siemens STAR-CCM+ Job Manager stop button research finding",
         caption: "Labeled: Job Manager Stop Button — research-driven workflow fix",
@@ -436,11 +431,6 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/espn-x-games-apps.jpg",
         alt: "ESPN applications admin dashboard showing X Games city apps",
         caption: "ESPN Apps admin — X Games city apps in the publish console",
-      },
-      {
-        src: "/images/cases/espn/espn-apps-admin-dashboard.jpg",
-        alt: "ESPN applications admin dashboard with X Games city apps and 30 for 30",
-        caption: "Labeled: ESPN Apps admin — X Games city apps in the publish console",
       },
       {
         src: "/images/cases/espn/espn-xgames-munich-localization-de-en.jpg",
