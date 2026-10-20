@@ -1,35 +1,34 @@
-# John Mariano — Portfolio Audit
+# John Mariano — Portfolio
 
-Public-surface audit of [johnmarianony.com](https://www.johnmarianony.com/) focused on hiring conversion for Platform Experience / UX strategy roles.
+Custom portfolio for [johnmarianony.com](https://www.johnmarianony.com/) — platform experience / senior UX strategy hiring conversion.
 
-## Scope
+**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · content in `src/content/`
 
-1. Portfolio / hiring conversion  
-2. Competitive benchmark vs peers  
-3. UX / design craft (hierarchy, storytelling, case studies)  
-4. Content / positioning / brand voice  
-5. Accessibility  
-6. Performance / SEO / technical health  
+Planning artifacts from the audit live alongside the app: [AUDIT.md](./AUDIT.md), [REBUILD_PLAN.md](./REBUILD_PLAN.md).
 
-## How to read the findings
+## Run locally
 
-See [AUDIT.md](./AUDIT.md) for:
+```bash
+npm install
+npm run dev
+```
 
-- **Score explanations** — weighted criteria behind each of the six pillar scores  
-- **Phased roadmap** — Phase 0 trust stop-loss → Phase 1 conversion rebuild → Phase 2 polish  
+Open [http://127.0.0.1:4317](http://127.0.0.1:4317).
 
-## Custom rebuild (Wix-agnostic)
+```bash
+npm run build   # production build
+npm run start   # serve production on 4317
+npm run lint
+```
 
-See [REBUILD_PLAN.md](./REBUILD_PLAN.md) for the full plan to redesign and rebuild on **Next.js + MDX**, deploy on **Vercel** (or Cloudflare/Netlify), with IA, content model, phases G0–G5, and cutover checklist.
+## What’s in v1
 
-**Voice (§1a):** site vs Substack channel split, rewrite examples, and checklist — also as Cursor canvas **Voice Recommendations**.
+- Brand-first homepage with three proof chips and six featured cases
+- Case pages (sterilized stubs — DOW migration MVP owns the $820M proof)
+- Approach, About, Contact (`john.mariano.ny@gmail.com`), Accessibility
+- Writing strip → curated Substack posts
+- War Department (DOW) naming on relevant cases; no official DOW logo/seal
 
-Open the Cursor canvas **Custom Site Rebuild Plan** for the interactive rebuild version.
+## Contact
 
-## Method (snapshot: Oct 19, 2026)
-
-- Live crawl of homepage, selected case studies, contact, and accessibility statement  
-- Lighthouse (mobile): Performance 70 · Accessibility 84 · Best Practices 100 · SEO 92  
-- Peer set: Teresa Phan, Ellie Krysl, Michael Seufer, Ronald Schnier  
-
-No analytics or Wix-editor access was used.
+john.mariano.ny@gmail.com · [LinkedIn](https://www.linkedin.com/in/john-mariano) · [Substack](https://johnmarianony.substack.com/)

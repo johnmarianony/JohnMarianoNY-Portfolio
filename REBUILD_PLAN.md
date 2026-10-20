@@ -423,6 +423,7 @@ Export full list from Wix sitemaps during G0.
 | 5 | **Brand** | **Start fresh** for personal site; DOW cases use War Department naming + accent palette (no official logo/seal) |
 | — | LinkedIn | https://www.linkedin.com/in/john-mariano |
 | — | Blog | https://johnmarianony.substack.com/ (*My Neural Graffiti*) |
+| — | **Contact email** | `john.mariano.ny@gmail.com` |
 
 ### Proof metrics — locked
 
