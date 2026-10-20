@@ -2,6 +2,8 @@ export type CaseArtifact = {
   src: string;
   alt: string;
   caption: string;
+  /** Portrait screenshots (e.g. Facebook tab captures) */
+  portrait?: boolean;
 };
 
 export type CaseMetric = {
@@ -326,7 +328,7 @@ export const cases: CaseStudy[] = [
     platforms: ["Simcenter STAR-CCM+"],
     tags: ["workflow", "research", "enterprise"],
     thumb: "/images/cases/star-ccm-az-workflow.jpg",
-    thumbAlt: "Sterilized A-to-Z engineering workflow map",
+    thumbAlt: "Siemens STAR-CCM+ portfolio collage — labeled product UI examples",
     teaser:
       "Mapped the first clear A–Z workflow in STAR-CCM+—where none had ever been defined.",
     summary:
@@ -338,14 +340,54 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/star-ccm-az-workflow.jpg",
-        alt: "Sterilized A-to-Z engineering workflow map",
-        caption: "The robust path made visible for the first time",
+        src: "/images/cases/siemens/siemens-star-ccm-user-journey-splash.png",
+        alt: "Siemens Simcenter STAR-CCM+ User Journey splash and login",
+        caption: "Labeled: STAR-CCM+ User Journey — product entry experience",
       },
       {
-        src: "/images/cases/star-ccm-az-workflow-2.jpg",
-        alt: "Sterilized A-to-Z workflow discovery board with gap markers",
-        caption: "Gap markers where siloed feature work had normalized friction",
+        src: "/images/cases/siemens/siemens-star-ccm-az-workflow-board.png",
+        alt: "Siemens STAR-CCM+ A-to-Z workflow analysis board",
+        caption: "Labeled: A–Z workflow analysis — mapping the undefined path",
+      },
+      {
+        src: "/images/cases/siemens/siemens-star-ccm-az-detail.png",
+        alt: "Siemens STAR-CCM+ A-to-Z workflow detail close-up",
+        caption: "Labeled: A–Z workflow detail — steps made visible",
+      },
+      {
+        src: "/images/cases/siemens/siemens-web-monitoring-client.png",
+        alt: "Siemens STAR-CCM+ Web Monitoring Client prototype",
+        caption: "Labeled: Web Monitoring Client — clickable prototype work",
+      },
+      {
+        src: "/images/cases/siemens/siemens-physics-comparison-tool.png",
+        alt: "Siemens STAR-CCM+ staged physics comparison tool",
+        caption: "Labeled: Staged Physics Comparison Tool — Java client feature",
+      },
+      {
+        src: "/images/cases/siemens/siemens-job-manager-stop-button.jpg",
+        alt: "Siemens STAR-CCM+ Job Manager stop button research finding",
+        caption: "Labeled: Job Manager Stop Button — research-driven workflow fix",
+      },
+      {
+        src: "/images/cases/siemens/siemens-tabular-editor.png",
+        alt: "Siemens STAR-CCM+ tabular editor concept exploration",
+        caption: "Labeled: Tabular Editor — next-gen UI exploration",
+      },
+      {
+        src: "/images/cases/siemens/siemens-modernization-diagram.png",
+        alt: "Siemens STAR-CCM+ modernization diagram",
+        caption: "Labeled: Modernization diagram — from legacy to next-gen UI",
+      },
+      {
+        src: "/images/cases/siemens/siemens-ux-influence-timeline.png",
+        alt: "Siemens UX influence timeline from direct work to continued use",
+        caption: "Labeled: UX Influence Timeline — impact after departure",
+      },
+      {
+        src: "/images/cases/siemens/siemens-star-ccm-collage.png",
+        alt: "Siemens STAR-CCM+ portfolio collage of labeled UI examples",
+        caption: "Labeled: STAR-CCM+ collage — portfolio of shipped UI work",
       },
     ],
     pullQuote:
@@ -378,19 +420,76 @@ export const cases: CaseStudy[] = [
     clearance: "public",
     platforms: ["Facebook apps"],
     tags: ["media", "social", "localization"],
+    thumb: "/images/cases/espn-x-games-apps.jpg",
+    thumbAlt: "ESPN applications admin dashboard showing X Games city apps",
+    teaser:
+      "Multi-language Facebook audience apps for ESPN’s global X Games—from Tignes to Foz do Iguaçu.",
     summary:
       "Built multi-language social apps for ESPN’s global X Games—live content, fan interaction, and platform-native UX.",
     metrics: [
-      { value: "Global", label: "Multi-language event apps" },
+      { value: "4 cities", label: "Tignes · Munich · Barcelona · Foz" },
+      { value: "Localized", label: "FR · DE · ES · PT event UIs" },
       { value: "Live", label: "Immovable event deadlines" },
-      { value: "Social", label: "Platform-native fan UX" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/espn/espn-apps-admin-dashboard.jpg",
+        alt: "ESPN applications admin dashboard with X Games city apps and 30 for 30",
+        caption: "Labeled: ESPN Apps admin — X Games city apps in the publish console",
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-munich-localization-de-en.jpg",
+        alt: "Side-by-side German and English ESPN X Games Munich Facebook apps",
+        caption: "Labeled: Munich localization — DE / EN side-by-side",
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-barcelona-app-ui.jpg",
+        alt: "ESPN X Games Barcelona Facebook app UI",
+        caption: "Labeled: Barcelona — video, headlines, gallery, social bar",
+        portrait: true,
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-tignes-app-ui.jpg",
+        alt: "ESPN X Games Tignes Facebook app UI in French",
+        caption: "Labeled: Tignes — French-localized winter event app",
+        portrait: true,
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-foz-do-iguacu-app-ui.jpg",
+        alt: "ESPN X Games Foz do Iguaçu Facebook app UI in Portuguese",
+        caption: "Labeled: Foz do Iguaçu — Portuguese-localized event app",
+        portrait: true,
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-munich-app-ui-de.jpg",
+        alt: "ESPN X Games Munich Facebook app UI in German",
+        caption: "Labeled: Munich — German-localized summer event app",
+        portrait: true,
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-barcelona-facebook-tab.jpg",
+        alt: "ESPN X Games Barcelona Facebook tab with live video and headlines",
+        caption: "Labeled: Barcelona Facebook tab — live event hub in-platform",
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-tignes-facebook-tab.jpg",
+        alt: "ESPN X Games Tignes Facebook tab in French",
+        caption: "Labeled: Tignes Facebook tab — French winter event experience",
+        portrait: true,
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-foz-do-iguacu-facebook-tab.jpg",
+        alt: "ESPN X Games Foz do Iguaçu Facebook tab in Portuguese",
+        caption: "Labeled: Foz Facebook tab — Portuguese event experience",
+        portrait: true,
+      },
     ],
     pullQuote:
       "Live events teach ruthless prioritization—the audience doesn’t wait.",
     outcomes: [
       "Localized engagement across international event sites",
       "Platform-native patterns for fan interaction",
-      "Cross-team delivery under live-event pressure",
+      "Cross-team delivery under immovable event deadlines",
     ],
     context:
       "Global sports events needed local-language social experiences tied to live content.",

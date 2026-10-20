@@ -93,13 +93,15 @@ export default async function CasePage({ params }: Props) {
           </section>
 
           {artifacts[0] ? (
-            <figure className="case-figure">
+            <figure
+              className={`case-figure${artifacts[0].portrait ? " case-figure--portrait" : ""}`}
+            >
               <div className="case-figure__frame">
                 <Image
                   src={artifacts[0].src}
                   alt={artifacts[0].alt}
-                  width={1120}
-                  height={630}
+                  width={artifacts[0].portrait ? 820 : 1120}
+                  height={artifacts[0].portrait ? 1106 : 630}
                   sizes="(max-width: 1120px) 100vw, 1120px"
                   className="case-figure__img"
                   priority
@@ -144,20 +146,34 @@ export default async function CasePage({ params }: Props) {
             </ul>
           </section>
 
-          {artifacts[1] ? (
-            <figure className="case-figure">
-              <div className="case-figure__frame">
-                <Image
-                  src={artifacts[1].src}
-                  alt={artifacts[1].alt}
-                  width={1120}
-                  height={630}
-                  sizes="(max-width: 1120px) 100vw, 1120px"
-                  className="case-figure__img"
-                />
+          {artifacts.length > 1 ? (
+            <section className="case-gallery" aria-label="Project artifacts">
+              <h2 className="case-gallery__title">Artifacts</h2>
+              <div className="case-gallery__grid">
+                {artifacts.slice(1).map((art) => (
+                  <figure
+                    key={art.src}
+                    className={`case-figure case-figure--gallery${art.portrait ? " case-figure--portrait" : ""}`}
+                  >
+                    <div className="case-figure__frame">
+                      <Image
+                        src={art.src}
+                        alt={art.alt}
+                        width={art.portrait ? 820 : 1120}
+                        height={art.portrait ? 1106 : 630}
+                        sizes={
+                          art.portrait
+                            ? "(max-width: 700px) 100vw, 360px"
+                            : "(max-width: 700px) 100vw, 520px"
+                        }
+                        className="case-figure__img"
+                      />
+                    </div>
+                    <figcaption>{art.caption}</figcaption>
+                  </figure>
+                ))}
               </div>
-              <figcaption>{artifacts[1].caption}</figcaption>
-            </figure>
+            </section>
           ) : null}
 
           <section className="case-section">
