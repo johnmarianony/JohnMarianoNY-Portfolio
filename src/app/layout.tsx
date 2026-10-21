@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Figtree } from "next/font/google";
+import { Fraunces, Figtree, Syne } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/content/site";
@@ -14,6 +14,14 @@ const display = Fraunces({
 const body = Figtree({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+/** Condensed/heavy accent face for kickers, proofs, panel marks */
+const accent = Syne({
+  variable: "--font-accent",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +48,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable} ${accent.variable} h-full`}
+    >
       <body className="page-shell antialiased">
         <SiteHeader />
         <main id="main">{children}</main>
