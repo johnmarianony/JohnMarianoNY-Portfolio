@@ -22,8 +22,11 @@ export default function WorkPage() {
         </p>
       </header>
 
-      <section className="section" style={{ paddingTop: "1rem" }}>
+      <section className="section" style={{ paddingTop: "1rem" }} aria-labelledby="featured-heading">
         <p className="section__eyebrow">Featured</p>
+        <h2 id="featured-heading" className="section__title">
+          Featured engagements
+        </h2>
         <div className="case-grid case-grid--gallery">
           {featured.map((study) => (
             <CaseCard key={study.slug} study={study} />

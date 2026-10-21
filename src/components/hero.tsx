@@ -59,7 +59,7 @@ export function Hero() {
           </figure>
         </div>
 
-        <div className="hero__proofs" aria-label="Selected proof points">
+        <section className="hero__proofs" aria-label="Selected proof points">
           {site.proofs.map((proof, i) => (
             <div key={proof.value} className="proof proof--panel">
               <p className="proof__index" aria-hidden="true">
@@ -69,7 +69,7 @@ export function Hero() {
               <p className="proof__label">{proof.label}</p>
             </div>
           ))}
-        </div>
+        </section>
       </div>
     </section>
   );

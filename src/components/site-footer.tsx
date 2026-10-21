@@ -18,13 +18,16 @@ export function SiteFooter() {
             rel="noopener noreferrer"
           >
             LinkedIn
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
           <a
             href={site.social.substack}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Writing ↗
+            Writing
+            <span className="sr-only"> (opens in new tab)</span>
+            <span aria-hidden="true"> ↗</span>
           </a>
           <Link href="/accessibility">Accessibility</Link>
         </div>

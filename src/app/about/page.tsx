@@ -38,7 +38,9 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="text-accent"
           >
-            My Neural Graffiti ↗
+            My Neural Graffiti
+            <span className="sr-only"> (opens in new tab)</span>
+            <span aria-hidden="true"> ↗</span>
           </a>
           .
         </p>
@@ -54,7 +56,9 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="text-accent"
           >
-            LinkedIn ↗
+            LinkedIn
+            <span className="sr-only"> (opens in new tab)</span>
+            <span aria-hidden="true"> ↗</span>
           </a>
           {" · "}
           <Link href="/contact" className="text-accent">

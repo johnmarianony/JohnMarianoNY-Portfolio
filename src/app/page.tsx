@@ -78,7 +78,9 @@ export default function HomePage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3>
-                  {post.title} <span aria-hidden="true">↗</span>
+                  {post.title}
+                  <span className="sr-only"> (opens in new tab)</span>
+                  <span aria-hidden="true"> ↗</span>
                 </h3>
                 <p>{post.blurb}</p>
               </a>

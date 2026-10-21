@@ -60,8 +60,13 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} ${accent.variable} ${nameDisplay.variable} h-full`}
     >
       <body className="page-shell antialiased">
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         <SiteHeader />
-        <main id="main">{children}</main>
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>

@@ -113,6 +113,37 @@ a {
   border: 0;
 }
 
+/* Skip link — keyboard first stop (508 / WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  left: var(--space-page-x-m);
+  top: 0.75rem;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  clip-path: var(--blade);
+  transform: translateY(-150%);
+  transition: transform 120ms ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+main:focus {
+  outline: none;
+}
+
 /* Atmosphere */
 .page-shell {
   position: relative;
@@ -180,6 +211,11 @@ a {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   width: fit-content;
+}
+
+.site-logo:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
 }
 
 .site-nav {
@@ -289,6 +325,12 @@ a {
   color: var(--accent);
 }
 
+.site-footer__links a:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  color: var(--accent);
+}
+
 /* Layout helpers */
 .container {
   width: 100%;
@@ -354,10 +396,79 @@ a {
 
 .text-accent {
   color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
 
 .text-accent:hover {
   color: var(--accent-hover);
+}
+
+.text-accent:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Buttons — restored for contrast, target size, and focus */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 2.9rem;
+  padding: 0 1.35rem;
+  border-radius: 0;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  clip-path: var(--blade);
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+  transform: translate(-2px, -2px);
+}
+
+.btn--ghost {
+  border: 2px solid var(--panel-rule);
+  color: var(--fg);
+  /* Opaque fill so WCAG contrast is determinable over hero photography */
+  background: var(--ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translate(-2px, -2px);
+}
+
+.btn--ink {
+  background: #f2ebe0;
+  color: #12100e;
+  border: 2px solid #f2ebe0;
+  box-shadow: 5px 6px 0 #050403;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn--ink:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 9px 0 #050403;
 }
 
 /* Hero — splash panel (graphic novel cover, not cartoon) */
@@ -415,10 +526,10 @@ a {
   z-index: 2;
   max-width: min(40rem, 100%);
   padding: 1.5rem 1.5rem 1.65rem;
-  background: color-mix(in oklab, var(--ink) 78%, transparent);
+  /* Solid ink plate — readable contrast over atmosphere photo (508 / WCAG AA) */
+  background: var(--ink);
   border: var(--panel-border) solid var(--panel-rule);
   clip-path: var(--slash-deep);
-  backdrop-filter: blur(8px);
   box-shadow: 10px 14px 0 var(--ink);
 }
 
@@ -669,9 +780,8 @@ a {
   text-transform: uppercase;
   line-height: 0.95;
   color: var(--accent);
-  text-shadow:
-    0 0 0 transparent,
-    3px 3px 0 color-mix(in oklab, var(--ink) 90%, transparent);
+  /* No text-shadow: solid ink plate behind the name already stamps it;
+     shadows make automated contrast checks inconclusive. */
   animation: name-stamp 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 160ms both;
 }
 
@@ -736,8 +846,7 @@ a {
 .proof--panel {
   border: var(--panel-border) solid var(--panel-rule);
   padding: 0.95rem 0.95rem 1.05rem;
-  background: color-mix(in oklab, var(--ink) 74%, transparent);
-  backdrop-filter: blur(4px);
+  background: var(--ink);
   clip-path: var(--slash);
   transition: transform 180ms ease;
 }
@@ -811,6 +920,7 @@ a {
   .hero__proofs,
   .case-card,
   .featured-case__img,
+  .btn,
   .btn--ink {
     animation: none !important;
     transition: none !important;
@@ -830,6 +940,9 @@ a {
     }
   }
 
+  .btn:hover,
+  .btn--primary:hover,
+  .btn--ghost:hover,
   .btn--ink:hover {
     transform: none;
   }
@@ -1638,6 +1751,22 @@ a {
   line-height: var(--lh-body);
 }
 
+.stack p a:not(.btn) {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.stack p a:not(.btn):hover {
+  color: var(--accent-hover);
+}
+
+.stack p a:not(.btn):focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
 .stack__cta {
   margin-top: var(--space-body-cta) !important;
 }
@@ -1649,8 +1778,23 @@ a {
   max-width: 32rem;
 }
 
-.contact-panel a {
+/* Text links only — never override .btn contrast (508 / WCAG AA) */
+.contact-panel > a:not([class*="btn"]) {
   color: var(--accent);
   border-bottom: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
   width: fit-content;
+}
+
+.contact-panel > a:not([class*="btn"]):focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.contact-panel .btn--primary {
+  color: var(--accent-fg);
+  border-bottom: none;
+}
+
+.contact-panel .btn--ghost {
+  border-bottom: none;
 }

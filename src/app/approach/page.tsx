@@ -57,9 +57,11 @@ export default function ApproachPage() {
             href="https://johnmarianony.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "var(--accent)" }}
+            className="text-accent"
           >
-            My Neural Graffiti ↗
+            My Neural Graffiti
+            <span className="sr-only"> (opens in new tab)</span>
+            <span aria-hidden="true"> ↗</span>
           </a>
           .
         </p>

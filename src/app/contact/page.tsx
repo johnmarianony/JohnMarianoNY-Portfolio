@@ -27,7 +27,9 @@ export default function ContactPage() {
           rel="noopener noreferrer"
           className="btn btn--ghost"
         >
-          LinkedIn ↗
+          LinkedIn
+          <span className="sr-only"> (opens in new tab)</span>
+          <span aria-hidden="true"> ↗</span>
         </a>
         <p style={{ color: "var(--fg-muted)", marginTop: "1rem" }}>
           For cleared or invite-only artifacts, say so in your note—I’ll share
