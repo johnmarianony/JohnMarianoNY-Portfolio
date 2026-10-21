@@ -522,54 +522,55 @@ a {
 
 /*
   Ben-Day coloring screen on the photo.
-  Large, high-contrast neutral dots — obvious comic halftone
-  without shifting hue.
+  Light dots that read on dark midtones + offset dark plate —
+  larger, obvious comic halftone without a hue shift.
 */
 .hero__benday {
-  --benday-cell: 13px;
+  --benday-cell: 14px;
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 1;
+  /* Light plate — visible on dark photo areas */
   background-image: radial-gradient(
     circle,
-    rgb(210 210 210) 3.6px,
-    transparent 4px
+    rgb(255 255 255) 4.2px,
+    transparent 4.7px
   );
   background-size: var(--benday-cell) var(--benday-cell);
-  mix-blend-mode: hard-light;
-  opacity: 0.55;
+  mix-blend-mode: soft-light;
+  opacity: 0.85;
 }
 
 .hero__benday::before {
   content: "";
   position: absolute;
   inset: 0;
-  /* Offset dark plate — punches midtones */
+  /* Offset dark plate — texture in lighter midtones */
   background-image: radial-gradient(
     circle,
-    rgb(28 28 28) 3.1px,
-    transparent 3.5px
+    rgb(0 0 0) 3.4px,
+    transparent 3.9px
   );
   background-size: var(--benday-cell) var(--benday-cell);
   background-position: calc(var(--benday-cell) / 2) calc(var(--benday-cell) / 2);
   mix-blend-mode: soft-light;
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
 .hero__benday::after {
   content: "";
   position: absolute;
   inset: 0;
-  /* Secondary screen for denser print grain */
+  /* Denser secondary screen */
   background-image: radial-gradient(
     circle,
-    rgb(180 180 180) 1.8px,
-    transparent 2.15px
+    rgb(255 255 255) 2.2px,
+    transparent 2.6px
   );
-  background-size: 7px 7px;
+  background-size: 8px 8px;
   mix-blend-mode: overlay;
-  opacity: 0.75;
+  opacity: 0.55;
 }
 
 .hero__scrim {
