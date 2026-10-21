@@ -530,7 +530,8 @@ a {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  /* Above scrim so the screen isn’t crushed by the dark wash */
+  z-index: 3;
   /* Light plate — visible on dark photo areas */
   background-image: radial-gradient(
     circle,
@@ -576,7 +577,7 @@ a {
 .hero__scrim {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   background:
     linear-gradient(
       105deg,
@@ -595,7 +596,7 @@ a {
 .hero__ink {
   position: absolute;
   inset: 0;
-  z-index: 3;
+  z-index: 4;
   pointer-events: none;
   background:
     radial-gradient(ellipse 55% 40% at 100% 0%, rgba(0, 0, 0, 0.55), transparent 70%),

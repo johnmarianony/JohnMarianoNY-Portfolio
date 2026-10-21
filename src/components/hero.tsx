@@ -14,8 +14,8 @@ export function Hero() {
           sizes="100vw"
           className="hero__image"
         />
-        <div className="hero__benday" />
         <div className="hero__scrim" />
+        <div className="hero__benday" />
         <div className="hero__ink" />
       </div>
 
