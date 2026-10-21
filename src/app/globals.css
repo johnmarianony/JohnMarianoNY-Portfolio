@@ -522,23 +522,22 @@ a {
 
 /*
   Ben-Day coloring screen on the photo.
-  Visible comic texture that stays subordinate to the atmosphere image.
+  Subtle comic texture under the scrim — present but subordinate.
 */
 .hero__benday {
-  --benday-cell: 7.5px;
+  --benday-cell: 6.5px;
   position: absolute;
   inset: 0;
   pointer-events: none;
-  /* Above scrim so the screen isn’t crushed by the dark wash */
-  z-index: 3;
+  z-index: 1;
   background-image: radial-gradient(
     circle,
-    rgb(155 155 155) 1.7px,
-    transparent 2px
+    rgb(125 125 125) 1.45px,
+    transparent 1.7px
   );
   background-size: var(--benday-cell) var(--benday-cell);
-  mix-blend-mode: soft-light;
-  opacity: 0.55;
+  mix-blend-mode: overlay;
+  opacity: 0.62;
 }
 
 .hero__benday::before {
@@ -548,13 +547,13 @@ a {
   /* Offset second plate — denser comic screen */
   background-image: radial-gradient(
     circle,
-    rgb(70 70 70) 1.35px,
-    transparent 1.6px
+    rgb(85 85 85) 1.15px,
+    transparent 1.35px
   );
   background-size: var(--benday-cell) var(--benday-cell);
   background-position: calc(var(--benday-cell) / 2) calc(var(--benday-cell) / 2);
   mix-blend-mode: soft-light;
-  opacity: 0.45;
+  opacity: 0.4;
 }
 
 .hero__benday::after {
@@ -564,12 +563,12 @@ a {
   /* Finer grain plate */
   background-image: radial-gradient(
     circle,
-    rgb(140 140 140) 0.85px,
-    transparent 1.05px
+    rgb(135 135 135) 0.7px,
+    transparent 0.9px
   );
-  background-size: 4.25px 4.25px;
+  background-size: 3.5px 3.5px;
   mix-blend-mode: overlay;
-  opacity: 0.3;
+  opacity: 0.28;
 }
 
 .hero__scrim {
