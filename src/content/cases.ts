@@ -30,6 +30,8 @@ export type CaseStudy = {
   dowAccent?: boolean;
   /** Sterilized artifact thumb under /images/cases/ */
   thumb?: string;
+  /** Optional splash poster (taller / right-weighted) for FeaturedCase */
+  posterThumb?: string;
   thumbAlt?: string;
   metrics?: CaseMetric[];
   artifacts?: CaseArtifact[];
@@ -62,6 +64,7 @@ export const cases: CaseStudy[] = [
     tags: ["platform", "federal", "DOW", "migration"],
     dowAccent: true,
     thumb: "/images/cases/dow-platform-migration-mvp.jpg",
+    posterThumb: "/images/cases/dow-platform-migration-mvp-poster.jpg",
     thumbAlt: "Sterilized platform migration architecture diagram",
     teaser:
       "Design and requirements for a platform migration MVP that helped win an $820M, five-year contract.",

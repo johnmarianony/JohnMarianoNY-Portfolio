@@ -19,8 +19,7 @@ export function CaseCard({ study }: { study: CaseStudy }) {
           <Image
             src={study.thumb}
             alt={study.thumbAlt ?? ""}
-            width={720}
-            height={480}
+            fill
             sizes="(max-width: 719px) 100vw, (max-width: 1023px) 50vw, 33vw"
             className="case-card__thumb"
           />

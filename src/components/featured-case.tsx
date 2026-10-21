@@ -4,6 +4,7 @@ import type { CaseStudy } from "@/content/cases";
 
 export function FeaturedCase({ study }: { study: CaseStudy }) {
   const tags = [study.client, study.sector, ...study.tags.slice(0, 2)];
+  const media = study.posterThumb ?? study.thumb;
 
   return (
     <article
@@ -15,12 +16,11 @@ export function FeaturedCase({ study }: { study: CaseStudy }) {
           className="featured-case__media"
           aria-label={`Open case: ${study.title}`}
         >
-          {study.thumb ? (
+          {media ? (
             <Image
-              src={study.thumb}
+              src={media}
               alt={study.thumbAlt ?? ""}
-              width={1600}
-              height={900}
+              fill
               sizes="(max-width: 900px) 100vw, 1280px"
               className="featured-case__img"
               priority
