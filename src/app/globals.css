@@ -390,30 +390,41 @@ a {
   z-index: 2;
 }
 
+/* Cover masthead — copy panel + ink figure as one composition */
 .hero__masthead {
+  position: relative;
   display: grid;
-  gap: 1.5rem;
+  gap: 0;
   align-items: end;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  min-height: min(58vh, 560px);
 }
 
 @media (min-width: 900px) {
   .hero__masthead {
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
-    gap: 2rem;
-    align-items: end;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.85fr);
+    min-height: min(62vh, 620px);
   }
 }
 
 .hero__splash-panel {
   position: relative;
-  max-width: min(42rem, 100%);
+  z-index: 2;
+  max-width: min(40rem, 100%);
   padding: 1.5rem 1.5rem 1.65rem;
   background: color-mix(in oklab, var(--ink) 78%, transparent);
   border: var(--panel-border) solid var(--panel-rule);
   clip-path: var(--slash-deep);
   backdrop-filter: blur(8px);
   box-shadow: 10px 14px 0 var(--ink);
+}
+
+@media (min-width: 900px) {
+  .hero__splash-panel {
+    /* Leave a lane so the figure can overlap the panel edge */
+    max-width: min(36rem, 92%);
+    padding-right: 2.25rem;
+  }
 }
 
 .hero__panel-kicker {
@@ -426,60 +437,58 @@ a {
   color: var(--accent);
 }
 
-.hero__portrait {
+/* Ink/marker cutout — sits in the hero plane, not a card */
+.hero__figure {
+  position: relative;
+  z-index: 3;
   margin: 0;
+  pointer-events: none;
   justify-self: end;
-  width: min(100%, 280px);
-  animation: rise 800ms ease 120ms both;
+  align-self: end;
+  width: min(52vw, 220px);
+  filter: drop-shadow(0 18px 28px color-mix(in oklab, var(--ink) 55%, transparent));
+  animation: figure-rise 900ms cubic-bezier(0.2, 0.75, 0.2, 1) 100ms both;
 }
 
 @media (min-width: 900px) {
-  .hero__portrait {
-    width: 100%;
-    max-width: 300px;
+  .hero__figure {
+    width: min(38vw, 420px);
+    margin-right: -0.5rem;
+    margin-bottom: -1.25rem;
+    /* Pull into the splash panel so it reads as one cover */
+    transform: translateX(-12%);
   }
 }
 
-.hero__portrait-frame {
-  position: relative;
-  border: var(--panel-border) solid var(--accent);
-  background: #f4f1ea;
-  clip-path: var(--blade);
-  box-shadow:
-    8px 10px 0 var(--ink),
-    inset 0 0 0 1px color-mix(in oklab, var(--accent) 35%, transparent);
-  overflow: hidden;
-}
-
-.hero__portrait-frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  /* Keep the cartoon color read clean — light edge only */
-  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink) 12%, transparent);
-  background: none;
-  mix-blend-mode: normal;
-}
-
-.hero__portrait-img {
+.hero__figure-img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: 50% 12%;
-  filter: none;
+  object-fit: contain;
 }
 
-.hero__portrait-cap {
-  margin: 0.55rem 0 0;
-  font-family: var(--font-accent), sans-serif;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: color-mix(in oklab, var(--accent) 85%, var(--fg-muted));
+@keyframes figure-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@media (min-width: 900px) {
+  @keyframes figure-rise {
+    from {
+      opacity: 0;
+      transform: translateY(32px) translateX(-8%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateX(-12%);
+    }
+  }
 }
 
 .hero__plane {
@@ -632,7 +641,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: var(--space-grid);
+  margin-bottom: 0;
   animation: rise 700ms ease 200ms both;
 }
 
@@ -726,7 +735,7 @@ a {
   .hero__brand,
   .hero__brand-mark,
   .hero__brand-line--name,
-  .hero__portrait,
+  .hero__figure,
   .hero__headline,
   .hero__support,
   .hero__actions,
@@ -742,6 +751,16 @@ a {
     transform: scale(1.04);
   }
 
+  .hero__figure {
+    transform: none;
+  }
+
+  @media (min-width: 900px) {
+    .hero__figure {
+      transform: translateX(-12%);
+    }
+  }
+
   .btn--ink:hover {
     transform: none;
   }
@@ -749,17 +768,23 @@ a {
 
 @media (max-width: 899px) {
   .hero__masthead {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-items: start;
   }
 
-  .hero__portrait {
+  .hero__figure {
     order: -1;
-    width: min(42vw, 168px);
-    justify-self: start;
+    width: min(48vw, 190px);
+    justify-self: end;
+    margin: -0.5rem 0 -1.75rem;
+    z-index: 3;
   }
 
-  .hero__portrait-cap {
-    display: none;
+  .hero__splash-panel {
+    width: 100%;
+    max-width: none;
   }
 }
 
@@ -780,6 +805,10 @@ a {
 
   .hero__actions {
     margin-bottom: var(--space-grid-m);
+  }
+
+  .hero__splash-panel .hero__actions {
+    margin-bottom: 0;
   }
 }
 

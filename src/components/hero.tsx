@@ -17,6 +17,7 @@ export function Hero() {
         <div className="hero__scrim" />
         <div className="hero__ink" />
       </div>
+
       <div className="container hero__content">
         <div className="hero__masthead">
           <div className="hero__splash-panel">
@@ -43,21 +44,16 @@ export function Hero() {
             </div>
           </div>
 
-          <figure className="hero__portrait">
-            <div className="hero__portrait-frame">
-              <Image
-                src="/images/hero/john-portrait-own-style.jpg"
-                alt="Cartoon portrait of John Mariano in his own drawing style"
-                width={864}
-                height={1152}
-                sizes="(max-width: 900px) 60vw, 320px"
-                className="hero__portrait-img"
-                priority
-              />
-            </div>
-            <figcaption className="hero__portrait-cap">
-              Cover portrait · his line
-            </figcaption>
+          <figure className="hero__figure">
+            <Image
+              src="/images/hero/john-ink-marker-cutout.png"
+              alt="Ink-and-marker caricature of John Mariano"
+              width={720}
+              height={960}
+              sizes="(max-width: 900px) 55vw, min(38vw, 420px)"
+              className="hero__figure-img"
+              priority
+            />
           </figure>
         </div>
 
