@@ -46,8 +46,8 @@ export function Hero() {
 
           <figure className="hero__figure">
             <Image
-                src="/images/hero/john-ink-marker-preferred-v2.png"
-                alt="Ink-and-marker caricature of John Mariano with solid white sclera"
+                src="/images/hero/john-ink-marker-look-left.png"
+                alt="Ink-and-marker caricature of John Mariano looking left"
               width={720}
               height={960}
               sizes="(max-width: 900px) 55vw, min(38vw, 420px)"
