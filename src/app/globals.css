@@ -440,7 +440,8 @@ a {
   color: var(--accent);
 }
 
-/* Ink/marker cutout — sits in the hero plane, not a card */
+/* Ink/marker cutout — sits in the hero plane, not a card.
+   Bottom dissolves through Ben-Day dots instead of a hard crop. */
 .hero__figure {
   position: relative;
   z-index: 4;
@@ -459,7 +460,7 @@ a {
     width: min(36vw, 420px);
     max-height: min(70vh, 640px);
     margin-right: 0;
-    margin-bottom: -0.25rem;
+    margin-bottom: -0.5rem;
     align-self: end;
     transform: translateX(-6%);
   }
@@ -472,6 +473,13 @@ a {
   max-height: inherit;
   object-fit: contain;
   object-position: bottom center;
+  /* Solid through face/shoulders; Ben-Day dissolve through the polo */
+  -webkit-mask-image: url("/masks/hero-figure-benday-v3.svg");
+  mask-image: url("/masks/hero-figure-benday-v3.svg");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 @keyframes figure-rise {
