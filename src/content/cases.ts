@@ -328,7 +328,7 @@ export const cases: CaseStudy[] = [
     platforms: ["Simcenter STAR-CCM+"],
     tags: ["workflow", "research", "enterprise"],
     thumb: "/images/cases/star-ccm-az-workflow.jpg",
-    thumbAlt: "Siemens STAR-CCM+ portfolio collage — labeled product UI examples",
+    thumbAlt: "Sterilized Simcenter STAR-CCM+ A–Z workflow splash panel",
     teaser:
       "Mapped the first clear A–Z workflow in STAR-CCM+—where none had ever been defined.",
     summary:
