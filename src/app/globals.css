@@ -575,7 +575,7 @@ a {
 .hero__scrim {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   background:
     linear-gradient(
       105deg,
@@ -594,7 +594,7 @@ a {
 .hero__ink {
   position: absolute;
   inset: 0;
-  z-index: 4;
+  z-index: 3;
   pointer-events: none;
   background:
     radial-gradient(ellipse 55% 40% at 100% 0%, rgba(0, 0, 0, 0.55), transparent 70%),
