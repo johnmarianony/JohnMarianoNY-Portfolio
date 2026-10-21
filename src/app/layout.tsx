@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Figtree, Syne } from "next/font/google";
+import { Archivo_Black, Fraunces, Figtree, Syne } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/content/site";
@@ -22,6 +22,13 @@ const accent = Syne({
   variable: "--font-accent",
   subsets: ["latin"],
   weight: ["600", "700", "800"],
+});
+
+/** Display cut for the hero surname */
+const nameDisplay = Archivo_Black({
+  variable: "--font-name",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -50,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} ${accent.variable} h-full`}
+      className={`${display.variable} ${body.variable} ${accent.variable} ${nameDisplay.variable} h-full`}
     >
       <body className="page-shell antialiased">
         <SiteHeader />

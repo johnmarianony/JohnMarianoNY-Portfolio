@@ -41,6 +41,7 @@
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --font-accent: var(--font-accent);
+  --font-name: var(--font-name);
   --focus-ring: 3px solid var(--accent);
   --focus-offset: 3px;
   --cut: 1.15rem;
@@ -389,11 +390,25 @@ a {
   z-index: 2;
 }
 
+.hero__masthead {
+  display: grid;
+  gap: 1.5rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .hero__masthead {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+    gap: 2rem;
+    align-items: end;
+  }
+}
+
 .hero__splash-panel {
   position: relative;
   max-width: min(42rem, 100%);
   padding: 1.5rem 1.5rem 1.65rem;
-  margin-bottom: 1.35rem;
   background: color-mix(in oklab, var(--ink) 78%, transparent);
   border: var(--panel-border) solid var(--panel-rule);
   clip-path: var(--slash-deep);
@@ -409,6 +424,65 @@ a {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.hero__portrait {
+  margin: 0;
+  justify-self: end;
+  width: min(100%, 280px);
+  animation: rise 800ms ease 120ms both;
+}
+
+@media (min-width: 900px) {
+  .hero__portrait {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.hero__portrait-frame {
+  position: relative;
+  border: var(--panel-border) solid var(--accent);
+  background: var(--ink);
+  clip-path: var(--blade);
+  box-shadow:
+    8px 10px 0 var(--ink),
+    inset 0 0 0 1px color-mix(in oklab, var(--accent) 35%, transparent);
+  overflow: hidden;
+}
+
+.hero__portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      160deg,
+      transparent 55%,
+      color-mix(in oklab, var(--accent) 18%, transparent) 100%
+    );
+  mix-blend-mode: soft-light;
+}
+
+.hero__portrait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 18%;
+  filter: contrast(1.05) saturate(0.95);
+}
+
+.hero__portrait-cap {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--accent) 85%, var(--fg-muted));
 }
 
 .hero__plane {
@@ -462,11 +536,11 @@ a {
   position: absolute;
   right: 0;
   top: 0;
-  width: min(38vw, 420px);
-  height: min(48vh, 460px);
+  width: min(28vw, 300px);
+  height: min(36vh, 340px);
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='460' viewBox='0 0 420 460'%3E%3Cg fill='none' stroke='%23000000' stroke-opacity='0.55' stroke-width='1.2'%3E%3Cpath d='M40 20c40 60 20 110-10 170s40 90 10 150-30 80 20 120'/%3E%3Cpath d='M90 10c30 80 10 130-20 190s50 100 20 160'/%3E%3Cpath d='M160 0c20 90-10 140-40 210s60 110 30 180'/%3E%3Cpath d='M240 30c10 70-30 120-50 190s40 120 10 190'/%3E%3C/g%3E%3C/svg%3E")
     top right / contain no-repeat;
-  opacity: 0.45;
+  opacity: 0.28;
   mix-blend-mode: soft-light;
 }
 
@@ -511,22 +585,32 @@ a {
   display: block;
 }
 
-.hero__brand-line--heavy {
-  font-weight: 800;
-  font-family: var(--font-accent), var(--font-display), sans-serif;
-  letter-spacing: -0.03em;
+/* Surname cut — Archivo Black + gold ink */
+.hero__brand-line--name {
+  font-family: var(--font-name), var(--font-accent), sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.85rem, 9.2vw, 5.6rem);
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  font-size: clamp(2.6rem, 8.5vw, 5.2rem);
-  color: var(--fg);
-  background: linear-gradient(
-    105deg,
-    var(--fg) 0%,
-    var(--fg) 55%,
-    var(--accent) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  line-height: 0.95;
+  color: var(--accent);
+  text-shadow:
+    0 0 0 transparent,
+    3px 3px 0 color-mix(in oklab, var(--ink) 90%, transparent);
+  animation: name-stamp 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 160ms both;
+}
+
+@keyframes name-stamp {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em) skewX(-4deg);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) skewX(0);
+    filter: blur(0);
+  }
 }
 
 .hero__headline {
@@ -644,6 +728,8 @@ a {
   .hero__image,
   .hero__brand,
   .hero__brand-mark,
+  .hero__brand-line--name,
+  .hero__portrait,
   .hero__headline,
   .hero__support,
   .hero__actions,
@@ -664,6 +750,22 @@ a {
   }
 }
 
+@media (max-width: 899px) {
+  .hero__masthead {
+    justify-items: start;
+  }
+
+  .hero__portrait {
+    order: -1;
+    width: min(42vw, 168px);
+    justify-self: start;
+  }
+
+  .hero__portrait-cap {
+    display: none;
+  }
+}
+
 @media (max-width: 719px) {
   .hero__image {
     object-position: 70% 40%;
@@ -677,6 +779,10 @@ a {
         color-mix(in oklab, var(--bg) 70%, transparent) 45%,
         color-mix(in oklab, var(--bg) 88%, transparent) 100%
       );
+  }
+
+  .hero__actions {
+    margin-bottom: var(--space-grid-m);
   }
 }
 

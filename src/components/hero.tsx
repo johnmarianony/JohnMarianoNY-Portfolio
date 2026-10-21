@@ -18,29 +18,49 @@ export function Hero() {
         <div className="hero__ink" />
       </div>
       <div className="container hero__content">
-        <div className="hero__splash-panel">
-          <p className="sr-only">{site.name} — platform experience strategist</p>
-          <p className="hero__panel-kicker" aria-hidden="true">
-            Issue · Cover · 01
-          </p>
-          <h1 className="hero__brand">
-            <span className="hero__brand-mark" aria-hidden="true" />
-            <span className="hero__brand-line">John</span>
-            <span className="hero__brand-line hero__brand-line--heavy">
-              Mariano
-            </span>
-          </h1>
-          <p className="hero__headline">{site.headline}</p>
-          <p className="hero__support">{site.support}</p>
-          <div className="hero__actions">
-            <Link href={site.cta.primary.href} className="btn btn--primary">
-              {site.cta.primary.label}
-            </Link>
-            <Link href={site.cta.secondary.href} className="btn btn--ghost">
-              {site.cta.secondary.label}
-            </Link>
+        <div className="hero__masthead">
+          <div className="hero__splash-panel">
+            <p className="sr-only">{site.name} — platform experience strategist</p>
+            <p className="hero__panel-kicker" aria-hidden="true">
+              Issue · Cover · 01
+            </p>
+            <h1 className="hero__brand">
+              <span className="hero__brand-mark" aria-hidden="true" />
+              <span className="hero__brand-line">John</span>
+              <span className="hero__brand-line hero__brand-line--name">
+                Mariano
+              </span>
+            </h1>
+            <p className="hero__headline">{site.headline}</p>
+            <p className="hero__support">{site.support}</p>
+            <div className="hero__actions">
+              <Link href={site.cta.primary.href} className="btn btn--primary">
+                {site.cta.primary.label}
+              </Link>
+              <Link href={site.cta.secondary.href} className="btn btn--ghost">
+                {site.cta.secondary.label}
+              </Link>
+            </div>
           </div>
+
+          <figure className="hero__portrait">
+            <div className="hero__portrait-frame">
+              <Image
+                src="/images/hero/john-comic-portrait.jpg"
+                alt="Graphic-novel style portrait of John Mariano"
+                width={720}
+                height={960}
+                sizes="(max-width: 900px) 60vw, 320px"
+                className="hero__portrait-img"
+                priority
+              />
+            </div>
+            <figcaption className="hero__portrait-cap">
+              Cover portrait · stylized
+            </figcaption>
+          </figure>
         </div>
+
         <div className="hero__proofs" aria-label="Selected proof points">
           {site.proofs.map((proof, i) => (
             <div key={proof.value} className="proof proof--panel">
