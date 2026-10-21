@@ -510,6 +510,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: 0;
+  isolation: isolate;
 }
 
 .hero__image {
@@ -519,9 +520,62 @@ a {
   animation: hero-drift 18s ease-in-out infinite alternate;
 }
 
+/*
+  Ben-Day coloring screen on the photo.
+  Neutral mid-gray dots + overlay: textures lights and darks without
+  pulling hue or collapsing overall tone.
+*/
+.hero__benday {
+  --benday-cell: 5.5px;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: radial-gradient(
+    circle,
+    rgb(120 120 120) 1.35px,
+    transparent 1.55px
+  );
+  background-size: var(--benday-cell) var(--benday-cell);
+  mix-blend-mode: overlay;
+  opacity: 0.7;
+}
+
+.hero__benday::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Second plate, offset — denser comic screen */
+  background-image: radial-gradient(
+    circle,
+    rgb(90 90 90) 1.1px,
+    transparent 1.3px
+  );
+  background-size: var(--benday-cell) var(--benday-cell);
+  background-position: calc(var(--benday-cell) / 2) calc(var(--benday-cell) / 2);
+  mix-blend-mode: soft-light;
+  opacity: 0.55;
+}
+
+.hero__benday::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Finer plate for print grain */
+  background-image: radial-gradient(
+    circle,
+    rgb(140 140 140) 0.7px,
+    transparent 0.9px
+  );
+  background-size: 3.25px 3.25px;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+}
+
 .hero__scrim {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background:
     linear-gradient(
       105deg,
@@ -540,6 +594,7 @@ a {
 .hero__ink {
   position: absolute;
   inset: 0;
+  z-index: 3;
   pointer-events: none;
   background:
     radial-gradient(ellipse 55% 40% at 100% 0%, rgba(0, 0, 0, 0.55), transparent 70%),
