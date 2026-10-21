@@ -1,20 +1,21 @@
 import Link from "next/link";
 import { CaseCard } from "@/components/case-card";
+import { FeaturedCase } from "@/components/featured-case";
 import { Hero } from "@/components/hero";
-import { StudioBand } from "@/components/studio-band";
 import { getFeaturedCases } from "@/content/cases";
 import { site } from "@/content/site";
 
 export default function HomePage() {
   const featured = getFeaturedCases();
+  const [lead, ...rest] = featured;
 
   return (
     <>
       <Hero />
 
-      <section className="section comic-strip">
+      <section className="section section--work">
         <div className="container">
-          <header className="strip-header">
+          <header className="section-head">
             <p className="section__eyebrow">Selected work</p>
             <h2 className="section__title">Experience marks the spot</h2>
             <p className="section__lede">
@@ -22,19 +23,20 @@ export default function HomePage() {
               work first; sterilized artifacts in place of cleared screens.
             </p>
           </header>
-          <div className="case-grid case-grid--gallery case-grid--panels">
-            {featured.map((study) => (
+
+          {lead ? <FeaturedCase study={lead} /> : null}
+
+          <div className="case-grid case-grid--gallery">
+            {rest.map((study) => (
               <CaseCard key={study.slug} study={study} />
             ))}
           </div>
         </div>
       </section>
 
-      <StudioBand />
-
-      <section className="section section--after-studio comic-strip">
+      <section className="section section--writing">
         <div className="container">
-          <header className="strip-header">
+          <header className="section-head">
             <p className="section__eyebrow">Writing</p>
             <h2 className="section__title">From My Neural Graffiti</h2>
             <p className="section__lede">
@@ -42,18 +44,15 @@ export default function HomePage() {
               portfolio stays a hiring skim, not a blog.
             </p>
           </header>
-          <div className="writing-list writing-list--panels">
+          <div className="writing-list">
             {site.featuredPosts.map((post) => (
               <a
                 key={post.url}
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="writing-item writing-item--panel"
+                className="writing-item"
               >
-                <span className="writing-item__kicker" aria-hidden="true">
-                  Panel
-                </span>
                 <h3>
                   {post.title} <span aria-hidden="true">↗</span>
                 </h3>
@@ -64,11 +63,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section section--close">
         <div className="container">
           <div className="closing-panel">
             <h2 className="section__title">Let’s talk platforms</h2>
-            <p className="section__lede" style={{ marginBottom: "1.5rem" }}>
+            <p className="section__lede">
               Open to conversations about platform experience, federal delivery,
               and modernization under constraint.
             </p>

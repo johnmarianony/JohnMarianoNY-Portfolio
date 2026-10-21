@@ -8,9 +8,7 @@ export function SiteFooter() {
       <div className="site-footer__inner">
         <div>
           <p className="site-footer__name">{site.name}</p>
-          <p className="site-footer__tag">
-            Platform experience strategy · ink on the side
-          </p>
+          <p className="site-footer__tag">Platform experience strategy</p>
         </div>
         <div className="site-footer__links">
           <a href={`mailto:${site.email}`}>{site.email}</a>
