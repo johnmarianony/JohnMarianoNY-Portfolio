@@ -21,7 +21,7 @@ export function Hero() {
         <div className="hero__splash-panel">
           <p className="sr-only">{site.name} — platform experience strategist</p>
           <p className="hero__panel-kicker" aria-hidden="true">
-            Splash // 01
+            Issue · Cover · 01
           </p>
           <h1 className="hero__brand">
             <span className="hero__brand-mark" aria-hidden="true" />

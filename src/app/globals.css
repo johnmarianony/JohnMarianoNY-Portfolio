@@ -680,30 +680,67 @@ a {
   }
 }
 
-/* Featured case + work grid */
-.featured-case {
-  display: grid;
-  gap: var(--space-grid-m);
-  margin-bottom: var(--space-case-after);
+/* Chapter marks — Farewell Ravi pacing without illustration */
+.chapter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 var(--space-grid-m);
 }
 
 @media (min-width: 960px) {
-  .featured-case {
-    gap: var(--space-grid);
+  .chapter {
+    margin-bottom: var(--space-grid);
   }
+}
+
+.chapter__num {
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: var(--track-nav);
+  color: var(--accent);
+}
+
+.chapter__rule {
+  flex: 1;
+  height: 3px;
+  max-width: 12rem;
+  background: var(--accent);
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+}
+
+.chapter__label {
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* Featured case — poster / splash lockup */
+.featured-case {
+  margin-bottom: var(--space-case-after);
+}
+
+.featured-case__poster {
+  position: relative;
+  overflow: hidden;
+  border: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 60%, var(--border));
+  background: var(--ink);
+  clip-path: var(--slash-deep);
+  min-height: min(72vh, 640px);
+}
+
+.featured-case--dow .featured-case__poster {
+  border-color: color-mix(in oklab, var(--dow-steel) 65%, var(--border));
 }
 
 .featured-case__media {
   display: block;
-  overflow: hidden;
-  border: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 55%, var(--border));
-  clip-path: var(--slash-deep);
-  background: var(--surface);
-  aspect-ratio: 21 / 9;
-}
-
-.featured-case--dow .featured-case__media {
-  border-color: color-mix(in oklab, var(--dow-steel) 70%, var(--border));
+  position: absolute;
+  inset: 0;
 }
 
 .featured-case__img {
@@ -711,12 +748,12 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 500ms ease;
+  transition: transform 700ms ease;
 }
 
 .featured-case__media:hover .featured-case__img,
 .featured-case__media:focus-visible .featured-case__img {
-  transform: scale(1.03);
+  transform: scale(1.035);
 }
 
 .featured-case__media:focus-visible {
@@ -730,8 +767,53 @@ a {
   background: linear-gradient(135deg, var(--surface), color-mix(in oklab, var(--accent) 14%, var(--bg)));
 }
 
-.featured-case__copy {
-  max-width: var(--measure);
+.featured-case__poster::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      105deg,
+      color-mix(in oklab, var(--ink) 88%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 55%, transparent) 42%,
+      transparent 72%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 35%,
+      color-mix(in oklab, var(--ink) 82%, transparent) 100%
+    );
+}
+
+.featured-case__plate {
+  position: relative;
+  z-index: 2;
+  max-width: min(var(--measure), 100%);
+  margin: auto 0 0;
+  padding: var(--space-card-pad);
+  background: color-mix(in oklab, var(--ink) 82%, transparent);
+  border-top: var(--panel-border) solid var(--accent);
+  border-right: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 45%, transparent);
+  backdrop-filter: blur(8px);
+  clip-path: var(--slash);
+}
+
+@media (min-width: 960px) {
+  .featured-case__poster {
+    display: grid;
+    align-items: end;
+    min-height: min(78vh, 720px);
+  }
+
+  .featured-case__plate {
+    margin: 0;
+    width: min(34rem, 46%);
+    border: var(--panel-border) solid var(--panel-rule);
+    border-top-color: var(--accent);
+    box-shadow: 12px 14px 0 var(--ink);
+  }
 }
 
 .featured-case__eyebrow {
@@ -746,7 +828,7 @@ a {
 
 .featured-case__title {
   font-family: var(--font-display), serif;
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-size: clamp(2rem, 3.5vw, 2.85rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: var(--lh-display);
@@ -789,6 +871,36 @@ a {
   color: var(--accent);
 }
 
+/* Printed strip sheet for remaining cases */
+.comic-sheet {
+  padding: var(--space-grid-m);
+  background: #060908;
+  border: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 55%, var(--border));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 1.25rem),
+    calc(100% - 1.25rem) 100%,
+    0 100%
+  );
+}
+
+@media (min-width: 960px) {
+  .comic-sheet {
+    padding: var(--space-grid);
+  }
+}
+
+.comic-sheet__kicker {
+  margin: 0 0 var(--space-grid-m);
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 .case-grid {
   display: grid;
   gap: var(--space-grid-m);
@@ -804,8 +916,26 @@ a {
 
 @media (min-width: 1024px) {
   .case-grid.case-grid--gallery {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-grid);
+  }
+
+  .comic-sheet .case-grid.case-grid--gallery {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .comic-sheet .case-card:nth-child(1) {
+    grid-column: span 3;
+  }
+
+  .comic-sheet .case-card:nth-child(2) {
+    grid-column: span 3;
+  }
+
+  .comic-sheet .case-card:nth-child(3),
+  .comic-sheet .case-card:nth-child(4),
+  .comic-sheet .case-card:nth-child(5) {
+    grid-column: span 2;
   }
 }
 
@@ -912,17 +1042,27 @@ a {
   color: var(--accent);
 }
 
-/* Writing */
+/* Writing strip */
 .writing-list {
   display: grid;
   gap: var(--space-grid-m);
   margin-top: 0;
 }
 
+.writing-list--strip {
+  padding: var(--space-grid-m);
+  background: #060908;
+  border: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 45%, var(--border));
+}
+
 @media (min-width: 900px) {
   .writing-list {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-grid);
+  }
+
+  .writing-list--strip {
+    padding: var(--space-grid);
   }
 }
 
@@ -933,6 +1073,16 @@ a {
   border: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 35%, var(--border));
   clip-path: var(--slash);
   transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.writing-item__num {
+  display: block;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: var(--track-nav);
+  color: var(--accent);
 }
 
 .writing-item:hover,
@@ -968,6 +1118,7 @@ a {
   padding: var(--space-card-pad);
   background: var(--panel-fill);
   border: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 40%, var(--border));
+  border-top: 3px solid var(--accent);
   clip-path: var(--slash-deep);
 }
 
