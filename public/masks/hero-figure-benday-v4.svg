@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" preserveAspectRatio="none">
-  <!-- White = visible. Gaps between dots must stay empty (no solid underlay). -->
+  <!-- Dissolve only at the squared-off bottom edge of the bust -->
   <defs>
-    <linearGradient id="solidFade" gradientUnits="userSpaceOnUse" x1="0" y1="660" x2="0" y2="720">
+    <linearGradient id="solidFade" gradientUnits="userSpaceOnUse" x1="0" y1="860" x2="0" y2="920">
       <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
       <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
     </linearGradient>
@@ -21,15 +21,13 @@
       <circle cx="6.5" cy="6.5" r="0.95" fill="#fff"/>
     </pattern>
   </defs>
-  <!-- Fully solid through face + upper polo -->
-  <rect x="0" y="0" width="720" height="670" fill="#fff"/>
-  <!-- Soft handoff into the dissolve -->
-  <rect x="0" y="660" width="720" height="60" fill="url(#solidFade)"/>
-  <!-- Ben-Day only (transparent between dots) — denser → sparser -->
-  <rect x="0" y="655" width="720" height="55" fill="url(#bd1)"/>
-  <rect x="0" y="700" width="720" height="50" fill="url(#bd2)" opacity="0.85"/>
-  <rect x="0" y="740" width="720" height="50" fill="url(#bd3)" opacity="0.65"/>
-  <rect x="0" y="780" width="720" height="55" fill="url(#bd4)" opacity="0.4"/>
-  <rect x="0" y="825" width="720" height="55" fill="url(#bd5)" opacity="0.2"/>
-  <rect x="0" y="870" width="720" height="90" fill="url(#bd5)" opacity="0.07"/>
+  <!-- Solid through the full squared shoulder/chest crop -->
+  <rect x="0" y="0" width="720" height="880" fill="#fff"/>
+  <rect x="0" y="860" width="720" height="60" fill="url(#solidFade)"/>
+  <!-- Short Ben-Day dissolve replacing the hard bottom edge -->
+  <rect x="0" y="855" width="720" height="30" fill="url(#bd1)"/>
+  <rect x="0" y="875" width="720" height="25" fill="url(#bd2)" opacity="0.8"/>
+  <rect x="0" y="892" width="720" height="22" fill="url(#bd3)" opacity="0.5"/>
+  <rect x="0" y="906" width="720" height="22" fill="url(#bd4)" opacity="0.25"/>
+  <rect x="0" y="920" width="720" height="40" fill="url(#bd5)" opacity="0.08"/>
 </svg>

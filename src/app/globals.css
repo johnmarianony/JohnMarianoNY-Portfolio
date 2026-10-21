@@ -473,9 +473,9 @@ a {
   max-height: inherit;
   object-fit: contain;
   object-position: bottom center;
-  /* Solid through face/shoulders; Ben-Day dissolve through the polo */
-  -webkit-mask-image: url("/masks/hero-figure-benday-v3.svg");
-  mask-image: url("/masks/hero-figure-benday-v3.svg");
+  /* Solid through squared shoulder crop; Ben-Day dissolve at bottom edge (v4) */
+  -webkit-mask-image: url("/masks/hero-figure-benday-v4.svg");
+  mask-image: url("/masks/hero-figure-benday-v4.svg");
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
