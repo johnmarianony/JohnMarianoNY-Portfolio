@@ -1,22 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0f1412;
+  /* Professional page — graphic-novel panels, 508-friendly contrast */
+  --bg: #101412;
   --bg-elevated: #161c19;
-  --surface: #1c2420;
-  --fg: #e8ebe6;
-  --fg-muted: #9aa399;
-  --border: #2a332e;
-  --accent: #c4a574;
-  --accent-hover: #d4b888;
+  --surface: #1a211d;
+  --fg: #f0f2ed;
+  --fg-muted: #b8c0b4;
+  --border: #3a453e;
+  --accent: #d0b07e;
+  --accent-hover: #dfc191;
   --accent-fg: #14110c;
-  --dow-blue: #355e93;
+  --ink: #050706;
+  --panel-fill: #141a17;
+  --panel-rule: #e8ebe6;
+  --gutter: #0a0d0b;
+  --caption-bg: #0c100e;
+  --dow-blue: #5b86bc;
   --dow-space: #15263b;
-  --dow-steel: #aebfd4;
+  --dow-steel: #c5d4e6;
   --dow-haze: #ebeff5;
-  --radius: 2px;
+  --radius: 0;
+  --panel-border: 3px;
+  --gutter-gap: 0.7rem;
   --font-display: var(--font-display);
   --font-body: var(--font-body);
+  --focus-ring: 2px solid var(--accent);
+  --focus-offset: 3px;
 }
 
 @theme inline {
@@ -103,8 +113,8 @@ a {
   top: 0;
   z-index: 40;
   backdrop-filter: blur(12px);
-  background: color-mix(in oklab, var(--bg) 78%, transparent);
-  border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  background: color-mix(in oklab, var(--bg) 88%, transparent);
+  border-bottom: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 40%, var(--border));
 }
 
 .site-header__inner {
@@ -256,7 +266,7 @@ a {
   font-size: 1.05rem;
 }
 
-/* Hero */
+/* Hero — splash panel (graphic novel cover, not cartoon) */
 .hero {
   position: relative;
   min-height: min(100svh, 920px);
@@ -264,6 +274,37 @@ a {
   align-items: end;
   padding: 7rem 0 4.5rem;
   overflow: hidden;
+}
+
+.hero--splash {
+  padding: 6.5rem 0 3.5rem;
+}
+
+.hero--splash::after {
+  content: "";
+  position: absolute;
+  inset: 0.85rem;
+  border: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 55%, transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero__splash-panel {
+  position: relative;
+  max-width: 40rem;
+  padding: 1.35rem 1.35rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background: color-mix(in oklab, var(--ink) 72%, transparent);
+  border: var(--panel-border) solid var(--panel-rule);
+  backdrop-filter: blur(6px);
+}
+
+.hero__panel-kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .hero__plane {
@@ -408,15 +449,24 @@ a {
   position: relative;
 }
 
+.proof--panel {
+  border: var(--panel-border) solid var(--panel-rule);
+  border-top: var(--panel-border) solid var(--panel-rule);
+  padding: 0.85rem 0.85rem 1rem;
+  background: color-mix(in oklab, var(--ink) 68%, transparent);
+  backdrop-filter: blur(4px);
+}
+
+.proof__index {
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 .proof::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -1px;
-  width: 2.5rem;
-  height: 3px;
-  background: var(--accent);
-  clip-path: polygon(0 0, 100% 30%, 92% 100%, 0 70%);
+  content: none;
 }
 
 .proof__value {
@@ -500,7 +550,13 @@ a {
 }
 
 .case-grid--gallery {
-  gap: 2rem 1.35rem;
+  gap: var(--gutter-gap);
+}
+
+.case-grid--panels {
+  padding: var(--gutter-gap);
+  background: var(--gutter);
+  border: var(--panel-border) solid var(--panel-rule);
 }
 
 /* Higher specificity so gallery stays 3-up on desktop (not stuck at 2) */
@@ -510,37 +566,56 @@ a {
   }
 }
 
+.strip-header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: var(--panel-border) solid color-mix(in oklab, var(--panel-rule) 35%, var(--border));
+}
+
 .case-card {
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 0.85rem;
+  gap: 0;
   padding: 0;
   height: 100%;
-  transition: transform 180ms ease;
+  background: var(--panel-fill);
+  border: var(--panel-border) solid var(--panel-rule);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .case-card:hover,
 .case-card:focus-visible {
-  transform: translateY(-4px);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
 }
 
 .case-card:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.case-card__panel {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 0;
 }
 
 .case-card__media {
   position: relative;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 0;
   aspect-ratio: 3 / 2;
   background: var(--surface);
-  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
-  box-shadow: none;
+  border: 0;
+  border-bottom: 2px solid var(--panel-rule);
+}
+
+.case-card--dow {
+  border-color: var(--dow-steel);
 }
 
 .case-card--dow .case-card__media {
-  border-color: color-mix(in oklab, var(--dow-blue) 50%, var(--border));
+  border-bottom-color: var(--dow-steel);
 }
 
 .case-card__thumb {
@@ -560,33 +635,33 @@ a {
 
 .case-card:hover .case-card__thumb,
 .case-card:focus-visible .case-card__thumb {
-  transform: scale(1.045);
+  transform: scale(1.03);
 }
 
-.case-card__proof-chip {
-  position: absolute;
-  left: 0.75rem;
-  bottom: 0.75rem;
-  max-width: calc(100% - 1.5rem);
-  padding: 0.35rem 0.55rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1.25;
-  color: var(--accent-fg);
-  background: color-mix(in oklab, var(--accent) 92%, white);
-  border-radius: 2px;
+/* Caption bar — comic narration, not a UI chip */
+.case-card__caption {
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  color: var(--fg);
+  background: var(--caption-bg);
+  border-top: 0;
 }
 
-.case-card--dow .case-card__proof-chip {
-  background: color-mix(in oklab, var(--dow-steel) 88%, white);
-  color: var(--dow-space);
+.case-card--dow .case-card__caption {
+  background: color-mix(in oklab, var(--dow-space) 80%, var(--caption-bg));
+  color: var(--dow-haze);
 }
 
 .case-card__body {
   display: grid;
   gap: 0.35rem;
   align-content: start;
+  padding: 0.85rem 0.75rem 1rem;
+  border-top: 1px solid color-mix(in oklab, var(--panel-rule) 28%, transparent);
 }
 
 .case-card__meta {
@@ -623,11 +698,18 @@ a {
   overflow: hidden;
 }
 
-/* Writing strip */
+/* Writing strip as panels */
 .writing-list {
   display: grid;
   gap: 1rem;
   margin-top: 1.75rem;
+}
+
+.writing-list--panels {
+  gap: var(--gutter-gap);
+  padding: var(--gutter-gap);
+  background: var(--gutter);
+  border: var(--panel-border) solid var(--panel-rule);
 }
 
 @media (min-width: 900px) {
@@ -641,6 +723,35 @@ a {
   padding: 1.25rem 0;
   border-top: 1px solid var(--border);
   transition: border-color 160ms ease;
+}
+
+.writing-item--panel {
+  padding: 1.1rem 1rem 1.25rem;
+  background: var(--panel-fill);
+  border: var(--panel-border) solid var(--panel-rule);
+  border-top: var(--panel-border) solid var(--panel-rule);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.writing-item--panel:hover,
+.writing-item--panel:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+  border-top-color: var(--panel-rule);
+}
+
+.writing-item--panel:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.writing-item__kicker {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .writing-item:hover {
@@ -660,6 +771,13 @@ a {
   font-size: 0.9rem;
 }
 
+.closing-panel {
+  padding: 1.75rem 1.35rem 2rem;
+  background: var(--panel-fill);
+  border: var(--panel-border) solid var(--panel-rule);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
 /* Buttons as links */
 .btn {
   display: inline-flex;
@@ -671,6 +789,11 @@ a {
   font-size: 0.925rem;
   font-weight: 550;
   transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
 }
 
 .btn--primary {
@@ -802,15 +925,17 @@ a {
 .studio__plates {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: var(--gutter-gap);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem;
+  gap: var(--gutter-gap);
+  background: #050403;
+  border: var(--panel-border) solid #f2ebe0;
 }
 
 @media (min-width: 640px) {
   .studio__plates {
-    gap: 1rem;
+    gap: var(--gutter-gap);
   }
 }
 
@@ -839,32 +964,23 @@ a {
 
 .studio__frame {
   overflow: hidden;
-  border: 2px solid #f2ebe0;
+  border: var(--panel-border) solid #f2ebe0;
   background: #0a0908;
-  box-shadow: 8px 10px 0 #050403;
+  box-shadow: none;
   aspect-ratio: 1;
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
-.studio__plate--1 .studio__frame {
-  transform: rotate(-1.6deg);
-}
-
-.studio__plate--2 .studio__frame {
-  transform: rotate(1.8deg);
-}
-
-.studio__plate--3 .studio__frame {
-  transform: rotate(1.2deg);
-}
-
+.studio__plate--1 .studio__frame,
+.studio__plate--2 .studio__frame,
+.studio__plate--3 .studio__frame,
 .studio__plate--4 .studio__frame {
-  transform: rotate(-2deg);
+  transform: none;
 }
 
 .studio__plate:hover .studio__frame {
-  transform: translate(-3px, -4px) rotate(-0.5deg);
-  box-shadow: 12px 14px 0 #050403;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #050403;
 }
 
 .studio__img {

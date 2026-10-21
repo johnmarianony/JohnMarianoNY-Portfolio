@@ -15,20 +15,22 @@ export function CaseCard({ study }: { study: CaseStudy }) {
       href={`/work/${study.slug}`}
       className={`case-card${study.dowAccent ? " case-card--dow" : ""}`}
     >
-      <div className="case-card__media">
-        {study.thumb ? (
-          <Image
-            src={study.thumb}
-            alt={study.thumbAlt ?? ""}
-            width={720}
-            height={480}
-            sizes="(max-width: 719px) 100vw, (max-width: 1023px) 50vw, 33vw"
-            className="case-card__thumb"
-          />
-        ) : (
-          <div className="case-card__placeholder" aria-hidden="true" />
-        )}
-        <span className="case-card__proof-chip">{study.proof}</span>
+      <div className="case-card__panel">
+        <div className="case-card__media">
+          {study.thumb ? (
+            <Image
+              src={study.thumb}
+              alt={study.thumbAlt ?? ""}
+              width={720}
+              height={480}
+              sizes="(max-width: 719px) 100vw, (max-width: 1023px) 50vw, 33vw"
+              className="case-card__thumb"
+            />
+          ) : (
+            <div className="case-card__placeholder" aria-hidden="true" />
+          )}
+        </div>
+        <p className="case-card__caption">{study.proof}</p>
       </div>
       <div className="case-card__body">
         <div className="case-card__meta">

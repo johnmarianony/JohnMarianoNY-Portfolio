@@ -30,17 +30,17 @@ export function StudioBand() {
       <div className="studio__bleed" aria-hidden="true" />
       <div className="container studio__inner">
         <div className="studio__intro">
-          <p className="studio__eyebrow">Studio</p>
+          <p className="studio__eyebrow">Studio · Insert pages</p>
           <h2 id="studio-title" className="studio__title">
             Ink under the platform work
           </h2>
           <p className="studio__lede">
-            Giger denseness. Escher structure. Dalí wrongness. Jones timing.
-            Schulz economy. The same hand that maps federal workflows still
-            fills sketchbooks—because clarity and character are both craft.
+            Graphic-novel density—not cartoon chrome. Giger hatch, Escher
+            structure, Jones timing, Schulz economy. The same hand that maps
+            federal workflows still fills sketchbooks.
           </p>
           <p className="studio__aside">
-            Hiring skim stays above the fold. This is the fingerprint.
+            Work panels stay professional. These pages are the fingerprint.
           </p>
           <Link href="/about" className="btn btn--ink">
             About the hand

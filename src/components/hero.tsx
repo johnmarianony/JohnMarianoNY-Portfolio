@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 
 export function Hero() {
   return (
-    <section className="hero">
+    <section className="hero hero--splash">
       <div className="hero__plane" aria-hidden="true">
         <Image
           src="/images/hero/platform-atmosphere.jpg"
@@ -18,24 +18,32 @@ export function Hero() {
         <div className="hero__ink" />
       </div>
       <div className="container hero__content">
-        <p className="sr-only">{site.name} — platform experience strategist</p>
-        <h1 className="hero__brand">
-          <span className="hero__brand-mark" aria-hidden="true" />
-          {site.name}
-        </h1>
-        <p className="hero__headline">{site.headline}</p>
-        <p className="hero__support">{site.support}</p>
-        <div className="hero__actions">
-          <Link href={site.cta.primary.href} className="btn btn--primary">
-            {site.cta.primary.label}
-          </Link>
-          <Link href={site.cta.secondary.href} className="btn btn--ghost">
-            {site.cta.secondary.label}
-          </Link>
+        <div className="hero__splash-panel">
+          <p className="sr-only">{site.name} — platform experience strategist</p>
+          <p className="hero__panel-kicker" aria-hidden="true">
+            Splash · Page 01
+          </p>
+          <h1 className="hero__brand">
+            <span className="hero__brand-mark" aria-hidden="true" />
+            {site.name}
+          </h1>
+          <p className="hero__headline">{site.headline}</p>
+          <p className="hero__support">{site.support}</p>
+          <div className="hero__actions">
+            <Link href={site.cta.primary.href} className="btn btn--primary">
+              {site.cta.primary.label}
+            </Link>
+            <Link href={site.cta.secondary.href} className="btn btn--ghost">
+              {site.cta.secondary.label}
+            </Link>
+          </div>
         </div>
         <div className="hero__proofs" aria-label="Selected proof points">
-          {site.proofs.map((proof) => (
-            <div key={proof.value} className="proof">
+          {site.proofs.map((proof, i) => (
+            <div key={proof.value} className="proof proof--panel">
+              <p className="proof__index" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </p>
               <p className="proof__value">{proof.value}</p>
               <p className="proof__label">{proof.label}</p>
             </div>
