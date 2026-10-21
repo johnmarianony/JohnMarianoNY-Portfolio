@@ -327,7 +327,7 @@ export const cases: CaseStudy[] = [
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
     tags: ["workflow", "research", "enterprise"],
-    thumb: "/images/cases/star-ccm-az-workflow.jpg",
+    thumb: "/images/cases/star-ccm-az-workflow-panel.jpg",
     thumbAlt: "Sterilized Simcenter STAR-CCM+ A–Z workflow splash panel",
     teaser:
       "Mapped the first clear A–Z workflow in STAR-CCM+—where none had ever been defined.",
@@ -340,9 +340,14 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/star-ccm-az-workflow.jpg",
-        alt: "Siemens STAR-CCM+ portfolio collage — labeled product UI examples",
-        caption: "STAR-CCM+ portfolio collage — labeled product UI examples",
+        src: "/images/cases/star-ccm-az-workflow-panel.jpg",
+        alt: "Sterilized Simcenter STAR-CCM+ A–Z workflow splash panel",
+        caption: "Sterilized splash — undefined path mapped A→Z",
+      },
+      {
+        src: "/images/cases/star-ccm-az-workflow-panel-2.jpg",
+        alt: "Sterilized overgrowth versus consolidation comparison panel",
+        caption: "Sterilized comparison — overgrowth versus consolidation",
       },
       {
         src: "/images/cases/siemens/siemens-star-ccm-user-journey-splash.png",
