@@ -4,10 +4,13 @@ import { site } from "@/content/site";
 export function SiteFooter() {
   return (
     <footer className="site-footer">
+      <div className="site-footer__drip" aria-hidden="true" />
       <div className="site-footer__inner">
         <div>
           <p className="site-footer__name">{site.name}</p>
-          <p className="site-footer__tag">Platform experience strategy</p>
+          <p className="site-footer__tag">
+            Platform experience strategy · ink on the side
+          </p>
         </div>
         <div className="site-footer__links">
           <a href={`mailto:${site.email}`}>{site.email}</a>

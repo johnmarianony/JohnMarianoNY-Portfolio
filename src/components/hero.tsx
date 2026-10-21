@@ -15,10 +15,14 @@ export function Hero() {
           className="hero__image"
         />
         <div className="hero__scrim" />
+        <div className="hero__ink" />
       </div>
       <div className="container hero__content">
         <p className="sr-only">{site.name} — platform experience strategist</p>
-        <h1 className="hero__brand">{site.name}</h1>
+        <h1 className="hero__brand">
+          <span className="hero__brand-mark" aria-hidden="true" />
+          {site.name}
+        </h1>
         <p className="hero__headline">{site.headline}</p>
         <p className="hero__support">{site.support}</p>
         <div className="hero__actions">

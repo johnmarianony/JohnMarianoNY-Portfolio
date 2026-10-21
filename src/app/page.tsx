@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CaseCard } from "@/components/case-card";
 import { Hero } from "@/components/hero";
+import { StudioBand } from "@/components/studio-band";
 import { getFeaturedCases } from "@/content/cases";
 import { site } from "@/content/site";
 
@@ -27,7 +28,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <StudioBand />
+
+      <section className="section section--after-studio">
         <div className="container">
           <p className="section__eyebrow">Writing</p>
           <h2 className="section__title">From My Neural Graffiti</h2>
