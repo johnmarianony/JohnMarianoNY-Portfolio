@@ -6,6 +6,13 @@ export function Hero() {
   return (
     <section className="hero">
       <div className="hero__plane" aria-hidden="true">
+        {/*
+          Oct 21 portrait candidate (production cutout — not a desktop screenshot):
+          /images/hero/john-ink-marker-cutout.png
+          Composition references only: docs/hero-candidates/2026-10-21/
+          This slot stays the full-bleed landscape. The cutout is a transparent
+          3:4 portrait, and object-fit: cover here is tuned for the window.
+        */}
         <Image
           src="/images/hero/platform-atmosphere.jpg"
           alt=""
