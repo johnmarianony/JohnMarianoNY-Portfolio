@@ -5,7 +5,7 @@ import { getAllCases, getFeaturedCases } from "@/content/cases";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected platform experience and UX strategy case studies—federal, War Department, and enterprise.",
+    "Selected platform experience and UX strategy case studies—federal and enterprise.",
 };
 
 export default function WorkPage() {

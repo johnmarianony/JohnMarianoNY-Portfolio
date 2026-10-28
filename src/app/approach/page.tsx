@@ -43,7 +43,7 @@ export default function ApproachPage() {
         </h2>
         <p>
           Big platforms move when you sequence small, evidence-backed journeys—
-          then reuse the pattern across bureaus and product lines.
+          then reuse the pattern across offices and product lines.
         </p>
 
         <h2 className="section__title" style={{ fontSize: "1.5rem" }}>

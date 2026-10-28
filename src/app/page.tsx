@@ -16,8 +16,8 @@ export default function HomePage() {
           <p className="section__eyebrow">Selected work</p>
           <h2 className="section__title">Experience marks the spot</h2>
           <p className="section__lede">
-            Six featured engagements—image-first, outcome-led. War Department
-            work first; sterilized artifacts in place of cleared screens.
+            Six featured engagements—image-first, outcome-led. Federal work
+            first; sterilized artifacts in place of cleared screens.
           </p>
           <div className="case-grid case-grid--gallery">
             {featured.map((study) => (

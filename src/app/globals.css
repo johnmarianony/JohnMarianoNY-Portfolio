@@ -671,6 +671,14 @@ a {
   font-size: 0.95rem;
 }
 
+.case-hero__team {
+  color: var(--fg-muted);
+  margin: 0.4rem 0 0;
+  max-width: 42rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
 .case-metrics {
   border-block: 1px solid var(--border);
   background: color-mix(in oklab, var(--surface) 55%, transparent);
@@ -893,10 +901,20 @@ a {
 .case-quote p {
   margin: 0;
   font-family: var(--font-display), serif;
-  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
-  line-height: 1.35;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.4;
   letter-spacing: -0.02em;
   color: var(--fg);
+}
+
+.case-quote__cite {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  color: var(--fg-muted);
 }
 
 .case-back {

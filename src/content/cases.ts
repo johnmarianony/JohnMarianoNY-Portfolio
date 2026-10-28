@@ -34,6 +34,12 @@ export type CaseStudy = {
   metrics?: CaseMetric[];
   artifacts?: CaseArtifact[];
   pullQuote?: string;
+  /** Role attribution for pullQuote, shown under the quote. */
+  pullQuoteCite?: string;
+  /** Lead-in above the outcomes list, when the locked copy has one. */
+  outcomesIntro?: string;
+  /** Engagement team. Shown under the case hero when set. */
+  team?: string;
   outcomes: string[];
   context: string;
   approach: string[];
@@ -49,28 +55,30 @@ export const processSteps = [
 export const cases: CaseStudy[] = [
   {
     slug: "dow-platform-migration-mvp",
-    title: "Platform Design & Migration MVP",
-    client: "War Department (DOW)",
+    title: "Platform Migration MVP",
+    client: "Federal defense organization",
     sector: "Federal",
-    role: "UX / platform design & requirements (delivery team)",
+    role: "Lead Designer & Lead Business Analyst",
     dates: "2025–2026",
     featured: true,
     order: 1,
-    proof: "$820M · 5-year contract",
+    proof: "$800M · five-plus-year contract",
     clearance: "sterilized",
     platforms: ["Platform migration", "MVP delivery"],
-    tags: ["platform", "federal", "DOW", "migration"],
+    tags: ["platform", "federal", "migration"],
     dowAccent: true,
     thumb: "/images/cases/dow-platform-migration-mvp.jpg",
     thumbAlt: "Sterilized platform migration architecture diagram",
+    team:
+      "Me, alongside solution architects, engineers, and program leads",
     teaser:
-      "Design and requirements for a platform migration MVP that helped win an $820M, five-year contract.",
+      "Lead designer and lead BA for a migration MVP that started three months behind and led to an $800 million, five-plus-year contract.",
     summary:
-      "Integral to a delivery team shaping design and requirements for a platform design and migration MVP that helped win an $820M, five-year contract.",
+      "A high-stakes federal defense modernization needed a credible path off its legacy systems. I joined as both the lead designer and the lead BA for the migration MVP. When I started, the project was three months behind schedule.",
     metrics: [
-      { value: "$820M", label: "5-year contract the MVP helped win" },
-      { value: "MVP", label: "Platform design & migration path" },
-      { value: "DOW", label: "War Department delivery team" },
+      { value: "$800M", label: "Five-plus-year contract to continue development" },
+      { value: "3 months", label: "Schedule deficit recovered on the MVP" },
+      { value: "MVP", label: "Overdelivered, then carried onto the main contract" },
     ],
     artifacts: [
       {
@@ -85,45 +93,51 @@ export const cases: CaseStudy[] = [
       },
     ],
     pullQuote:
-      "The win wasn’t a launch screenshot—it was a contract-shaped outcome built under constraint.",
+      "John was critical in supporting our delivery and led efforts in team cohesiveness and collaboration. He also led our BAs and mentored them to bring back requirements efficiently when the client was difficult to engage.",
+    pullQuoteCite: "Packaged Application Development Manager",
     outcomes: [
-      "Design and requirements contributed to an MVP that supported an $820M, 5-year award",
-      "Platform migration framing clarified scope under delivery pressure",
-      "Sterilized public narrative—deeper walkthrough available on request",
+      "Recovered from a three-month deficit and overdelivered on the MVP.",
+      "The MVP led to an $800 million, five-plus-year contract to continue development on the platform.",
+      "I was the key team member carried over to the main contract, sharing knowledge with the onboarding team and continuing the customer relationship.",
     ],
     context:
-      "A high-stakes War Department platform modernization effort required a credible MVP path—design and requirements tight enough to de-risk migration, clear enough for executive decision-making.",
+      "Migration risk was the real customer. Moving legacy workflows to a new platform without disrupting mission operations meant every design choice was also a risk decision. We also had to make up three months. Decision-makers weren’t going to be won over by polished screens. They needed scope, sequence, and requirements they could trust, all within security and accreditation requirements and the target platform’s standard capabilities.",
     approach: [
-      "Partnered inside the delivery team on platform design and requirements",
-      "Framed migration MVP outcomes for leadership and engineering alignment",
-      "Kept artifacts clearance-safe for public storytelling",
+      "As lead designer and lead BA, I owned both the experience and the requirements behind it.",
+      "Framed the target architecture and mapped how tangled legacy workflows would consolidate into a clearer platform.",
+      "Ranked workflows by mission value and migration risk to decide what moved first, and just as clearly, what didn’t move yet.",
+      "Built requirements traceability from user needs to requirements to MVP features.",
+      "Designed low-fidelity day-one flows so leadership could see what users would experience at launch.",
+      "Summarized scope, sequence, and risk on a single page for executives.",
     ],
     reflection:
-      "The win wasn’t a launch screenshot—it was a contract-shaped outcome built from disciplined platform design under constraint. Full narrative expanding as sterilized details are cleared.",
+      "At this scale, clear scoping is design work. The most persuasive artifact wasn’t a screen. It was a plain account of what we would do first and what we were deliberately leaving for later. Saying “not yet” clearly is how a team that started behind ended up ahead.",
   },
   {
     slug: "intel-portal-audit",
-    title: "Heuristic Audit of a Classified Self-Service Portal",
+    title: "Heuristic Audit of a Mission Self-Service Portal",
     client: "U.S. Government (cleared engagement)",
-    sector: "Federal / Intelligence",
-    role: "UX lead — heuristic audit",
-    dates: "Two-month engagement",
+    sector: "Federal",
+    role: "UX Lead, Heuristic Audit",
+    dates: "8 weeks",
     featured: true,
     order: 2,
-    proof: "8-week audit → 2-year modernization roadmap",
+    proof: "8 weeks → 2-year roadmap",
     clearance: "sterilized",
-    platforms: ["Self-service portal"],
+    platforms: ["Mission self-service portal"],
     tags: ["audit", "adoption", "federal"],
     thumb: "/images/cases/intel-portal-audit.jpg",
     thumbAlt: "Sterilized heuristic audit findings board",
+    team:
+      "Me and my director (a fellow designer), working with the government’s team and the subcontracting team on the portal",
     teaser:
-      "Eight-week heuristic audit of a classified self-service portal—quick wins for adoption plus a two-year modernization roadmap.",
+      "An eight-week independent read on a mission self-service portal people weren’t using—usability, adoption, and clearance constraints.",
     summary:
-      "Eight-week heuristic audit of a classified self-service portal—quick wins for adoption plus a two-year modernization roadmap.",
+      "A government organization had already launched a mission self-service portal, but people weren’t using it the way leadership expected. My director and I were brought in for an independent read on usability and adoption. We worked alongside the government’s team and the subcontracting team that was building and maintaining the portal. We had eight weeks, and the work had to stay within clearance constraints.",
     metrics: [
-      { value: "8 weeks", label: "Heuristic audit engagement" },
-      { value: "2 years", label: "Modernization roadmap horizon" },
-      { value: "Adoption", label: "Quick wins sequenced first" },
+      { value: "8 weeks", label: "Audit delivered" },
+      { value: "2 years", label: "Modernization roadmap from observed UX debt" },
+      { value: "Quick wins", label: "Adoption work sequenced ahead of structural change" },
     ],
     artifacts: [
       {
@@ -138,45 +152,52 @@ export const cases: CaseStudy[] = [
       },
     ],
     pullQuote:
-      "Great UX isn’t about perfect freedom—it’s about strategic influence.",
+      "John took our discussions and turned them into actions. I relied on him for the readout content and Executive Readout slides. There was a sense of relief working with him—he’d try new things, get feedback, iterate, and succeed. It was great working with someone who takes ownership.",
+    pullQuoteCite: "Platform Design Director",
     outcomes: [
-      "Quick-win recommendations to improve adoption across the agency",
-      "Two-year modernization roadmap grounded in observed UX debt",
-      "Clear separation of near-term fixes vs structural platform work",
+      "Delivered the audit in 8 weeks.",
+      "Built a two-year modernization roadmap grounded in observed UX debt.",
+      "Put the adoption-focused quick wins first, so the organization could start rebuilding user trust and shifting volume off the call center.",
+      "Recommended a rebranding initiative: next to the VIP call-center path, the portal had gained a reputation as a bottleneck.",
     ],
     context:
-      "A deployed self-service portal needed an honest read on usability and adoption—without theater, and within clearance constraints.",
+      "The portal technically worked. That was part of the problem. Users circumvented it and called the call center instead, which had a directive to respond within hours, so everyone was treated like a VIP. Nobody was tracking that pattern as a UX issue, even though the real goal was to get more people onto self-service and take volume off the call center. We also couldn’t redesign the system in two months, and nothing could leave the environment as a screenshot. Anything we delivered had to make sense to people who would never see the live system, and it had to hold up after we left.",
     approach: [
-      "Heuristic evaluation against real task flows",
-      "Prioritized findings into quick wins and multi-year bets",
-      "Briefed stakeholders on adoption risks and sequencing",
+      "Worked in tandem with my director on the audit. Because I held the clearance, I was the one who could audit the platform and its workflows on premises.",
+      "Audited the portal on site, walking through the most important user tasks end to end so every finding was tied to real work rather than isolated screens.",
+      "Took notes by hand and made rough drawings that redacted any cleared information but still showed my team the current platform configuration and where the workflows had pain points and bottlenecks.",
+      "Ran heuristic evaluations against those flows and scored each issue by severity and frequency.",
+      "Split the findings into two tracks: quick wins (labels, wayfinding, error recovery, status feedback) and structural work (content, information architecture, platform, governance).",
+      "Shared findings with the government’s team and the subcontracting team in plain language, and wrote each recommendation as a decision they could own and sequence without us.",
     ],
     reflection:
-      "Great UX isn’t about perfect freedom—it’s about strategic influence. An eight-week lens can still shape years of modernization.",
+      "This project reminded me that great UX isn’t about having perfect freedom. It’s about strategic influence. My most useful tools were a notebook and a pencil—and the same ownership showed up in the executive readout and slides. Redacted sketches gave a team that couldn’t see the system a clear picture of it. An eight-week engagement can still shape years of modernization.",
   },
   {
     slug: "doi-platform-constraints",
     title: "Designing Within Constraints",
-    client: "Department of the Interior",
+    client: "Federal agency (cleared platform)",
     sector: "Federal",
     role: "UX Design Lead",
     dates: "2024–2025",
     featured: true,
     order: 3,
-    proof: "Policy → platform-aligned UX; assets reused; contract extended",
+    proof: "Style guide made actionable · contract extended",
     clearance: "sterilized",
-    platforms: ["Power Platform", "USWDS"],
+    platforms: ["Low-code platform", "Federal design system"],
     tags: ["platform", "federal", "mentorship"],
     thumb: "/images/cases/doi-platform-constraints.jpg",
     thumbAlt: "Sterilized federal constraint wireframe sheets",
+    team:
+      "Me, a group of junior designers I mentored, plus platform engineers, compliance reviewers, and product owners",
     teaser:
-      "Translated federal policy into design constraints—aligning bureaus, mentoring juniors, and leaving assets that got reused.",
+      "Turned federal policy and an updated style guide into design direction shared-platform teams could use, and mentored the agency’s designers along the way.",
     summary:
-      "Enabled platform alignment across federal bureaus through research, mentoring, and wireframe-based strategy—translating federal policy into actionable design constraints.",
+      "Several offices within a federal agency were building on the same low-code platform, which required a clearance to work on, and all of them were working under the same federal policy. Each team was solving its problems separately. My job was to turn policy and the recently updated federal style guide into design direction teams could actually use, and to help the agency’s designers grow while we did it.",
     metrics: [
-      { value: "Policy → UX", label: "Constraints made actionable" },
-      { value: "Reused", label: "Wireframes across DOI efforts" },
-      { value: "Extended", label: "Contract on alignment strength" },
+      { value: "Policy", label: "Style guide and requirements made actionable" },
+      { value: "Reused", label: "Wireframes across efforts in the program" },
+      { value: "Extended", label: "Contract on the strength of the alignment work" },
     ],
     artifacts: [
       {
@@ -191,45 +212,52 @@ export const cases: CaseStudy[] = [
       },
     ],
     pullQuote:
-      "Constraint isn’t the enemy of craft—it’s the brief.",
+      "John is a great asset—always responsive, takes ownership of his work, strong client engagement, and a great team contributor. He was extended on the project to finalize details on the site, completed that with no delay, then helped the team with testing. I would recommend him to any team.",
+    pullQuoteCite: "Delivery Manager",
     outcomes: [
-      "Wireframe strategy reused across DOI efforts",
-      "Junior designers mentored into constraint-fluent practice",
-      "Contract extended on the strength of platform alignment work",
+      "Made policy and the updated style guide actionable as design constraints.",
+      "My wireframes were reused across efforts in the program.",
+      "Junior designers grew into confident, constraint-aware practitioners.",
+      "The contract was extended on the strength of the alignment work.",
     ],
     context:
-      "Multiple bureaus, shared platforms, and policy constraints that make “UX theater” expensive. The job was unification without pretending freedom that didn’t exist.",
+      "Accessibility, records, and security requirements were real and non-negotiable, but they were written for compliance, not for design. Teams usually discovered a constraint late in review, when changes were expensive. Because everyone was on a shared platform without a shared approach to UX, screens looked and behaved differently from one team to the next. Polished mockups often promised things the platform couldn’t deliver.",
     approach: [
-      "Translated policy into design constraints teams could use",
-      "Wireframe-led strategy for cross-bureau alignment",
-      "Mentored designers through ambiguous federal delivery",
+      "Interpreted the recently updated federal style guide, decided how it should apply inside the platform, and showed teams how to use it.",
+      "Translated policy into designable rules, sorting each requirement into “must,” “should,” or “the platform can’t do this.”",
+      "Mapped what the low-code platform supported natively, what needed a workaround, and what was off-limits.",
+      "Built a reusable, annotated wireframe kit on the federal design system. The margin notes explained why each pattern worked the way it did.",
+      "Ran workshops where designers practiced reading policy as a design brief.",
+      "Mentored junior designers who were new to federal work, using a simple review checklist they also used to critique each other’s work.",
+      "Kept patterns simple, since citizen developers would maintain many of these screens after launch.",
     ],
     reflection:
-      "Constraint isn’t the enemy of craft—it’s the brief. Influence shows up in what gets reused after you leave.",
+      "Constraint isn’t the enemy of craft. It’s the brief. My role wasn’t to pretend we had freedom we didn’t have. It was to surface the real limits early enough that designers could be creative inside them. I measure my influence here by what teams kept using after I stepped away.",
   },
   {
     slug: "state-total-experience",
-    title: "Total Experience — Department of State",
-    client: "U.S. Department of State",
+    title: "Designing Through Ambiguity — Total Experience",
+    client: "Federal agency (cleared engagement)",
     sector: "Federal",
-    role: "UX strategy lead / team lead",
+    role: "UX Strategy Lead / Team Lead",
     dates: "2024",
     featured: true,
     order: 4,
-    proof: "Quiet impact: research & framework left behind when launch wasn’t ready",
+    proof: "15 → 2 platforms · 2+ year roadmap",
     clearance: "sterilized",
-    platforms: ["Total Experience", "Multi-platform evaluation"],
+    platforms: ["Total Experience", "Platform evaluation"],
     tags: ["strategy", "federal", "leadership"],
     thumb: "/images/cases/state-total-experience.jpg",
     thumbAlt: "Sterilized Total Experience ecosystem map",
+    team: "A delivery lead and two designers, with me leading UX strategy",
     teaser:
-      "Led Total Experience through fog and election clocks—quiet impact when launch wasn’t ready.",
+      "Led Total Experience strategy across HR, admin, and service delivery on a timeline shaped by an election and an inauguration.",
     summary:
-      "Led Total Experience through fog, election clocks, and no chosen platform—quiet impact: research and framework left behind when launch wasn’t ready.",
+      "A federal agency wanted a Total Experience vision: one connected way of thinking about employee and customer experience across HR, administrative services, and service delivery. I led the UX strategy and the design team on a timeline shaped by an election and an inauguration.",
     metrics: [
-      { value: "TX", label: "Total Experience vision" },
-      { value: "Fog", label: "No stack; shifting leadership" },
-      { value: "Quiet", label: "Impact without a launch" },
+      { value: "15 → 2", label: "Platforms researched against government requirements" },
+      { value: "2+ years", label: "Roadmap leadership could carry forward" },
+      { value: "TX", label: "Vision across HR, admin, and service delivery" },
     ],
     artifacts: [
       {
@@ -244,46 +272,56 @@ export const cases: CaseStudy[] = [
       },
     ],
     pullQuote:
-      "This wasn’t just designing screens—it was designing ecosystems.",
+      "John built and strengthened his relationship with the primary Total Experience client. On numerous occasions the client turned to him for expertise on how to move an initiative forward, and said John made it easier to get things done. He raises concerns early, and he operates well within ambiguity—driving the work forward when client direction is thin.",
+    pullQuoteCite: "Delivery Manager",
+    outcomesIntro:
+      "Partway through, it became clear the launch wouldn’t happen on our timeline. Instead of treating that as a failure, we focused on what leadership could carry forward:",
     outcomes: [
-      "Unifying vision across HR, admin, and service delivery",
-      "Reusable framework influencing later platform decisions",
-      "Mentored a team of three through ambiguous client leadership",
+      "A roadmap covering more than two years.",
+      "A platform matrix and recommendation grounded in the government’s requirements.",
+      "A unifying Total Experience vision across HR, admin, and service delivery.",
+      "A client point of contact who was better prepared for his expanded role.",
+      "A team that grew through a genuinely ambiguous engagement.",
     ],
     context:
-      "No pre-selected tech stack, shifting client leadership, and an inauguration clock. Ambiguity wasn’t a phase—it was the operating environment.",
+      "We had no pre-selected technology stack, so there was no platform to design screens for. Client leadership also changed during the engagement. When our main contact’s lead was elevated to a new position, he became our primary point of contact, and decisions started to bottleneck. Ambiguity wasn’t a phase we had to get through. It was the environment we worked in for the whole project, and my team still needed steady direction.",
     approach: [
-      "Weekly trust-building with the primary stakeholder",
-      "Close mentorship for junior designers",
-      "Outcomes over deliverables—value leadership could carry forward",
+      "Mapped HR, administrative services, and service delivery as one ecosystem instead of three separate functions.",
+      "Collected requirements from the government and synthesized stakeholder interviews into shared themes, tracing where the employee experience broke down at handoffs.",
+      "Researched each candidate platform in depth against those requirements, narrowing 15 options to 2 without designing for any single vendor.",
+      "Built a platform matrix and a recommendation for which platform best suited the project going forward.",
+      "Mentored the client’s new primary point of contact weekly, which helped clear the communication bottleneck and keep decisions moving.",
+      "Mentored my designers closely, helping them do good work when the brief kept moving.",
     ],
     reflection:
-      "This wasn’t just designing screens—it was designing ecosystems. Success can be quiet impact when launch isn’t ready.",
+      "This wasn’t just designing screens. It was designing ecosystems, and sometimes the relationship itself. I’m proud of this work not because of what we launched, but because of what we learned and what we left behind. When a launch isn’t ready, the most valuable thing you can leave is clear thinking that someone else can build on.",
   },
   {
     slug: "dow-platform-modernization",
-    title: "Mission-Critical Platform Modernization",
-    client: "War Department (DOW)",
+    title: "Mission-Critical Defense Platform Suite",
+    client: "Federal defense organization",
     sector: "Federal",
-    role: "UX research & design",
-    dates: "Prior engagement",
+    role: "UX Research & Design",
+    dates: "2 years",
     featured: true,
     order: 5,
     proof: "+65% satisfaction · 500+ engineering hours saved",
     clearance: "sterilized",
-    platforms: ["Intelligence / mission platform"],
-    tags: ["platform", "federal", "DOW", "research"],
+    platforms: ["Mission-critical platform suite"],
+    tags: ["platform", "federal", "research"],
     dowAccent: true,
     thumb: "/images/cases/dow-platform-modernization.jpg",
     thumbAlt: "Sterilized dual-path journey modernization diagram",
+    team:
+      "Me, working with engineering and product leads and the development teams for applications across the suite",
     teaser:
-      "Field research and dual-path UX that raised satisfaction and recovered 500+ engineering hours.",
+      "Two years of field research and design to streamline a mission-critical defense platform suite without slowing the experts who use it.",
     summary:
-      "Modernized a fragmented mission platform through field research, journey mapping, and dual-path UX strategy—raising satisfaction and recovering engineering time.",
+      "For two years I worked with engineering and product leads and development teams across the applications in a Mission-Critical Defense Platform Suite. I was tasked with helping the team develop a plan to streamline the suite, grounded in field research with the people who use it.",
     metrics: [
-      { value: "+65%", label: "User satisfaction lift" },
-      { value: "500+", label: "Engineering hours saved" },
-      { value: "Dual-path", label: "Experts and modern flows" },
+      { value: "+65%", label: "User satisfaction" },
+      { value: "500+", label: "Engineering hours saved by reducing rework" },
+      { value: "2 years", label: "Field research and design across the suite" },
     ],
     artifacts: [
       {
@@ -298,21 +336,24 @@ export const cases: CaseStudy[] = [
       },
     ],
     pullQuote:
-      "Modernization sticks when research earns the right to change workflows.",
+      "John has been our biggest champion for UX best practices. He always goes above and beyond. His ideas and effort are always appreciated by the design team and leadership.",
+    pullQuoteCite: "Creative Team Manager",
     outcomes: [
-      "+65% user satisfaction",
-      "500+ engineering hours saved",
-      "Dual-path UX that respected power users and modern workflows",
+      "+65% user satisfaction.",
+      "500+ engineering hours saved by reducing rework.",
+      "A shared plan for streamlining the suite across development teams.",
     ],
     context:
-      "Disconnected tools, operational pressure, and modernization mandates that couldn’t wait for a greenfield fantasy.",
+      "The applications were used together as a suite, but they shared no common development. Some services offered redundant or conflicting functions. To finish one job, users moved between applications, re-entered data, and held the workflow together in their heads. The most experienced users had built muscle memory around the existing tools, so any streamlining that slowed them down would be rejected, and fairly so. Operations couldn’t stop, so changes had to land incrementally.",
     approach: [
-      "Field research and journey mapping in context",
-      "Reframed tools into a unified ecosystem narrative",
-      "Dual-path UX to land change without stranding experts",
+      "Ran field research and in-context journey mapping, documenting every handoff and re-entry point in a single task.",
+      "Mapped where applications overlapped or conflicted, giving the teams a shared view of the suite as one ecosystem.",
+      "Worked with engineering and product leads to shape a streamlining plan the development teams could act on incrementally.",
+      "Designed a dual-path experience: a dense, efficient path for experts and a guided path for newer users.",
+      "Treated expert speed as a hard requirement and protected shortcuts, density, and bulk actions.",
     ],
     reflection:
-      "Modernization sticks when research earns the right to change workflows—not when a redesign is declared.",
+      "Streamlining sticks when research earns the right to change workflows. It doesn’t stick when it’s simply declared. The experts weren’t resisting change. They were protecting the mission. Designing a path for them is what made the streamlined path possible.",
   },
   {
     slug: "star-ccm-az-workflow",

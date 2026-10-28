@@ -48,6 +48,9 @@ export default async function CasePage({ params }: Props) {
               ? " · Public details sterilized for clearance"
               : null}
           </p>
+          {study.team ? (
+            <p className="case-hero__team">Team: {study.team}</p>
+          ) : null}
         </header>
       </div>
 
@@ -84,7 +87,13 @@ export default async function CasePage({ params }: Props) {
 
         <article className="case-article">
           <section className="case-section">
+            <h2>Overview</h2>
+            <p>{study.summary}</p>
+          </section>
+
+          <section className="case-section">
             <h2>Outcomes</h2>
+            {study.outcomesIntro ? <p>{study.outcomesIntro}</p> : null}
             <ul>
               {study.outcomes.map((item) => (
                 <li key={item}>{item}</li>
@@ -134,6 +143,9 @@ export default async function CasePage({ params }: Props) {
           {study.pullQuote ? (
             <blockquote className="case-quote">
               <p>{study.pullQuote}</p>
+              {study.pullQuoteCite ? (
+                <footer className="case-quote__cite">— {study.pullQuoteCite}</footer>
+              ) : null}
             </blockquote>
           ) : null}
 
