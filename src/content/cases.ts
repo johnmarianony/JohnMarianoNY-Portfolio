@@ -91,6 +91,16 @@ export const cases: CaseStudy[] = [
         alt: "Sterilized before-to-after platform consolidation diagram",
         caption: "From tangled legacy nodes to a clearer target platform",
       },
+      {
+        src: "/images/cases/dow-platform-migration-mvp/artifact-1.jpg",
+        alt: "Requirements traceability from a user need to a requirement to an MVP feature",
+        caption: "Requirements traceability (need → requirement → MVP feature)",
+      },
+      {
+        src: "/images/cases/dow-platform-migration-mvp/artifact-2.jpg",
+        alt: "Low-fidelity day-one flow beside a Scope, Sequence, and Risk one-pager",
+        caption: "Day-one lo-fi flow + Scope / Sequence / Risk one-pager",
+      },
     ],
     pullQuote:
       "John was critical in supporting our delivery and led efforts in team cohesiveness and collaboration. He also led our BAs and mentored them to bring back requirements efficiently when the client was difficult to engage.",
@@ -149,6 +159,16 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/intel-portal-audit-2.jpg",
         alt: "Sterilized quick-wins to multi-year roadmap timeline",
         caption: "Quick wins now, structural bets across a two-year arc",
+      },
+      {
+        src: "/images/cases/intel-portal-audit/artifact-1.jpg",
+        alt: "Hand-notes workflow audit with redacted sketches and an on-prem clearance mark",
+        caption: "Hand-notes on-prem audit (redacted workflow sketches)",
+      },
+      {
+        src: "/images/cases/intel-portal-audit/artifact-2.jpg",
+        alt: "Stacked executive readout covering adoption, quick wins, and a two-year roadmap",
+        caption: "Executive readout stack (adoption, quick wins, 2-year roadmap)",
       },
     ],
     pullQuote:
@@ -210,6 +230,16 @@ export const cases: CaseStudy[] = [
         alt: "Sterilized mentorship and constraint workshop board",
         caption: "Workshop boards that made policy legible for designers",
       },
+      {
+        src: "/images/cases/doi-platform-constraints/artifact-1.jpg",
+        alt: "Annotated wireframe kit with a Policy, Platform, and Pattern rail",
+        caption: "Annotated wireframe kit with Policy / Platform / Pattern rail",
+      },
+      {
+        src: "/images/cases/doi-platform-constraints/artifact-2.jpg",
+        alt: "Must, Should, and Can’t board turning a policy line into design rules",
+        caption: "Must / Should / Can’t policy → design rules board",
+      },
     ],
     pullQuote:
       "John is a great asset—always responsive, takes ownership of his work, strong client engagement, and a great team contributor. He was extended on the project to finalize details on the site, completed that with no delay, then helped the team with testing. I would recommend him to any team.",
@@ -269,6 +299,16 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/state-total-experience-2.jpg",
         alt: "Sterilized ambiguity-to-clarity strategy board",
         caption: "From ambiguity fog to a reusable decision framework",
+      },
+      {
+        src: "/images/cases/state-total-experience/artifact-1.jpg",
+        alt: "Anonymized platform matrix narrowing 15 candidates to 2 finalists",
+        caption: "Platform matrix (15 candidates → 2 finalists; no vendor names)",
+      },
+      {
+        src: "/images/cases/state-total-experience/artifact-2.jpg",
+        alt: "Ambiguity-to-clarity board across HR, admin, and service delivery",
+        caption: "Ambiguity → clarity board (HR · Admin · Service delivery)",
       },
     ],
     pullQuote:
@@ -333,6 +373,16 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/dow-platform-modernization-2.jpg",
         alt: "Sterilized dual-path journey merge map",
         caption: "Field pins that earned the right to change the workflow",
+      },
+      {
+        src: "/images/cases/dow-platform-modernization/artifact-1.jpg",
+        alt: "Suite journey swimlanes marking handoffs and re-entry points across four apps",
+        caption: "Suite journey swimlanes with handoff and re-entry pins",
+      },
+      {
+        src: "/images/cases/dow-platform-modernization/artifact-2.jpg",
+        alt: "Dual-path experience with a dense expert view and a guided path sharing the same outcomes",
+        caption: "Dual-path experience (expert vs guided → shared outcomes)",
       },
     ],
     pullQuote:
