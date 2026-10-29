@@ -4,6 +4,11 @@ export type CaseArtifact = {
   caption: string;
   /** Portrait screenshots (e.g. Facebook tab captures) */
   portrait?: boolean;
+  /**
+   * Mid-story slot. Index 0 is always the hero.
+   * Unset artifacts after the hero stay in the end gallery.
+   */
+  slot?: "challenge" | "approach";
 };
 
 export type CaseMetric = {
@@ -85,6 +90,20 @@ export const cases: CaseStudy[] = [
         alt: "Sterilized before-to-after platform consolidation diagram",
         caption: "From tangled legacy nodes to a clearer target platform",
       },
+      {
+        src: "/images/cases/dow-platform-migration-mvp-5.jpg",
+        alt: "Consolidation sketch of tangled legacy channels becoming request, approval, and knowledge paths on one record",
+        caption:
+          "Legacy to Mission Service Center — eight channels become three paths on one record",
+        slot: "challenge",
+      },
+      {
+        src: "/images/cases/dow-platform-migration-mvp-4.jpg",
+        alt: "Value by migration-risk board marking what shipped in the MVP and what was deferred with a trigger",
+        caption:
+          "Value × risk — what moved first, and a not-yet list with a trigger on each deferral",
+        slot: "approach",
+      },
     ],
     pullQuote:
       "The win wasn’t a launch screenshot—it was a contract-shaped outcome built under constraint.",
@@ -137,6 +156,20 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/intel-portal-audit-2.jpg",
         alt: "Sterilized quick-wins to multi-year roadmap timeline",
         caption: "Quick wins now, structural bets across a two-year arc",
+      },
+      {
+        src: "/images/cases/intel-portal-audit-3.jpg",
+        alt: "Six-step task walkthrough with severity tags, showing critical steps that end in a phone call",
+        caption:
+          "Severity-tagged walkthrough — the critical steps fail, and people finish by phone",
+        slot: "challenge",
+      },
+      {
+        src: "/images/cases/intel-portal-audit-4.jpg",
+        alt: "Decision board splitting quick wins from structural bets against call-center volume",
+        caption:
+          "VIP call-center workaround — two tracks, one goal: move volume off the phones",
+        slot: "approach",
       },
     ],
     pullQuote:
@@ -191,6 +224,20 @@ export const cases: CaseStudy[] = [
         alt: "Sterilized mentorship and constraint workshop board",
         caption: "Workshop boards that made policy legible for designers",
       },
+      {
+        src: "/images/cases/doi-platform-constraints-4.jpg",
+        alt: "Dark capability catalog sorting features into native, workaround, and off-limits",
+        caption:
+          "Capability catalog — native, workaround, and off-limits before any polish",
+        slot: "challenge",
+      },
+      {
+        src: "/images/cases/doi-platform-constraints-3.jpg",
+        alt: "Dark annotated wire catalog of three shared flows, each marked policy, platform, and pattern",
+        caption:
+          "Annotated wire catalog — every screen traces a policy line and a platform limit",
+        slot: "approach",
+      },
     ],
     pullQuote:
       "Constraint isn’t the enemy of craft—it’s the brief.",
@@ -243,6 +290,20 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/state-total-experience-2.jpg",
         alt: "Sterilized ambiguity-to-clarity strategy board",
         caption: "From ambiguity fog to a reusable decision framework",
+      },
+      {
+        src: "/images/cases/state-total-experience-3.jpg",
+        alt: "Ecosystem map of one employee journey across people, workplace, and service desks, with handoff breaks",
+        caption:
+          "Ecosystem handoff map — one journey, and the breaks are in the handoffs",
+        slot: "challenge",
+      },
+      {
+        src: "/images/cases/state-total-experience-4.jpg",
+        alt: "Non-launch board showing a frozen go-live and the criteria, roadmap, and owner left for the next team",
+        caption:
+          "Non-launch pivot — go-live left the table; the handoff is what the next team can carry",
+        slot: "approach",
       },
     ],
     pullQuote:
@@ -297,6 +358,20 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/dow-platform-modernization-2.jpg",
         alt: "Sterilized dual-path journey merge map",
         caption: "Field pins that earned the right to change the workflow",
+      },
+      {
+        src: "/images/cases/dow-platform-modernization-4.jpg",
+        alt: "Field journey of one task crossing five apps, marking handoffs and re-entry points",
+        caption:
+          "Field journey — one task, five apps, and where experts lose their place",
+        slot: "challenge",
+      },
+      {
+        src: "/images/cases/dow-platform-modernization-5.jpg",
+        alt: "Heat matrix of five apps against shared services, with overlap turning into conflict",
+        caption:
+          "Heated overlap matrix — five apps rebuilding the same services, and where they collide",
+        slot: "approach",
       },
     ],
     pullQuote:
