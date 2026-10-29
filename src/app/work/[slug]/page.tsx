@@ -12,6 +12,35 @@ import { site } from "@/content/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
+function CaseBeats({
+  problem,
+  opportunity,
+  constraint,
+}: {
+  problem?: string;
+  opportunity?: string;
+  constraint?: string;
+}) {
+  const beats = [
+    problem ? { label: "Problem", copy: problem } : null,
+    opportunity ? { label: "Opportunity", copy: opportunity } : null,
+    constraint ? { label: "Constraint", copy: constraint } : null,
+  ].filter((beat): beat is { label: string; copy: string } => beat !== null);
+
+  if (beats.length === 0) return null;
+
+  return (
+    <div className="case-beats">
+      {beats.map((beat) => (
+        <div key={beat.label} className="case-beat">
+          <h3>{beat.label}</h3>
+          <p>{beat.copy}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function CaseFigure({
   art,
   preload = false,
@@ -161,6 +190,11 @@ export default async function CasePage({ params }: Props) {
           <section className="case-section">
             <h2>Context</h2>
             <p>{study.context}</p>
+            <CaseBeats
+              problem={study.problem}
+              opportunity={study.opportunity}
+              constraint={study.constraint}
+            />
           </section>
 
           {challengeArts.map((art) => (

@@ -43,6 +43,10 @@ export type CaseStudy = {
   pullQuote?: string;
   outcomes: string[];
   context: string;
+  /** Labeled beats under Context. Omit when a case does not use this frame. */
+  problem?: string;
+  opportunity?: string;
+  constraint?: string;
   approach: string[];
   reflection: string;
 };
@@ -114,6 +118,12 @@ export const cases: CaseStudy[] = [
     ],
     context:
       "A high-stakes War Department platform modernization effort required a credible MVP path—design and requirements tight enough to de-risk migration, clear enough for executive decision-making.",
+    problem:
+      "The migration was already about three months behind. Legacy workflows were tangled, and the customer risk was not a pretty homepage. It was picking the wrong work first and burning the follow-on.",
+    opportunity:
+      "Rank what to move by mission value and migration risk, put a clear Not yet list on the table, and ship an MVP path into a Mission Service Center that helped win the multi-year follow-on (~$800M class).",
+    constraint:
+      "We were moving into a standard ITSM-class platform, not a custom build. That meant using what the platform already offered for tickets, catalogs, and day-one service paths. Design stayed dark and 508-friendly so it would clear a federal review, not win an awards deck.",
     approach: [
       "Partnered inside the delivery team on platform design and requirements",
       "Framed migration MVP outcomes for leadership and engineering alignment",
@@ -181,6 +191,12 @@ export const cases: CaseStudy[] = [
     ],
     context:
       "A deployed self-service portal needed an honest read on usability and adoption—without theater, and within clearance constraints.",
+    problem:
+      "Everyone finished critical and noncritical work by phone. The call center was so easy and so efficient that the portal looked like the bottleneck and picked up unflattering nicknames, even though that phone path carried a steep cost.",
+    opportunity:
+      "Show that the bottleneck was partly a competing channel. Then surface the highest leverage portal content (common forms, knowledge articles, catalog items) so leadership could move volume off an expensive call center without pretending the portal was fine.",
+    constraint:
+      "A cleared on-prem self-service portal competing with a high-SLA call center. Severity and nicknames stay composite. No system or vendor names.",
     approach: [
       "Heuristic evaluation against real task flows",
       "Prioritized findings into quick wins and multi-year bets",
@@ -248,6 +264,12 @@ export const cases: CaseStudy[] = [
     ],
     context:
       "Multiple bureaus, shared platforms, and policy constraints that make “UX theater” expensive. The job was unification without pretending freedom that didn’t exist.",
+    problem:
+      "Two related bureau programs sat on shared low-code backends. Policy made custom polish expensive, but teams kept designing as if the stack were open, and burned time on work the platform would never ship.",
+    opportunity:
+      "Make the hard edges legible first. What was native, what was a workaround, and what was off-limits. Then align both programs on a wireframe strategy juniors could reuse after I left.",
+    constraint:
+      "Shared low-code backends for internal users only. One program also needed a public-facing front end on a separate portal class, so what could ship native differed by audience, not just by bureau. Catalog first: Native / Workaround / Off-limits.",
     approach: [
       "Translated policy into design constraints teams could use",
       "Wireframe-led strategy for cross-bureau alignment",
@@ -315,6 +337,12 @@ export const cases: CaseStudy[] = [
     ],
     context:
       "No pre-selected tech stack, shifting client leadership, and an inauguration clock. Ambiguity wasn’t a phase—it was the operating environment.",
+    problem:
+      "The client had not picked a platform, leadership kept changing, and a hard political deadline was coming. Nobody could design the \"real\" product yet, but the work still had to move.",
+    opportunity:
+      "When go-live left the table, redefine the win: leave-behinds the next team can decide from. Buyers guide, fog-to-frame roadmap, mentored judgment that outlasts a frozen launch.",
+    constraint:
+      "No stack selected. Platform choice stayed open while Total Experience framing still had to move.",
     approach: [
       "Weekly trust-building with the primary stakeholder",
       "Close mentorship for junior designers",
@@ -383,6 +411,12 @@ export const cases: CaseStudy[] = [
     ],
     context:
       "Disconnected tools, operational pressure, and modernization mandates that couldn’t wait for a greenfield fantasy.",
+    problem:
+      "Several mission apps overlapped on the same services, but they did not share one product organization. People doing the work lived in the gaps between those apps. A single streamlined path that slowed long-time operators or subject matter experts would get rejected as soon as it hit the field.",
+    opportunity:
+      "Map the collisions, then earn the right to change workflows with a dual path: dense expert tools beside guided novice flows, converging into a map-first Mission Coordination Suite.",
+    constraint:
+      "A suite of mission apps without a shared development line. Overlap had to be designed around. No product or vendor names on the public story.",
     approach: [
       "Field research and journey mapping in context",
       "Reframed tools into a unified ecosystem narrative",
