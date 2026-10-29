@@ -1630,6 +1630,10 @@ main:focus {
   margin: 0;
 }
 
+.case-beat p + p {
+  margin-top: 0.85rem;
+}
+
 .case-figure {
   margin: 0 0 2.75rem;
   max-width: 52rem;
