@@ -461,6 +461,34 @@ export const cases: CaseStudy[] = [
         caption: "Sterilized comparison — overgrowth versus consolidation",
       },
       {
+        src: "/images/cases/siemens/siemens-mid-challenge-workshop-guidance.jpg",
+        alt: "Workshop whiteboard with handwritten Guidance, Automation, and Templating notes from a STAR-CCM+ session",
+        caption:
+          "Workshop wall - Guidance, Automation, and Templating before the path had a name",
+        slot: "challenge",
+      },
+      {
+        src: "/images/cases/siemens/siemens-mid-challenge-right-click.jpg",
+        alt: "Legacy STAR-CCM+ Java client with a directory tree and a scalar field dialog triggered by right click",
+        caption:
+          "Directory-era client - deep tree navigation and right-click to trigger work",
+        slot: "challenge",
+      },
+      {
+        src: "/images/cases/siemens/siemens-mid-approach-templates.jpg",
+        alt: "Simcenter STAR-CCM+ Views screen showing a drag monitor plot as a Simulation Templates concept",
+        caption:
+          "Simulation Templates - shared workflow best practices you can reuse",
+        slot: "approach",
+      },
+      {
+        src: "/images/cases/siemens/siemens-mid-approach-az-walls.jpg",
+        alt: "Custom tree console of parent and child nodes beside a boundary-condition map of a duct assembly",
+        caption:
+          "A to Z walls - the mapped path from geometry through reporting",
+        slot: "approach",
+      },
+      {
         src: "/images/cases/siemens/siemens-star-ccm-user-journey-splash.png",
         alt: "Siemens Simcenter STAR-CCM+ User Journey splash and login",
         caption: "Labeled: STAR-CCM+ User Journey — product entry experience",
@@ -510,6 +538,12 @@ export const cases: CaseStudy[] = [
     ],
     context:
       "A deep engineering product with powerful capabilities and implicit workflows living only in expert heads.",
+    problem:
+      "Nobody had ever mapped how people actually ran STAR-CCM+ from start to finish. Engineers kept a library of notebooks for workflow directions, and something like a rolodex to remember which notebook and which page held the next step.\n\nThe UI itself was a folder directory that leaned on right-click actions and deep folder navigation to trigger work. Repetitive steps meant climbing up and down the tree, sometimes deep into nested folders, just to do the same action again.\n\nThe product was as deep as a Photoshop-class tool, so the real path lived on paper, in expert heads, and inside that directory model, and every feature team shipped against a different mental model. The culture assumed PhD users could absorb the complexity. Research kept showing that the complexity was the tax, not the badge.",
+    opportunity:
+      "Walk a real model A to Z (geometry, meshing, physics, simulation, reporting), make the robust path visible in the product instead of across notebooks and folder trees, and give product and engineering a shared language for what “complete” meant before next-gen and cloud work started. Once the path was named, the gaps feature teams had been shipping around finally had somewhere to land.\n\nWe also saw that we could land some of those improvements in the new cloud offering first, because desktop adoption moved slowly. Users did not update often. They expected newer releases to be less stable than older ones, and their models were most compatible with older builds. That same research made the case for stronger backwards compatibility so newer software could earn trust instead of waiting years for people to leave a known-good version.\n\nProduct management drove Simulation Templates as a way to carry shared workflow best practices; I worked on that effort with the team, alongside Web Viewer, so people could reuse a protected path and share results without another trip through paper notes or the directory tree.",
+    constraint:
+      "Legacy Java client built around directory-era information architecture and right-click driven actions, plus a first-HCI-lead seat inside a PhD-heavy shop that treated UX as an outsider. Research had to earn trust with data and collaboration, not with a redesign pitch. Cloud and next-gen migration was already on the horizon, so the map had to hold for the product people used today and the one they were about to build.",
     approach: [
       "Mapped the robust path from start to finish",
       "Named friction that siloed feature work had normalized",

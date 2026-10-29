@@ -31,12 +31,20 @@ function CaseBeats({
 
   return (
     <div className="case-beats">
-      {beats.map((beat) => (
-        <div key={beat.label} className="case-beat">
-          <h3>{beat.label}</h3>
-          <p>{beat.copy}</p>
-        </div>
-      ))}
+      {beats.map((beat) => {
+        const paragraphs = beat.copy
+          .split(/\n\n+/)
+          .map((paragraph) => paragraph.trim())
+          .filter(Boolean);
+        return (
+          <div key={beat.label} className="case-beat">
+            <h3>{beat.label}</h3>
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
