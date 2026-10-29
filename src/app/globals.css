@@ -877,6 +877,11 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* A single board should read at hero width, not half a column. */
+  .case-gallery__grid > .case-figure:only-child {
+    grid-column: 1 / -1;
+  }
+
   .case-figure--gallery {
     margin: 0;
     max-width: none;

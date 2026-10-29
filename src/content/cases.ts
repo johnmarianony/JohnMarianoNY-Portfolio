@@ -67,8 +67,8 @@ export const cases: CaseStudy[] = [
     platforms: ["Platform migration", "MVP delivery"],
     tags: ["platform", "federal", "migration"],
     dowAccent: true,
-    thumb: "/images/cases/dow-platform-migration-mvp.jpg",
-    thumbAlt: "Sterilized platform migration architecture diagram",
+    thumb: "/images/cases/dow-platform-migration-mvp/artifact-3.jpg",
+    thumbAlt: "Dark-mode ITSM employee portal homepage for a mission service center",
     team:
       "Me, alongside solution architects, engineers, and program leads",
     teaser:
@@ -82,24 +82,22 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/dow-platform-migration-mvp.jpg",
-        alt: "Sterilized platform migration architecture diagram",
-        caption: "Target architecture framing for the migration MVP",
-      },
-      {
-        src: "/images/cases/dow-platform-migration-mvp-2.jpg",
-        alt: "Sterilized before-to-after platform consolidation diagram",
-        caption: "From tangled legacy nodes to a clearer target platform",
+        src: "/images/cases/dow-platform-migration-mvp/artifact-3.jpg",
+        alt: "Dark-mode ITSM employee portal homepage for a mission service center",
+        caption:
+          "Day-one employee portal — search, catalog, requests, and status on the migrated platform",
       },
       {
         src: "/images/cases/dow-platform-migration-mvp/artifact-1.jpg",
-        alt: "Requirements traceability from a user need to a requirement to an MVP feature",
-        caption: "Requirements traceability (need → requirement → MVP feature)",
+        alt: "Dark-mode MVP traceability board with mission-value and migration-risk chips",
+        caption:
+          "Need → requirement → MVP feature, with the numbers leadership used to say yes",
       },
       {
         src: "/images/cases/dow-platform-migration-mvp/artifact-2.jpg",
-        alt: "Low-fidelity day-one flow beside a Scope, Sequence, and Risk one-pager",
-        caption: "Day-one lo-fi flow + Scope / Sequence / Risk one-pager",
+        alt: "Dark-mode day-one flow screens next to an MVP one-pager",
+        caption:
+          "Four day-one screens beside the Scope / Sequence / Risk one-pager — including what we deliberately left out",
       },
     ],
     pullQuote:
@@ -136,8 +134,9 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Mission self-service portal"],
     tags: ["audit", "adoption", "federal"],
-    thumb: "/images/cases/intel-portal-audit.jpg",
-    thumbAlt: "Sterilized heuristic audit findings board",
+    thumb: "/images/cases/intel-portal-audit/artifact-1.jpg",
+    thumbAlt:
+      "Handwritten field notebook with redacted workflow notes and an on-prem clearance stamp",
     team:
       "Me and my director (a fellow designer), working with the government’s team and the subcontracting team on the portal",
     teaser:
@@ -151,24 +150,16 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/intel-portal-audit.jpg",
-        alt: "Sterilized heuristic audit findings board",
-        caption: "Findings synthesis — severity without exposing the system",
-      },
-      {
-        src: "/images/cases/intel-portal-audit-2.jpg",
-        alt: "Sterilized quick-wins to multi-year roadmap timeline",
-        caption: "Quick wins now, structural bets across a two-year arc",
-      },
-      {
         src: "/images/cases/intel-portal-audit/artifact-1.jpg",
-        alt: "Hand-notes workflow audit with redacted sketches and an on-prem clearance mark",
-        caption: "Hand-notes on-prem audit (redacted workflow sketches)",
+        alt: "Handwritten field notebook with redacted workflow notes and an on-prem clearance stamp",
+        caption:
+          "Field notebook from the on-prem audit — redacted workflows, severity marks, VIP call-line tally",
       },
       {
         src: "/images/cases/intel-portal-audit/artifact-2.jpg",
-        alt: "Stacked executive readout covering adoption, quick wins, and a two-year roadmap",
-        caption: "Executive readout stack (adoption, quick wins, 2-year roadmap)",
+        alt: "Compiled executive readout board with adoption, quick wins, and roadmap pieces",
+        caption:
+          "Executive readout: adoption pattern, quick wins vs structural bets, and a two-year roadmap",
       },
     ],
     pullQuote:
@@ -206,8 +197,9 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Low-code platform", "Federal design system"],
     tags: ["platform", "federal", "mentorship"],
-    thumb: "/images/cases/doi-platform-constraints.jpg",
-    thumbAlt: "Sterilized federal constraint wireframe sheets",
+    thumb: "/images/cases/doi-platform-constraints/artifact-1.jpg",
+    thumbAlt:
+      "Side-by-side bureau back-office and portal screens reflecting two unnamed platform looks",
     team:
       "Me, a group of junior designers I mentored, plus platform engineers, compliance reviewers, and product owners",
     teaser:
@@ -221,24 +213,16 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/doi-platform-constraints.jpg",
-        alt: "Sterilized federal constraint wireframe sheets",
-        caption: "Wireframe strategy under shared platform rules",
-      },
-      {
-        src: "/images/cases/doi-platform-constraints-2.jpg",
-        alt: "Sterilized mentorship and constraint workshop board",
-        caption: "Workshop boards that made policy legible for designers",
-      },
-      {
         src: "/images/cases/doi-platform-constraints/artifact-1.jpg",
-        alt: "Annotated wireframe kit with a Policy, Platform, and Pattern rail",
-        caption: "Annotated wireframe kit with Policy / Platform / Pattern rail",
+        alt: "Side-by-side bureau back-office and portal screens reflecting two unnamed platform looks",
+        caption:
+          "Two related bureau projects on one shared platform — back-office workflows beside a public-facing portal",
       },
       {
         src: "/images/cases/doi-platform-constraints/artifact-2.jpg",
-        alt: "Must, Should, and Can’t board turning a policy line into design rules",
-        caption: "Must / Should / Can’t policy → design rules board",
+        alt: "Compilation board showing four constraint sources flowing into Must, Should, and Can’t",
+        caption:
+          "Four sources feeding Must / Should / Can’t — customer requirements, platform limits, the federal style guide, and bureau branding",
       },
     ],
     pullQuote:
@@ -277,8 +261,8 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Total Experience", "Platform evaluation"],
     tags: ["strategy", "federal", "leadership"],
-    thumb: "/images/cases/state-total-experience.jpg",
-    thumbAlt: "Sterilized Total Experience ecosystem map",
+    thumb: "/images/cases/state-total-experience/artifact-1.jpg",
+    thumbAlt: "Anonymized ITSM platform comparison matrix with Suites A–F",
     team: "A delivery lead and two designers, with me leading UX strategy",
     teaser:
       "Led Total Experience strategy across HR, admin, and service delivery on a timeline shaped by an election and an inauguration.",
@@ -291,24 +275,16 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/state-total-experience.jpg",
-        alt: "Sterilized Total Experience ecosystem map",
-        caption: "HR, admin, and service delivery as one ecosystem",
-      },
-      {
-        src: "/images/cases/state-total-experience-2.jpg",
-        alt: "Sterilized ambiguity-to-clarity strategy board",
-        caption: "From ambiguity fog to a reusable decision framework",
-      },
-      {
         src: "/images/cases/state-total-experience/artifact-1.jpg",
-        alt: "Anonymized platform matrix narrowing 15 candidates to 2 finalists",
-        caption: "Platform matrix (15 candidates → 2 finalists; no vendor names)",
+        alt: "Anonymized ITSM platform comparison matrix with Suites A–F",
+        caption:
+          "Buyers’ guide: Suites A–F scored against FedRAMP, cost, licenses, AI chatbots, and key features",
       },
       {
         src: "/images/cases/state-total-experience/artifact-2.jpg",
-        alt: "Ambiguity-to-clarity board across HR, admin, and service delivery",
-        caption: "Ambiguity → clarity board (HR · Admin · Service delivery)",
+        alt: "Energetic two-year Total Experience modernization roadmap infographic",
+        caption:
+          "Two-year modernization roadmap — platform decision in three weeks, then discovery through scale",
       },
     ],
     pullQuote:
@@ -350,8 +326,9 @@ export const cases: CaseStudy[] = [
     platforms: ["Mission-critical platform suite"],
     tags: ["platform", "federal", "research"],
     dowAccent: true,
-    thumb: "/images/cases/dow-platform-modernization.jpg",
-    thumbAlt: "Sterilized dual-path journey modernization diagram",
+    thumb: "/images/cases/dow-platform-modernization/artifact-3.jpg",
+    thumbAlt:
+      "Map-first suite shell with terrain map, app switcher, drive flyout, and messenger chats",
     team:
       "Me, working with engineering and product leads and the development teams for applications across the suite",
     teaser:
@@ -365,24 +342,22 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/dow-platform-modernization.jpg",
-        alt: "Sterilized dual-path journey modernization diagram",
-        caption: "Dual-path UX — power users and modern journeys together",
-      },
-      {
-        src: "/images/cases/dow-platform-modernization-2.jpg",
-        alt: "Sterilized dual-path journey merge map",
-        caption: "Field pins that earned the right to change the workflow",
+        src: "/images/cases/dow-platform-modernization/artifact-3.jpg",
+        alt: "Map-first suite shell with terrain map, app switcher, drive flyout, and messenger chats",
+        caption:
+          "Mission Coordination Suite — map-first shell with shared chat, drive, and maps across Deployments, Medical, Personnel, Assets, and Strategy",
       },
       {
         src: "/images/cases/dow-platform-modernization/artifact-1.jpg",
-        alt: "Suite journey swimlanes marking handoffs and re-entry points across four apps",
-        caption: "Suite journey swimlanes with handoff and re-entry pins",
+        alt: "Dark navy collision map of four suite apps with handoffs and re-entry markers",
+        caption:
+          "One mission task across four apps — handoffs, re-entry heat, and the conflicts operators carried in their heads",
       },
       {
         src: "/images/cases/dow-platform-modernization/artifact-2.jpg",
-        alt: "Dual-path experience with a dense expert view and a guided path sharing the same outcomes",
-        caption: "Dual-path experience (expert vs guided → shared outcomes)",
+        alt: "Dual-path briefing board where expert and guided rails converge on one data model",
+        caption:
+          "Dual path over one data model — dense expert grid and guided steps that write the same record",
       },
     ],
     pullQuote:
