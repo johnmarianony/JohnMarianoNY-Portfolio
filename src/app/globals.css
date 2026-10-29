@@ -1610,6 +1610,26 @@ main:focus {
   margin-top: 0.55rem;
 }
 
+.case-beats {
+  display: grid;
+  gap: 1.35rem;
+  margin-top: 1.5rem;
+}
+
+.case-beat h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+  color: var(--fg);
+}
+
+.case-beat p {
+  margin: 0;
+}
+
 .case-figure {
   margin: 0 0 2.75rem;
   max-width: 52rem;
