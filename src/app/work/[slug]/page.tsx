@@ -6,10 +6,46 @@ import {
   getAllCases,
   getCaseBySlug,
   processSteps,
+  type CaseArtifact,
 } from "@/content/cases";
 import { site } from "@/content/site";
 
 type Props = { params: Promise<{ slug: string }> };
+
+function CaseFigure({
+  art,
+  preload = false,
+  gallery = false,
+}: {
+  art: CaseArtifact;
+  preload?: boolean;
+  gallery?: boolean;
+}) {
+  return (
+    <figure
+      className={`case-figure${gallery ? " case-figure--gallery" : ""}${art.portrait ? " case-figure--portrait" : ""}`}
+    >
+      <div className="case-figure__frame">
+        <Image
+          src={art.src}
+          alt={art.alt}
+          width={art.portrait ? 820 : 1120}
+          height={art.portrait ? 1106 : 630}
+          sizes={
+            gallery
+              ? art.portrait
+                ? "(max-width: 700px) 100vw, 360px"
+                : "(max-width: 700px) 100vw, 520px"
+              : "(max-width: 1120px) 100vw, 1120px"
+          }
+          className="case-figure__img"
+          preload={preload}
+        />
+      </div>
+      <figcaption>{art.caption}</figcaption>
+    </figure>
+  );
+}
 
 export function generateStaticParams() {
   return getAllCases().map((c) => ({ slug: c.slug }));
@@ -32,6 +68,17 @@ export default async function CasePage({ params }: Props) {
 
   const artifacts = study.artifacts ?? [];
   const metrics = study.metrics ?? [];
+  const hero = artifacts[0];
+  const challengeArts = artifacts.filter(
+    (art, index) => index > 0 && art.slot === "challenge",
+  );
+  const approachArts = artifacts.filter(
+    (art, index) => index > 0 && art.slot === "approach",
+  );
+  const galleryArts = artifacts.filter(
+    (art, index) =>
+      index > 0 && art.slot !== "challenge" && art.slot !== "approach",
+  );
 
   return (
     <div className={`case-page${study.dowAccent ? " case-page--dow" : ""}`}>
@@ -92,23 +139,8 @@ export default async function CasePage({ params }: Props) {
             </ul>
           </section>
 
-          {artifacts[0] ? (
-            <figure
-              className={`case-figure${artifacts[0].portrait ? " case-figure--portrait" : ""}`}
-            >
-              <div className="case-figure__frame">
-                <Image
-                  src={artifacts[0].src}
-                  alt={artifacts[0].alt}
-                  width={artifacts[0].portrait ? 820 : 1120}
-                  height={artifacts[0].portrait ? 1106 : 630}
-                  sizes="(max-width: 1120px) 100vw, 1120px"
-                  className="case-figure__img"
-                  priority
-                />
-              </div>
-              <figcaption>{artifacts[0].caption}</figcaption>
-            </figure>
+          {hero ? (
+            <CaseFigure art={hero} preload />
           ) : study.thumb ? (
             <figure className="case-figure">
               <div className="case-figure__frame">
@@ -119,7 +151,7 @@ export default async function CasePage({ params }: Props) {
                   height={630}
                   sizes="(max-width: 1120px) 100vw, 1120px"
                   className="case-figure__img"
-                  priority
+                  preload
                 />
               </div>
               <figcaption>{study.thumbAlt}</figcaption>
@@ -130,6 +162,10 @@ export default async function CasePage({ params }: Props) {
             <h2>Context</h2>
             <p>{study.context}</p>
           </section>
+
+          {challengeArts.map((art) => (
+            <CaseFigure key={art.src} art={art} />
+          ))}
 
           {study.pullQuote ? (
             <blockquote className="case-quote">
@@ -146,31 +182,16 @@ export default async function CasePage({ params }: Props) {
             </ul>
           </section>
 
-          {artifacts.length > 1 ? (
+          {approachArts.map((art) => (
+            <CaseFigure key={art.src} art={art} />
+          ))}
+
+          {galleryArts.length > 0 ? (
             <section className="case-gallery" aria-label="Project artifacts">
               <h2 className="case-gallery__title">Artifacts</h2>
               <div className="case-gallery__grid">
-                {artifacts.slice(1).map((art) => (
-                  <figure
-                    key={art.src}
-                    className={`case-figure case-figure--gallery${art.portrait ? " case-figure--portrait" : ""}`}
-                  >
-                    <div className="case-figure__frame">
-                      <Image
-                        src={art.src}
-                        alt={art.alt}
-                        width={art.portrait ? 820 : 1120}
-                        height={art.portrait ? 1106 : 630}
-                        sizes={
-                          art.portrait
-                            ? "(max-width: 700px) 100vw, 360px"
-                            : "(max-width: 700px) 100vw, 520px"
-                        }
-                        className="case-figure__img"
-                      />
-                    </div>
-                    <figcaption>{art.caption}</figcaption>
-                  </figure>
+                {galleryArts.map((art) => (
+                  <CaseFigure key={art.src} art={art} gallery />
                 ))}
               </div>
             </section>
