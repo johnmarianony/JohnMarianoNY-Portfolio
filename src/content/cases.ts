@@ -20,6 +20,21 @@ export type CaseMetric = {
   label: string;
 };
 
+export type CaseStat = {
+  /** Numeric target for the count-up. */
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  /**
+   * If set, this is the final visible numeral (for ranges such as 20–25%).
+   * Count up only when `display` is omitted.
+   */
+  display?: string;
+  label: string;
+  /** Optional 0–1 fill for a subtle progress ring or bar. Omit when it would be meaningless. */
+  progress?: number;
+};
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -43,6 +58,11 @@ export type CaseStudy = {
   posterThumb?: string;
   thumbAlt?: string;
   metrics?: CaseMetric[];
+  /**
+   * Animated mid-story results. When present, omit `metrics` so the same
+   * numbers are not repeated in the static hero band.
+   */
+  stats?: CaseStat[];
   artifacts?: CaseArtifact[];
   pullQuote?: string;
   outcomes: string[];
@@ -430,131 +450,378 @@ export const cases: CaseStudy[] = [
       "Modernization sticks when research earns the right to change workflows—not when a redesign is declared.",
   },
   {
+    slug: "star-ccm-design-practice",
+    title: "Building a Design Practice: Siemens STAR-CCM+",
+    client: "Siemens",
+    sector: "Enterprise engineering software",
+    role: "First HCI design lead for STAR-CCM+, then acting manager of the department for 18+ months. I reported directly to senior management and the director. I led a small HCI team, kept the research moving, and I was promoted in 2020.",
+    dates: "March 2019 to January 2022",
+    featured: true,
+    order: 6,
+    proof: "Direct customer access, a monumental cultural shift",
+    clearance: "public",
+    platforms: ["Simcenter STAR-CCM+"],
+    tags: ["Leadership", "Design ops"],
+    thumb:
+      "/images/cases/star-ccm-design-practice/practice-influence-culture-timeline.jpg",
+    thumbAlt:
+      "Timeline of the STAR-CCM+ design practice, from a customer guardrail to direct HCI access.",
+    summary:
+      "Within a few months of standing up a new HCI department, I was acting manager of a small team, reporting to the director and senior management. The work that defined the practice was winning direct customer access for research, observation, and interviews.",
+    teaser:
+      "Within a few months of standing up a new HCI department, I was acting manager of a small team, reporting to the director and senior management. The work that defined the practice was winning direct customer access for research, observation, and interviews.",
+    stats: [
+      { value: 30, suffix: "%", label: "Scope cut per sprint", progress: 0.3 },
+      { value: 12, label: "Lunch-and-learns across 4 cohorts" },
+      { value: 4, label: "Weekly research meetings" },
+      { value: 33, suffix: "%", label: "Higher retention", progress: 0.33 },
+      { value: 2, suffix: "x", label: "On-time delivery" },
+      {
+        value: 20,
+        display: "20–25%",
+        suffix: "%",
+        label: "QA churn down",
+      },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/star-ccm-design-practice/practice-influence-culture-timeline.jpg",
+        alt: "Timeline of the STAR-CCM+ HCI practice, from a developer-era customer guardrail through support and new-hire research to direct customer access.",
+        caption:
+          "From a developer-era customer guardrail to direct HCI access, a shift the company treated as monumental.",
+        board: true,
+        width: 1600,
+        height: 1100,
+      },
+      {
+        src: "/images/cases/star-ccm-design-practice/practice-maturity-before-after.jpg",
+        alt: "Before-and-after contact-path diagram comparing PM-only customer contact with HCI customer research after access was granted.",
+        caption:
+          "Before, Product Management were the only customer touch points. After, HCI won direct access for research, observation, and interviews.",
+        slot: "challenge",
+        board: true,
+        width: 1600,
+        height: 1100,
+      },
+      {
+        src: "/images/cases/star-ccm-design-practice/practice-feature-overgrowth-vs-consolidation.jpg",
+        alt: "Comparison of feature overgrowth against a consolidated workflow.",
+        caption:
+          "Feature overgrowth versus consolidation. The dense tree we inherited, and the simpler path we were aiming for.",
+        slot: "approach",
+        width: 1024,
+        height: 867,
+      },
+    ],
+    pullQuote:
+      "A small team won direct customer access for research, observation, and interviews, a change the company treated as a monumental cultural shift.",
+    outcomes: [
+      "A small team won direct customer access for research, observation, and interviews, a change the company treated as a monumental cultural shift.",
+      "With that access, we boosted user retention by 33%, reduced QA churn by 20 to 25% and new feature bugs by 8 to 12%, and doubled on-time feature delivery.",
+      "When I left, the director told me the research and design systems would keep guiding the product, and Simcenter STAR-CCM+ 2022.1 was the first release built on that research backbone.",
+    ],
+    context:
+      "Within a few months of standing up a new HCI department, I was acting manager of a small team, reporting to the director and senior management. The work that defined the practice was winning direct customer access for research, observation, and interviews.",
+    problem:
+      "The HCI design department launched when I joined, branching off from the UX development team. I was the first HCI lead hire on a newly formed team that also included a designer, a front-end developer, and a project manager.\n\nThe STAR-CCM+ interface was powerful and notoriously dense, buried under tree directories, and it had not evolved much in nearly 20 years. Engineering was skeptical of human-centered methods, particularly those from the Nielsen Norman Group. The culture assumed PhD users could absorb the complexity, and I was an outsider in a first HCI-lead seat. Teams worked in silos, with limited cross-functional collaboration.\n\nThe HCI team sat under the development banner. Years earlier, a guardrail had been put up that barred developers from speaking to customers, to prevent scope creep and feature bloat. Product Management were the only customer touch points. Direct research, observation, and interviews were off limits.\n\nWhen the manager took a leave of absence a few months in, there was no one else clearly carrying the practice. The research and the Next Gen work still had to move.",
+    opportunity:
+      "I stepped in as acting manager for 18+ months, reporting to the director and senior management. I worked with the project manager and the director to solidify a plan, and I kept a small team focused on research.\n\nI moved us from abstract concepts to visual overlays on the existing Java client, so engineering could see the work as actionable, not theoretical. That is how trust with engineering started to stick.\n\nWe kept the research moving with the support team and with new hires, often by shoulder-surfing expert users who were new to the company, the same approach I used when a cultural barrier kept me from reaching actual customers on the A to Z workflow. That progress showed leadership how we would approach customers, and it gave them the confidence to grant HCI direct access for research, observation, and interviews.\n\nI ran 12 weekly lunch-and-learns with four software developer cohorts, and I directed a research program with four weekly customer research meetings, which cut product scope by 30% per sprint. Nielsen Norman methods, feedback loops, and collaboration were how I kept building that trust. Over time, engineers started pulling me into technical discussions, not just design reviews. I was promoted in 2020 for embedding UX in the product lifecycle and improving cross-team collaboration.",
+    constraint:
+      "The HCI team sat under the development banner. Years earlier, a guardrail had been put up that barred developers from speaking to customers, to prevent scope creep and feature bloat. Product Management were the only customer touch points.\n\nI was a first HCI lead in a PhD-heavy shop that treated UX as an outsider, then an acting manager of a small team, reporting above the original manager seat, without a long runway to pause the work. Research had to earn trust with data and a disciplined approach, not with a redesign pitch. Until leadership granted access, we could not go directly to customers.",
+    approach: [
+      "Stepped in as acting manager of a small team and kept the research moving with support and new hires.",
+      "Used Java-client visual overlays, lunch-and-learns, and weekly research meetings to earn trust and cut scope.",
+      "Won direct customer access for research, observation, and interviews.",
+    ],
+    reflection:
+      "A small team won direct customer access, a change the company treated as a monumental cultural shift, and Simcenter STAR-CCM+ 2022.1 was the first release built on that research backbone.",
+  },
+  {
+    slug: "star-ccm-discovery-workshop",
+    title: "Discovery Workshop: Siemens STAR-CCM+",
+    client: "Siemens",
+    sector: "Enterprise engineering software",
+    role: "I designed and facilitated the workshop as the new HCI lead, in a room of more than 30 departmental leaders and program managers from the major development teams and project management.",
+    dates: "3 days",
+    featured: true,
+    order: 7,
+    proof: "90% positive feedback, and a three-year approach",
+    clearance: "public",
+    platforms: ["Simcenter STAR-CCM+"],
+    tags: ["Facilitation", "Strategy"],
+    thumb:
+      "/images/cases/star-ccm-discovery-workshop/workshop-W6-major-concepts.jpg",
+    thumbAlt:
+      "Workshop wall of major concepts from the STAR-CCM+ discovery session.",
+    summary:
+      "I had to invent our discovery workshop in my first month, in a room with the major development teams and project management, and that session set the approach we followed for the next three years.",
+    teaser:
+      "I had to invent our discovery workshop in my first month, in a room with the major development teams and project management, and that session set the approach we followed for the next three years.",
+    stats: [
+      { value: 3, suffix: " days", label: "Workshop" },
+      { value: 30, suffix: "+", label: "Leaders" },
+      { value: 120, suffix: "+", label: "Ideas" },
+      { value: 4, label: "Actionable steps" },
+      {
+        value: 90,
+        suffix: "%",
+        label: "Positive feedback",
+        progress: 0.9,
+      },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-W6-major-concepts.jpg",
+        alt: "Workshop wall covered in major-concept notes from the STAR-CCM+ discovery session.",
+        caption: "Workshop wall: major concepts the room aligned on.",
+        width: 4032,
+        height: 3024,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-C7-guidance-automation-wall.jpg",
+        alt: "Workshop whiteboard with handwritten Guidance, Automation, and Templating notes from a STAR-CCM+ session.",
+        caption:
+          "Workshop wall: Guidance, Automation, and Templating, before the path had a name.",
+        slot: "challenge",
+        width: 4032,
+        height: 3024,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-W1-preprocess-notes.jpg",
+        alt: "Workshop wall of preprocess notes.",
+        caption: "Preprocess notes from the workshop wall.",
+        width: 4032,
+        height: 3024,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-W2-breakout-wall.jpg",
+        alt: "Cropped workshop breakout wall with pipeline and process sketches.",
+        caption: "Breakout wall: pipeline and process sketches from the session.",
+        width: 3460,
+        height: 3024,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-W3-encapsulating-model.jpg",
+        alt: "Workshop wall notes on encapsulating the model.",
+        caption: "Workshop wall: encapsulating the model.",
+        width: 4032,
+        height: 3024,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-W5-filtered-view-approach.jpg",
+        alt: "Upright workshop sheet titled Filtered View approach.",
+        caption: "Filtered View approach, captured from the workshop wall.",
+        portrait: true,
+        width: 3024,
+        height: 4032,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-W8-room-sketch.jpg",
+        alt: "Hand-drawn sketch of the workshop room layout.",
+        caption: "Room sketch of the workshop setup.",
+        portrait: true,
+        width: 1650,
+        height: 2400,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-W-austin-room-sketch-preso.jpg",
+        alt: "Workshop room sketch used in a session readout.",
+        caption: "Workshop room sketch from the session readout.",
+        portrait: true,
+        width: 1650,
+        height: 2400,
+      },
+    ],
+    pullQuote:
+      "That session set the approach we followed for the next three years.",
+    outcomes: [
+      "The workshop earned 90% positive stakeholder feedback.",
+      "The four steps from those 120+ ideas became the backbone of our next-gen UI wireframes and the approach we followed for the next three years.",
+    ],
+    context:
+      "I had to invent our discovery workshop in my first month, in a room with the major development teams and project management, and that session set the approach we followed for the next three years.",
+    problem:
+      "STAR-CCM+ was a sprawling, feature-bloated platform, and the major development teams and project management did not share a language for how people actually used it, or for what Next Gen should become.\n\nEngineering was skeptical of human-centered methods. UX had little standing, and I had to get buy-in in my first month, before we had a three-year plan we could all stand on.",
+    opportunity:
+      "I designed a three-day in-person discovery workshop and ran it with the major development teams and the project management team, more than 30 departmental leaders and program managers.\n\nWe surfaced pain points, workshopped solutions, and pushed 120+ ideas through three design iterations, down to four actionable steps for next-gen UI wireframes. That session gave us the approach we followed for the next three years.",
+    constraint:
+      "I had to invent and run the workshop in my first month, in a culture that was still unconvinced UX belonged in engineering planning. The room had to include all the major development teams and project management, and the output had to be a plan we could actually execute, not a stack of notes we would leave behind.",
+    approach: [
+      "Designed and facilitated a three-day in-person discovery workshop in the first month.",
+      "Brought the major development teams and project management into one room, more than 30 leaders.",
+      "Worked 120+ ideas down to four actionable steps for next-gen UI wireframes.",
+    ],
+    reflection:
+      "The workshop earned 90% positive stakeholder feedback, and those four steps became the approach we followed for the next three years.",
+  },
+  {
     slug: "star-ccm-az-workflow",
     title: "End-to-End Workflow Mapping: Siemens STAR-CCM+",
     client: "Siemens",
     sector: "Enterprise engineering software",
-    role: "UX research & analysis",
-    dates: "Siemens tenure",
-    featured: true,
-    order: 6,
-    proof: "First clear A–Z workflow map where none had been defined",
+    role: "Lead UX research, strategy, and design. I walked the A to Z path on a real model, often by shoulder-surfing expert users who were new to the company, and I turned that path into a shared language for product and engineering.",
+    dates: "March 2019 to January 2020",
+    featured: false,
+    order: 10,
+    proof: "First clear A to Z workflow map where none had been defined",
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
     tags: ["UX research", "Process"],
     thumb: "/images/cases/star-ccm-az-workflow-panel.jpg",
-    thumbAlt: "Sterilized Simcenter STAR-CCM+ A–Z workflow splash panel",
-    teaser:
-      "Mapped the first clear A–Z workflow in STAR-CCM+—where none had ever been defined.",
+    thumbAlt: "Sterilized Simcenter STAR-CCM+ A to Z workflow splash panel.",
     summary:
-      "Initial analysis to understand the most robust end-to-end workflow in the application—because no workflows had ever been clearly defined.",
-    metrics: [
-      { value: "A→Z", label: "First end-to-end workflow map" },
-      { value: "Gaps", label: "Friction feature teams shipped around" },
-      { value: "Shared", label: "Language for product integrity" },
-    ],
+      "Nobody had mapped how people actually ran STAR-CCM+ from start to finish, so I walked a real model A to Z, often by shoulder-surfing expert users who were new to the company, because a cultural barrier kept me from reaching actual customers.",
+    teaser:
+      "Nobody had mapped how people actually ran STAR-CCM+ from start to finish, so I walked a real model A to Z, often by shoulder-surfing expert users who were new to the company, because a cultural barrier kept me from reaching actual customers.",
     artifacts: [
       {
         src: "/images/cases/star-ccm-az-workflow-panel.jpg",
-        alt: "Sterilized Simcenter STAR-CCM+ A–Z workflow splash panel",
-        caption: "Sterilized splash — undefined path mapped A→Z",
+        alt: "Sterilized Simcenter STAR-CCM+ A to Z workflow splash panel.",
+        caption: "Sterilized splash, the undefined path mapped A to Z.",
+        width: 1280,
+        height: 720,
       },
       {
-        src: "/images/cases/star-ccm-az-workflow-panel-2.jpg",
-        alt: "Sterilized overgrowth versus consolidation comparison panel",
-        caption: "Sterilized comparison — overgrowth versus consolidation",
-      },
-      {
-        src: "/images/cases/siemens/siemens-mid-challenge-workshop-guidance.jpg",
-        alt: "Workshop whiteboard with handwritten Guidance, Automation, and Templating notes from a STAR-CCM+ session",
+        src: "/images/cases/star-ccm-az-workflow/az-C11-triggered-by-right-click.jpg",
+        alt: "Legacy STAR-CCM+ Java client with a directory tree and a scalar field dialog triggered by right click.",
         caption:
-          "Workshop wall - Guidance, Automation, and Templating before the path had a name",
+          "Directory-era client: deep tree navigation and right-click to trigger work.",
         slot: "challenge",
+        width: 1270,
+        height: 699,
       },
       {
-        src: "/images/cases/siemens/siemens-mid-challenge-right-click.jpg",
-        alt: "Legacy STAR-CCM+ Java client with a directory tree and a scalar field dialog triggered by right click",
+        src: "/images/cases/star-ccm-az-workflow/az-A1-templates.jpg",
+        alt: "Simcenter STAR-CCM+ Views screen showing a drag monitor plot as a Simulation Templates concept.",
         caption:
-          "Directory-era client - deep tree navigation and right-click to trigger work",
-        slot: "challenge",
-      },
-      {
-        src: "/images/cases/siemens/siemens-mid-approach-templates.jpg",
-        alt: "Simcenter STAR-CCM+ Views screen showing a drag monitor plot as a Simulation Templates concept",
-        caption:
-          "Simulation Templates - shared workflow best practices you can reuse",
+          "Simulation Templates, shared workflow best practices you can reuse.",
         slot: "approach",
+        width: 1920,
+        height: 1080,
       },
       {
-        src: "/images/cases/siemens/siemens-mid-approach-az-walls.jpg",
-        alt: "Custom tree console of parent and child nodes beside a boundary-condition map of a duct assembly",
-        caption:
-          "A to Z walls - the mapped path from geometry through reporting",
+        src: "/images/cases/star-ccm-az-workflow/az-A4-custom-tree-walls.jpg",
+        alt: "Custom tree console of parent and child nodes beside a boundary-condition map of a duct assembly.",
+        caption: "A to Z walls, the mapped path from geometry through reporting.",
         slot: "approach",
-      },
-      {
-        src: "/images/cases/siemens/siemens-star-ccm-user-journey-splash.png",
-        alt: "Siemens Simcenter STAR-CCM+ User Journey splash and login",
-        caption: "Labeled: STAR-CCM+ User Journey — product entry experience",
-      },
-      {
-        src: "/images/cases/siemens/siemens-star-ccm-az-workflow-board.png",
-        alt: "Siemens STAR-CCM+ A-to-Z workflow analysis board",
-        caption: "Labeled: A–Z workflow analysis — mapping the undefined path",
-      },
-      {
-        src: "/images/cases/siemens/siemens-star-ccm-az-detail.png",
-        alt: "Siemens STAR-CCM+ A-to-Z workflow detail close-up",
-        caption: "Labeled: A–Z workflow detail — steps made visible",
-      },
-      {
-        src: "/images/cases/siemens/siemens-web-monitoring-client.png",
-        alt: "Siemens STAR-CCM+ Web Monitoring Client prototype",
-        caption: "Labeled: Web Monitoring Client — clickable prototype work",
-      },
-      {
-        src: "/images/cases/siemens/siemens-job-manager-stop-button.jpg",
-        alt: "Siemens STAR-CCM+ Job Manager stop button research finding",
-        caption: "Labeled: Job Manager Stop Button — research-driven workflow fix",
-      },
-      {
-        src: "/images/cases/siemens/siemens-tabular-editor.png",
-        alt: "Siemens STAR-CCM+ tabular editor concept exploration",
-        caption: "Labeled: Tabular Editor — next-gen UI exploration",
-      },
-      {
-        src: "/images/cases/siemens/siemens-modernization-diagram.png",
-        alt: "Siemens STAR-CCM+ modernization diagram",
-        caption: "Labeled: Modernization diagram — from legacy to next-gen UI",
-      },
-      {
-        src: "/images/cases/siemens/siemens-ux-influence-timeline.png",
-        alt: "Siemens UX influence timeline from direct work to continued use",
-        caption: "Labeled: UX Influence Timeline — impact after departure",
+        width: 1920,
+        height: 1080,
       },
     ],
-    pullQuote:
-      "If the workflow was never defined, every feature is a guess.",
+    pullQuote: "If the workflow was never defined, every feature is a guess.",
     outcomes: [
-      "Documented A–Z workflow as a shared product reference",
-      "Surfaced gaps that feature teams had been shipping around",
-      "Foundation for later modernization and inclusive research",
+      "The A to Z map became the shared reference for what complete meant, and the gaps feature teams had been shipping around finally had somewhere to land.",
+      "That work was a foundation for later Java-client improvements and for the Next Gen path.",
     ],
     context:
-      "A deep engineering product with powerful capabilities and implicit workflows living only in expert heads.",
+      "Nobody had mapped how people actually ran STAR-CCM+ from start to finish, so I walked a real model A to Z, often by shoulder-surfing expert users who were new to the company, because a cultural barrier kept me from reaching actual customers.",
     problem:
       "Nobody had ever mapped how people actually ran STAR-CCM+ from start to finish. Engineers kept a library of notebooks for workflow directions, and something like a rolodex to remember which notebook and which page held the next step.\n\nThe UI itself was a folder directory that leaned on right-click actions and deep folder navigation to trigger work. Repetitive steps meant climbing up and down the tree, sometimes deep into nested folders, just to do the same action again.\n\nThe product was as deep as a Photoshop-class tool, so the real path lived on paper, in expert heads, and inside that directory model, and every feature team shipped against a different mental model. The culture assumed PhD users could absorb the complexity. Research kept showing that the complexity was the tax, not the badge.",
     opportunity:
-      "Walk a real model A to Z (geometry, meshing, physics, simulation, reporting), make the robust path visible in the product instead of across notebooks and folder trees, and give product and engineering a shared language for what “complete” meant before next-gen and cloud work started. Once the path was named, the gaps feature teams had been shipping around finally had somewhere to land.\n\nWe also saw that we could land some of those improvements in the new cloud offering first, because desktop adoption moved slowly. Users did not update often. They expected newer releases to be less stable than older ones, and their models were most compatible with older builds. That same research made the case for stronger backwards compatibility so newer software could earn trust instead of waiting years for people to leave a known-good version.\n\nProduct management drove Simulation Templates as a way to carry shared workflow best practices; I worked on that effort with the team, alongside Web Viewer, so people could reuse a protected path and share results without another trip through paper notes or the directory tree.",
+      "Walk a real model A to Z (geometry, meshing, physics, simulation, reporting), make the robust path visible in the product instead of across notebooks and folder trees, and give product and engineering a shared language for what \"complete\" meant before next-gen work started. Once the path was named, the gaps feature teams had been shipping around finally had somewhere to land.\n\nI often did that by shoulder-surfing expert users, preferably people who were new to the company, because a cultural barrier kept me from reaching actual customers at the start.\n\nProduct management drove Simulation Templates as a way to carry shared workflow best practices. I worked on that effort with the team, so people could reuse a protected path without another trip through paper notes or the directory tree.",
     constraint:
-      "Legacy Java client built around directory-era information architecture and right-click driven actions, plus a first-HCI-lead seat inside a PhD-heavy shop that treated UX as an outsider. Research had to earn trust with data and collaboration, not with a redesign pitch. Cloud and next-gen migration was already on the horizon, so the map had to hold for the product people used today and the one they were about to build.",
+      "Legacy Java client built around directory-era information architecture and right-click driven actions, plus a first-HCI-lead seat inside a PhD-heavy shop that treated UX as an outsider. Research had to earn trust with data and collaboration, not with a redesign pitch. Next-gen migration was already on the horizon, so the map had to hold for the product people used today and the one they were about to build.",
     approach: [
-      "Mapped the robust path from start to finish",
-      "Named friction that siloed feature work had normalized",
-      "Gave teams a shared language for workflow integrity",
+      "Walked a real model A to Z, often by shoulder-surfing expert users who were new to the company.",
+      "Made the robust path visible and gave product and engineering a shared language for what complete meant.",
+      "Worked with the team on Simulation Templates so people could reuse a protected path.",
     ],
     reflection:
       "If the workflow was never defined, every feature is a guess. Naming the path is strategy.",
+  },
+  {
+    slug: "star-ccm-cloud-payg",
+    title: "Cloud Pay-as-you-go Research: Siemens STAR-CCM+",
+    client: "Siemens",
+    sector: "Enterprise engineering software",
+    role: "Lead UX research, strategy, and design. My research was integral to developing the cloud pay-as-you-go project, including Web Monitoring concepts that landed in our Power On Cloud offering, and a Job Manager stop path for runs that were already in flight.",
+    dates: "2019 to 2022",
+    featured: false,
+    order: 11,
+    proof: "50% faster time-to-market",
+    clearance: "public",
+    platforms: ["Simcenter STAR-CCM+"],
+    tags: ["Research", "Product strategy"],
+    thumb: "/images/cases/star-ccm-cloud-payg/cloud-credits-time.jpg",
+    thumbAlt:
+      "Diagram of prepaid cloud credits allocated over a time window.",
+    summary:
+      "Users did not trust new desktop releases, and a weekend cloud run could go wrong with no way to stop it. The research I was already doing became the case for a pay-as-you-go cloud path, and for giving people control once a job was in flight.",
+    teaser:
+      "Users did not trust new desktop releases, and a weekend cloud run could go wrong with no way to stop it. The research I was already doing became the case for a pay-as-you-go cloud path, and for giving people control once a job was in flight.",
+    stats: [
+      {
+        value: 50,
+        suffix: "%",
+        label: "Faster time-to-market",
+        progress: 0.5,
+      },
+      { value: 12, suffix: "-month", label: "Credit window" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/star-ccm-cloud-payg/cloud-credits-time.jpg",
+        alt: "Diagram of prepaid cloud credits allocated to users and a team over a time window.",
+        caption:
+          "Prepaid credits, often on a 12-month window, allocated to users and teams from an account pool.",
+        width: 720,
+        height: 540,
+      },
+      {
+        src: "/images/cases/star-ccm-cloud-payg/cloud-poc-submit-credits.jpg",
+        alt: "Cropped STAR-CCM+ cloud job submission screen showing credit balance and burn rate, with desktop chrome removed.",
+        caption:
+          "Submitting a cloud job, with balance and burn rate visible before the run starts.",
+        slot: "approach",
+        width: 1920,
+        height: 785,
+      },
+      {
+        src: "/images/cases/star-ccm-cloud-payg/cloud-poc-monitor-credits.jpg",
+        alt: "Cropped STAR-CCM+ cloud job monitor showing credit burn during a run, with desktop chrome removed.",
+        caption:
+          "Monitoring a run, and whether there are enough credits to reach convergence.",
+        slot: "approach",
+        width: 1920,
+        height: 785,
+      },
+      {
+        src: "/images/cases/star-ccm-cloud-payg/cloud-web-monitoring-client.jpg",
+        alt: "STAR-CCM+ Web Monitoring Client prototype.",
+        caption:
+          "Web Monitoring Client prototype. The concepts landed in the Power On Cloud offering.",
+        width: 1920,
+        height: 1080,
+      },
+      {
+        src: "/images/cases/star-ccm-cloud-payg/cloud-job-manager-stop-button.jpg",
+        alt: "STAR-CCM+ Job Manager stop-button research finding, with the internal hostname cropped out of the browser chrome.",
+        caption:
+          "Job Manager stop path, so a run already in flight could be halted.",
+        width: 1920,
+        height: 941,
+      },
+    ],
+    pullQuote: "A weekend cloud run could go wrong with no way to stop it.",
+    outcomes: [
+      "Formal UX research and design accelerated time-to-market by 50% for the cloud portal initiative.",
+      "The stop-button work drew immediate positive feedback from product management, service support, and clients on a workflow that touched the whole platform.",
+    ],
+    context:
+      "Users did not trust new desktop releases, and a weekend cloud run could go wrong with no way to stop it. The research I was already doing became the case for a pay-as-you-go cloud path, and for giving people control once a job was in flight.",
+    problem:
+      "Desktop adoption moved slowly. Users did not update often. They expected newer releases to be less stable than older ones, and their models were most compatible with older builds, so people stayed on known-good versions for years.\n\nThe cloud path had its own friction. Users were reluctant to adopt a cloud-based solution because of security concerns. Renders on a cloud server farm could run for days, often over the weekend. People would come back to corrupted, incomplete, or \"trending bad\" data, and they had no way to stop the job once it was engaged. I also watched users rotate through screens just to keep an eye on a calculation as it ran.",
+    opportunity:
+      "The research I was already doing made the case for a pay-as-you-go cloud path, and for landing some improvements in the new cloud offering first, instead of waiting on desktop adoption. That same research argued for stronger backwards compatibility, so newer software could earn trust instead of waiting years for people to leave a known-good version.\n\nWith the Job Manager team, we iterated a stop path and expedited a hotfix, so people could halt a run, inspect the data, and reset the model when they needed to. I also designed a clickable Web Monitoring Client prototype, based on those over-the-shoulder observations, so users could watch a render and its plots without flipping through screens. That prototype did not ship as its own application. Its concepts were incorporated into our Power On Cloud offering, embedded in the Java client. Web Viewer later let people share results without another trip through a licensed desktop session.\n\nThe pay-as-you-go model used prepaid credits, often set to expire 12 months from purchase, and allocated to users and groups from an account pool. While a job ran, people needed to see their balance and burn rate, and to judge whether they had enough credits to reach convergence. Research sessions walked users through submitting jobs, watching that burn rate, and adding credits if they ran short.",
+    constraint:
+      "We were asking people to trust a cloud path while they still did not fully trust new desktop builds, and while security concerns were real. The Job Manager and monitoring work had to fit a legacy Java client and an engineering team that needed a feasible path, not a separate product we did not have the standing to force. Web Monitoring was a prototype. It had to be useful even if it never shipped under its own name.",
+    approach: [
+      "Made the case for a pay-as-you-go cloud path and for landing some improvements in the cloud offering first.",
+      "Iterated a Job Manager stop path and a Web Monitoring prototype whose concepts landed in Power On Cloud.",
+      "Designed the credit experience: prepaid balances, a 12-month window, burn rate, and enough credits to reach convergence.",
+    ],
+    reflection:
+      "Formal UX research and design accelerated time-to-market by 50% for the cloud portal initiative, and the stop path gave people control once a job was in flight.",
   },
   {
     slug: "adobe-social-onboarding",
@@ -564,7 +831,7 @@ export const cases: CaseStudy[] = [
     role: "Business Consultant, Adobe Social, and the lead of three onshore consultants. The team had a manager, the three of us onshore, and eight offshore technical consultants who set up the configurations from the requirements we gathered. I was aligned with the offshore lead. I mentored the other onshore consultants, ran standups, and assigned work. I took the most complicated setups, the largest customers, and the at-risk contracts, and I stepped in when other engagements started to go sideways. When the manager left the position, I stepped into that gap. I was not the product owner.",
     dates: "Dec 2012 to Jan 2015",
     featured: true,
-    order: 7,
+    order: 8,
     proof: "6 months to 2 weeks, and 25% higher adoption",
     clearance: "public",
     platforms: ["Adobe Social"],
@@ -626,7 +893,7 @@ export const cases: CaseStudy[] = [
     role: "Experience Designer, Cross-Device Event Applications. I designed the Screens and mobile applications, and coordinated development for the engineers by leading front-end dev efforts. I worked with three sales leads and two developers.",
     dates: "Jan to Mar 2017",
     featured: true,
-    order: 8,
+    order: 9,
     proof: "+20% lead conversions, 250+ interactions, 45+ leads",
     clearance: "public",
     platforms: ["AEM Mobile", "AEM Screens"],
@@ -831,7 +1098,7 @@ export const cases: CaseStudy[] = [
     role: "UX Designer, Adobe consulting. Presales heuristic review and live testing for Darden / Olive Garden.",
     dates: "September 2017",
     featured: false,
-    order: 10,
+    order: 12,
     proof: "Darden shipped the winner. Order Now back on top.",
     clearance: "public",
     platforms: ["Adobe Target", "Olive Garden ordering"],

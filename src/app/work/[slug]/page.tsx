@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { StatBlocks } from "@/components/stat-blocks";
 import {
   getAllCases,
   getCaseBySlug,
@@ -104,7 +105,8 @@ export default async function CasePage({ params }: Props) {
   if (!study) notFound();
 
   const artifacts = study.artifacts ?? [];
-  const metrics = study.metrics ?? [];
+  const hasStats = Boolean(study.stats?.length);
+  const metrics = hasStats ? [] : (study.metrics ?? []);
   const hero = artifacts[0];
   const challengeArts = artifacts.filter(
     (art, index) => index > 0 && art.slot === "challenge",
@@ -115,6 +117,63 @@ export default async function CasePage({ params }: Props) {
   const galleryArts = artifacts.filter(
     (art, index) =>
       index > 0 && art.slot !== "challenge" && art.slot !== "approach",
+  );
+
+  const storyAfterContext = (
+    <>
+      {challengeArts.map((art) => (
+        <CaseFigure key={art.src} art={art} />
+      ))}
+
+      {study.pullQuote ? (
+        <blockquote className="case-quote">
+          <p>{study.pullQuote}</p>
+        </blockquote>
+      ) : null}
+
+      <section className="case-section">
+        <h2>Approach</h2>
+        <ul>
+          {study.approach.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      {approachArts.map((art) => (
+        <CaseFigure key={art.src} art={art} />
+      ))}
+
+      {galleryArts.length > 0 ? (
+        <section className="case-gallery" aria-label="Project artifacts">
+          <h2 className="case-gallery__title">Artifacts</h2>
+          <div className="case-gallery__grid">
+            {galleryArts.map((art) => (
+              <CaseFigure key={art.src} art={art} gallery />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="case-section">
+        <h2>Reflection</h2>
+        <p>{study.reflection}</p>
+      </section>
+
+      <section className="case-section case-section--next">
+        <h2>Next</h2>
+        <p>
+          Want the deeper walkthrough or related artifacts?{" "}
+          <a href={`mailto:${site.email}`}>Email {site.email}</a> or{" "}
+          <Link href="/contact">use the contact page</Link>.
+        </p>
+        <p className="case-back">
+          <Link href="/work" className="btn btn--ghost">
+            ← All work
+          </Link>
+        </p>
+      </section>
+    </>
   );
 
   return (
@@ -174,7 +233,9 @@ export default async function CasePage({ params }: Props) {
           </ol>
         </section>
 
-        <article className="case-article">
+        <article
+          className={`case-article${hasStats ? " case-article--split" : ""}`}
+        >
           <section className="case-section">
             <h2>Outcomes</h2>
             <ul>
@@ -213,60 +274,17 @@ export default async function CasePage({ params }: Props) {
             />
           </section>
 
-          {challengeArts.map((art) => (
-            <CaseFigure key={art.src} art={art} />
-          ))}
-
-          {study.pullQuote ? (
-            <blockquote className="case-quote">
-              <p>{study.pullQuote}</p>
-            </blockquote>
-          ) : null}
-
-          <section className="case-section">
-            <h2>Approach</h2>
-            <ul>
-              {study.approach.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-
-          {approachArts.map((art) => (
-            <CaseFigure key={art.src} art={art} />
-          ))}
-
-          {galleryArts.length > 0 ? (
-            <section className="case-gallery" aria-label="Project artifacts">
-              <h2 className="case-gallery__title">Artifacts</h2>
-              <div className="case-gallery__grid">
-                {galleryArts.map((art) => (
-                  <CaseFigure key={art.src} art={art} gallery />
-                ))}
-              </div>
-            </section>
-          ) : null}
-
-          <section className="case-section">
-            <h2>Reflection</h2>
-            <p>{study.reflection}</p>
-          </section>
-
-          <section className="case-section case-section--next">
-            <h2>Next</h2>
-            <p>
-              Want the deeper walkthrough or related artifacts?{" "}
-              <a href={`mailto:${site.email}`}>Email {site.email}</a> or{" "}
-              <Link href="/contact">use the contact page</Link>.
-            </p>
-            <p className="case-back">
-              <Link href="/work" className="btn btn--ghost">
-                ← All work
-              </Link>
-            </p>
-          </section>
+          {hasStats ? null : storyAfterContext}
         </article>
       </div>
+
+      {hasStats && study.stats ? <StatBlocks stats={study.stats} /> : null}
+
+      {hasStats ? (
+        <div className="container">
+          <article className="case-article">{storyAfterContext}</article>
+        </div>
+      ) : null}
     </div>
   );
 }
