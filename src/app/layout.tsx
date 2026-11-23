@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Fraunces, Figtree, Syne } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/content/site";
@@ -8,27 +8,18 @@ import "./globals.css";
 const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
-  axes: ["SOFT", "WONK", "opsz"],
+  axes: ["opsz"],
+  style: ["normal", "italic"],
+  display: "swap",
+  fallback: ["Georgia", "serif"],
 });
 
-const body = Figtree({
+const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-/** Condensed/heavy accent face for kickers, proofs, panel marks */
-const accent = Syne({
-  variable: "--font-accent",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-});
-
-/** Display cut for the hero surname */
-const nameDisplay = Archivo_Black({
-  variable: "--font-name",
-  subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600"],
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -55,10 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${display.variable} ${body.variable} ${accent.variable} ${nameDisplay.variable} h-full`}
-    >
+    <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
       <body className="page-shell antialiased">
         <a href="#main" className="skip-link">
           Skip to main content

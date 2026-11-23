@@ -12,7 +12,7 @@ export default function ContactPage() {
       <header className="page-hero">
         <h1>Contact</h1>
         <p>
-          One primary path—email. LinkedIn if you prefer a warm intro. No form
+          One primary path, email. LinkedIn if you prefer a warm intro. No form
           maze.
         </p>
       </header>
@@ -32,7 +32,7 @@ export default function ContactPage() {
           <span aria-hidden="true"> ↗</span>
         </a>
         <p style={{ color: "var(--fg-muted)", marginTop: "1rem" }}>
-          For cleared or invite-only artifacts, say so in your note—I’ll share
+          For cleared or invite-only artifacts, say so in your note, I’ll share
           what’s appropriate.
         </p>
       </div>

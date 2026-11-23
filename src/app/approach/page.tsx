@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Approach",
   description:
-    "How John Mariano leads platform experience under constraint—methods, mentorship, and human-led AI craft.",
+    "How John Mariano leads platform experience under constraint, methods, mentorship, and human-led AI craft.",
 };
 
 export default function ApproachPage() {
@@ -13,7 +13,7 @@ export default function ApproachPage() {
       <header className="page-hero">
         <h1>Approach</h1>
         <p>
-          Named methods for platform work under constraint—teachable, short, and
+          Named methods for platform work under constraint, teachable, short, and
           built for delivery pressure.
         </p>
       </header>
@@ -23,7 +23,7 @@ export default function ApproachPage() {
           Constraint as the brief
         </h2>
         <p>
-          Federal and mission platforms don’t fail from lack of screens—they
+          Federal and mission platforms don’t fail from lack of screens, they
           fail when teams ignore policy, clearance, election clocks, and
           platform reality. I translate those limits into design moves teams can
           ship.
@@ -42,12 +42,12 @@ export default function ApproachPage() {
           Microjourneys over monolith myths
         </h2>
         <p>
-          Big platforms move when you sequence small, evidence-backed journeys—
+          Big platforms move when you sequence small, evidence-backed journeys,
           then reuse the pattern across bureaus and product lines.
         </p>
 
         <h2 className="section__title" style={{ fontSize: "1.5rem" }}>
-          T³ Loop — Talk, Think, Tweak
+          T³ Loop, Talk, Think, Tweak
         </h2>
         <p>
           For AI-assisted craft: stay human-led. Prompt with purpose, review

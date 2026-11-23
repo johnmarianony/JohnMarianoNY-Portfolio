@@ -3,23 +3,17 @@
 import { useEffect, useRef } from "react";
 import type { CaseStat } from "@/content/cases";
 
-const DURATION_MS = 1000;
+const DURATION_MS = 1200;
 const THRESHOLD = 0.35;
 
-function finalLabel(stat: CaseStat) {
-  if (stat.display) return stat.display;
-  return `${stat.prefix ?? ""}${stat.value}${stat.suffix ?? ""}`;
-}
-
-function countedLabel(stat: CaseStat, value: number) {
-  if (stat.display) return stat.display;
-  return `${stat.prefix ?? ""}${value}${stat.suffix ?? ""}`;
+function isWordSuffix(suffix: string | undefined) {
+  return Boolean(suffix && /^\s*[A-Za-z]/.test(suffix));
 }
 
 export function StatBlocks({ stats }: { stats: CaseStat[] }) {
   const rootRef = useRef<HTMLElement>(null);
   const valueRefs = useRef<(HTMLElement | null)[]>([]);
-  const ringRefs = useRef<(SVGCircleElement | null)[]>([]);
+  const barRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -33,14 +27,11 @@ export function StatBlocks({ stats }: { stats: CaseStat[] }) {
       stats.forEach((stat, index) => {
         const node = valueRefs.current[index];
         if (node && !stat.display) {
-          node.textContent = countedLabel(stat, Math.round(stat.value * eased));
+          node.textContent = String(Math.round(stat.value * eased));
         }
-        const ring = ringRefs.current[index];
-        if (ring && typeof stat.progress === "number") {
-          const circ = Number(ring.dataset.circ);
-          ring.style.strokeDashoffset = String(
-            circ * (1 - stat.progress * eased),
-          );
+        const bar = barRefs.current[index];
+        if (bar && typeof stat.progress === "number") {
+          bar.style.width = `${stat.progress * eased * 100}%`;
         }
       });
     };
@@ -70,55 +61,44 @@ export function StatBlocks({ stats }: { stats: CaseStat[] }) {
   }, [stats]);
 
   return (
-    <section className="stat-blocks" aria-label="Key results" ref={rootRef}>
-      <div className="container stat-blocks__grid">
+    <section className="stats" aria-label="Key results" ref={rootRef}>
+      <div className="wrap">
         {stats.map((stat, index) => {
-          const progress = stat.progress;
-          const size = 28;
-          const stroke = 2;
-          const radius = (size - stroke) / 2;
-          const circ = 2 * Math.PI * radius;
+          const word = isWordSuffix(stat.suffix);
           return (
-            <div key={stat.label} className="stat-block">
-              <p className="stat-block__value">
-                {typeof progress === "number" ? (
-                  <svg
-                    className="stat-block__ring"
-                    viewBox={`0 0 ${size} ${size}`}
-                    aria-hidden="true"
-                  >
-                    <circle
-                      className="stat-block__ring-track"
-                      cx={size / 2}
-                      cy={size / 2}
-                      r={radius}
-                      strokeWidth={stroke}
-                    />
-                    <circle
+            <div key={`${stat.label}-${index}`} className="stat">
+              <b>
+                {stat.display ? (
+                  stat.display
+                ) : (
+                  <>
+                    {stat.prefix ?? ""}
+                    <span
                       ref={(node) => {
-                        ringRefs.current[index] = node;
+                        valueRefs.current[index] = node;
                       }}
-                      className="stat-block__ring-value"
-                      cx={size / 2}
-                      cy={size / 2}
-                      r={radius}
-                      strokeWidth={stroke}
-                      data-circ={circ}
-                      strokeDasharray={circ}
-                      strokeDashoffset={circ * (1 - progress)}
-                      transform={`rotate(-90 ${size / 2} ${size / 2})`}
-                    />
-                  </svg>
-                ) : null}
-                <span
-                  ref={(node) => {
-                    valueRefs.current[index] = node;
-                  }}
-                >
-                  {finalLabel(stat)}
-                </span>
-              </p>
-              <p className="stat-block__label">{stat.label}</p>
+                    >
+                      {stat.value}
+                    </span>
+                    {word ? (
+                      <small>{stat.suffix?.trim()}</small>
+                    ) : (
+                      (stat.suffix ?? "")
+                    )}
+                  </>
+                )}
+              </b>
+              <span>{stat.label}</span>
+              {typeof stat.progress === "number" ? (
+                <div className="bar" aria-hidden="true">
+                  <i
+                    ref={(node) => {
+                      barRefs.current[index] = node;
+                    }}
+                    style={{ width: `${stat.progress * 100}%` }}
+                  />
+                </div>
+              ) : null}
             </div>
           );
         })}

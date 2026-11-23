@@ -2,41 +2,71 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudy } from "@/content/cases";
 
-function cardBlurb(study: CaseStudy) {
-  if (study.teaser) return study.teaser;
-  const cut = study.summary.split(/(?<=\.)\s/)[0];
-  return cut ?? study.summary;
+/** Card chrome shows the opening sentence. The case page keeps the full role. */
+function cardRole(role: string) {
+  const sentence = role.split(/(?<=[.!?])\s/)[0];
+  return sentence ?? role;
 }
 
-export function CaseCard({ study }: { study: CaseStudy }) {
+export function CaseCard({
+  study,
+  lead = false,
+}: {
+  study: CaseStudy;
+  lead?: boolean;
+}) {
   return (
-    <Link
-      href={`/work/${study.slug}`}
-      className={`case-card${study.dowAccent ? " case-card--dow" : ""}`}
-    >
-      <div className="case-card__media">
+    <Link href={`/work/${study.slug}`} className={lead ? "card lead" : "card"}>
+      <div className="img">
         {study.thumb ? (
           <Image
             src={study.thumb}
             alt={study.thumbAlt ?? ""}
             fill
-            sizes="(max-width: 719px) 100vw, (max-width: 1023px) 50vw, 33vw"
-            className="case-card__thumb"
+            sizes={
+              lead
+                ? "(max-width: 600px) 100vw, 640px"
+                : "(max-width: 600px) 100vw, 50vw"
+            }
+            style={{ objectFit: "cover", objectPosition: "top" }}
           />
         ) : (
-          <div className="case-card__placeholder" aria-hidden="true" />
+          <div className="card__placeholder" aria-hidden="true" />
         )}
       </div>
-      <div className="case-card__body">
-        <h3 className="case-card__title">{study.title}</h3>
-        <p className="case-card__tags">
-          {study.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
+      <div className="b">
+        <p className="label muted meta">
+          {study.client} · {study.dates}
         </p>
-        <p className="case-card__summary">{cardBlurb(study)}</p>
-        <p className="case-card__proof">{study.proof}</p>
+        <h3>{study.title}</h3>
+        <dl>
+          <dt>My role</dt>
+          <dd>{cardRole(study.role)}</dd>
+          <dt>Outcome</dt>
+          <dd className="o">{study.proof}</dd>
+        </dl>
+        {study.tags.length > 0 ? (
+          <p className="tags">{study.tags.join(" · ")}</p>
+        ) : null}
       </div>
     </Link>
+  );
+}
+
+export function CaseArchive({ studies }: { studies: CaseStudy[] }) {
+  return (
+    <ul>
+      {studies.map((study) => (
+        <li key={study.slug}>
+          <Link href={`/work/${study.slug}`}>
+            <div>
+              <b>{study.title}</b>
+              <small>{study.client}</small>
+            </div>
+            <span>{study.proof}</span>
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }

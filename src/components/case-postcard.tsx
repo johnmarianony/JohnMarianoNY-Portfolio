@@ -1,12 +1,5 @@
 import Image from "next/image";
-import { Patrick_Hand } from "next/font/google";
 import type { CasePostcard as CasePostcardData } from "@/content/cases";
-
-const postcardFont = Patrick_Hand({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-postcard",
-});
 
 export function CasePostcard({
   card,
@@ -21,19 +14,21 @@ export function CasePostcard({
 
   return (
     <figure
-      className={`case-postcard case-postcard--${side} ${postcardFont.variable}`}
-      style={{ ["--postcard-tilt" as string]: `${tilt}deg` }}
+      className={`pc ${side}`}
+      style={{ transform: `rotate(${tilt}deg)` }}
     >
-      <Image
-        src={card.src}
-        alt={card.alt}
-        width={card.width ?? 1280}
-        height={card.height ?? 720}
-        sizes="(max-width: 719px) 100vw, 38rem"
-        className="case-postcard__image"
-        loading={eager ? "eager" : "lazy"}
-      />
-      <figcaption className="case-postcard__caption">{card.caption}</figcaption>
+      <div className="post">
+        <div className="post__media">
+          <Image
+            src={card.src}
+            alt={card.alt}
+            fill
+            sizes="(max-width: 600px) 100vw, 640px"
+            preload={eager}
+          />
+        </div>
+        <figcaption>{card.caption}</figcaption>
+      </div>
     </figure>
   );
 }

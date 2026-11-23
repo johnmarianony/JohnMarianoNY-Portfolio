@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Accessibility",
   description:
-    "Accessibility statement for John Mariano’s portfolio—Section 508 / WCAG commitment and how to report issues.",
+    "Accessibility statement for John Mariano’s portfolio, Section 508 / WCAG commitment and how to report issues.",
 };
 
 export default function AccessibilityPage() {
@@ -21,7 +21,7 @@ export default function AccessibilityPage() {
           <strong style={{ color: "var(--fg)", fontWeight: 600 }}>
             WCAG 2.2 Level AA
           </strong>{" "}
-          for the pages we ship—accessibility is part of the craft story, not a
+          for the pages we ship, accessibility is part of the craft story, not a
           footer afterthought.
         </p>
       </header>
