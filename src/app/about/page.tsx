@@ -31,6 +31,13 @@ export default function AboutPage() {
           and advising Darden on online ordering accessibility.
         </p>
         <p>
+          From March 2019 to January 2022 I was the first HCI design lead for
+          Simcenter STAR-CCM+. I stood up a design practice I later ran as
+          acting manager, facilitated a three-day discovery workshop that set
+          our three-year approach, mapped the first A to Z workflow, and helped
+          shape the cloud pay-as-you-go path.
+        </p>
+        <p>
           I’m a storyteller and mentor as much as a strategist—most proud when
           junior designers leave a project more fluent in constraint than when
           they arrived.

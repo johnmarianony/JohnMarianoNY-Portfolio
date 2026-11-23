@@ -36,7 +36,7 @@ export default function HomePage() {
             <p className="section__eyebrow">Selected work</p>
             <h2 className="section__title">Experience marks the spot</h2>
             <p className="section__lede">
-              Eight featured engagements—image-first, outcome-led. War Department
+              Nine featured engagements, image-first and outcome-led. War Department
               work first; sterilized artifacts in place of cleared screens.
             </p>
           </header>
