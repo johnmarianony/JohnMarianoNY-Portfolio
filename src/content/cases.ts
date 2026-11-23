@@ -4,6 +4,10 @@ export type CaseArtifact = {
   caption: string;
   /** Portrait screenshots (e.g. Facebook tab captures) */
   portrait?: boolean;
+  /** Full board, so a 16:9 crop cannot cut the caption or the diagram. */
+  board?: boolean;
+  width?: number;
+  height?: number;
   /**
    * Mid-story slot. Index 0 is always the hero.
    * Unset artifacts after the hero stay in the end gallery.
@@ -60,7 +64,7 @@ export const processSteps = [
 export const cases: CaseStudy[] = [
   {
     slug: "dow-platform-migration-mvp",
-    title: "Platform Design & Migration MVP",
+    title: "Platform Migration MVP: Federal Defense Organization",
     client: "War Department (DOW)",
     sector: "Federal",
     role: "UX / platform design & requirements (delivery team)",
@@ -70,7 +74,7 @@ export const cases: CaseStudy[] = [
     proof: "$820M · 5-year contract",
     clearance: "sterilized",
     platforms: ["Platform migration", "MVP delivery"],
-    tags: ["platform", "federal", "DOW", "migration"],
+    tags: ["Requirements", "Delivery"],
     dowAccent: true,
     thumb: "/images/cases/dow-platform-migration-mvp.jpg",
     thumbAlt: "Sterilized platform migration architecture diagram",
@@ -134,7 +138,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "intel-portal-audit",
-    title: "Heuristic Audit of a Classified Self-Service Portal",
+    title: "Heuristic Audit: Federal Mission Portal",
     client: "U.S. Government (cleared engagement)",
     sector: "Federal / Intelligence",
     role: "UX lead — heuristic audit",
@@ -144,7 +148,7 @@ export const cases: CaseStudy[] = [
     proof: "8-week audit → 2-year modernization roadmap",
     clearance: "sterilized",
     platforms: ["Self-service portal"],
-    tags: ["audit", "adoption", "federal"],
+    tags: ["Research", "Service design"],
     thumb: "/images/cases/intel-portal-audit.jpg",
     thumbAlt: "Sterilized heuristic audit findings board",
     teaser:
@@ -207,7 +211,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "doi-platform-constraints",
-    title: "Designing Within Constraints",
+    title: "Constrained Platform Design: Federal Agency",
     client: "Department of the Interior",
     sector: "Federal",
     role: "UX Design Lead",
@@ -217,7 +221,7 @@ export const cases: CaseStudy[] = [
     proof: "Policy → platform-aligned UX; assets reused; contract extended",
     clearance: "sterilized",
     platforms: ["Power Platform", "USWDS"],
-    tags: ["platform", "federal", "mentorship"],
+    tags: ["Platform", "Mentorship"],
     thumb: "/images/cases/doi-platform-constraints.jpg",
     thumbAlt: "Sterilized federal constraint wireframe sheets",
     teaser:
@@ -280,7 +284,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "state-total-experience",
-    title: "Total Experience — Department of State",
+    title: "Total Experience Strategy: Federal Agency",
     client: "U.S. Department of State",
     sector: "Federal",
     role: "UX strategy lead / team lead",
@@ -290,7 +294,7 @@ export const cases: CaseStudy[] = [
     proof: "Quiet impact: research & framework left behind when launch wasn’t ready",
     clearance: "sterilized",
     platforms: ["Total Experience", "Multi-platform evaluation"],
-    tags: ["strategy", "federal", "leadership"],
+    tags: ["Strategy", "Leadership"],
     thumb: "/images/cases/state-total-experience.jpg",
     thumbAlt: "Sterilized Total Experience ecosystem map",
     teaser:
@@ -353,7 +357,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "dow-platform-modernization",
-    title: "Mission-Critical Platform Modernization",
+    title: "Mission Platform Suite: Federal Defense Organization",
     client: "War Department (DOW)",
     sector: "Federal",
     role: "UX research & design",
@@ -363,7 +367,7 @@ export const cases: CaseStudy[] = [
     proof: "+65% satisfaction · 500+ engineering hours saved",
     clearance: "sterilized",
     platforms: ["Intelligence / mission platform"],
-    tags: ["platform", "federal", "DOW", "research"],
+    tags: ["Platform", "Research"],
     dowAccent: true,
     thumb: "/images/cases/dow-platform-modernization.jpg",
     thumbAlt: "Sterilized dual-path journey modernization diagram",
@@ -427,7 +431,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "star-ccm-az-workflow",
-    title: "Simcenter STAR-CCM+ A–Z Workflow",
+    title: "End-to-End Workflow Mapping: Siemens STAR-CCM+",
     client: "Siemens",
     sector: "Enterprise engineering software",
     role: "UX research & analysis",
@@ -437,7 +441,7 @@ export const cases: CaseStudy[] = [
     proof: "First clear A–Z workflow map where none had been defined",
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
-    tags: ["workflow", "research", "enterprise"],
+    tags: ["UX research", "Process"],
     thumb: "/images/cases/star-ccm-az-workflow-panel.jpg",
     thumbAlt: "Sterilized Simcenter STAR-CCM+ A–Z workflow splash panel",
     teaser:
@@ -553,100 +557,356 @@ export const cases: CaseStudy[] = [
       "If the workflow was never defined, every feature is a guess. Naming the path is strategy.",
   },
   {
-    slug: "espn-x-games-apps",
-    title: "ESPN X Games — Facebook Audience Apps",
-    client: "ESPN",
-    sector: "Media",
-    role: "UX / interactive",
-    dates: "2013",
-    featured: false,
-    order: 99,
-    proof: "Multi-language social apps from Tignes to Foz do Iguaçu",
+    slug: "adobe-social-onboarding",
+    title: "Enterprise Onboarding Redesign: Adobe Social",
+    client: "Adobe",
+    sector: "Social",
+    role: "Business Consultant, Adobe Social, and the lead of three onshore consultants. The team had a manager, the three of us onshore, and eight offshore technical consultants who set up the configurations from the requirements we gathered. I was aligned with the offshore lead. I mentored the other onshore consultants, ran standups, and assigned work. I took the most complicated setups, the largest customers, and the at-risk contracts, and I stepped in when other engagements started to go sideways. When the manager left the position, I stepped into that gap. I was not the product owner.",
+    dates: "Dec 2012 to Jan 2015",
+    featured: true,
+    order: 7,
+    proof: "6 months to 2 weeks, and 25% higher adoption",
     clearance: "public",
-    platforms: ["Facebook apps"],
-    tags: ["media", "social", "localization"],
-    thumb: "/images/cases/espn-x-games-apps.jpg",
-    thumbAlt: "ESPN applications admin dashboard showing X Games city apps",
+    platforms: ["Adobe Social"],
+    tags: ["Service design", "Process"],
+    thumb: "/images/cases/adobe-social/01-hero-adobe-social-lockup.jpg",
+    thumbAlt: "Adobe Social logo over a dimmed onboarding workspace",
     teaser:
-      "Multi-language Facebook audience apps for ESPN’s global X Games—from Tignes to Foz do Iguaçu.",
+      "I was given the most complicated setups, the largest customers, and the at-risk contracts, including a global customer sales had sold onto a single regional server.",
     summary:
-      "Built multi-language social apps for ESPN’s global X Games—live content, fan interaction, and platform-native UX.",
+      "I was given the most complicated setups, the largest customers, and the at-risk contracts, including a global customer sales had sold onto a single regional server.",
     metrics: [
-      { value: "4 cities", label: "Tignes · Munich · Barcelona · Foz" },
-      { value: "Localized", label: "FR · DE · ES · PT event UIs" },
-      { value: "Live", label: "Immovable event deadlines" },
+      { value: "2 weeks", label: "Go-live, down from six months" },
+      { value: "10 days", label: "Business days to go live" },
+      { value: "+25%", label: "User adoption" },
     ],
     artifacts: [
       {
-        src: "/images/cases/espn-x-games-apps.jpg",
-        alt: "ESPN applications admin dashboard showing X Games city apps",
-        caption: "ESPN Apps admin — X Games city apps in the publish console",
+        src: "/images/cases/adobe-social/01-hero-adobe-social-lockup.jpg",
+        alt: "Adobe Social logo over a dimmed onboarding workspace",
+        caption: "Adobe Social, over the onboarding work",
+        width: 1600,
+        height: 900,
+      },
+      {
+        src: "/images/cases/adobe-social/regional-server-permissions.jpg",
+        alt: "Before and after board of one Adobe Social regional server versus shared groups and permissions across regions",
+        caption:
+          "One regional server, then shared groups and permissions across regions",
+        slot: "approach",
+        board: true,
+        width: 1600,
+        height: 1100,
+      },
+    ],
+    outcomes: [
+      "Cut Adobe Social go-live from six months to two weeks (10 business days), and boosted user adoption by 25%.",
+    ],
+    context:
+      "I was given the most complicated setups, the largest customers, and the at-risk contracts, including a global customer sales had sold onto a single regional server.",
+    problem:
+      "After Context Optional and Efficient Frontier joined Adobe, enterprise customers were waiting six months to go live. Early on, communications and timing with the offshore team frequently broke.\n\nSales did not always align with the technical requirements. In one case, sales sold a large global customer onto an instance on a single regional server. We learned that regional server proximity affected performance, and that regional analytics, segmented audiences, and the grouping of roles and permissions also needed to live at a regional level.",
+    opportunity:
+      "Templatizing the onboarding requirements did not resolve those technical problems. It did make sure every consultant retrieved the same requirements, in the same vernacular, so the offshore technical consultants could configure the work more efficiently.\n\nAs the consultants' advocate and requirements voice, I worked with the technical team on some of the identified restrictions, so groups and permissions could be shared across regional servers for enterprise clients. The onboarding model had to get customers live in two weeks, not six months, and actually adopted once they were standing.",
+    constraint:
+      "Regional server proximity, regional analytics, segmented audiences, and regional roles and permissions were real technical limits. A template could not erase them, and sales could still sell ahead of them. I could bring those restrictions to the technical team as a consultant. I did not own the product, so I could not change those limits on my own.",
+    approach: [
+      "Templatized onboarding requirements so every consultant retrieved the same requirements, in the same vernacular.",
+      "Worked with the technical team so groups and permissions could be shared across regional servers for enterprise clients.",
+      "Took the most complicated setups, the largest customers, and the at-risk contracts.",
+    ],
+    reflection:
+      "A template could not erase regional limits. It could make every consultant ask for the same requirements, so customers could go live in two weeks and actually get adopted.",
+  },
+  {
+    slug: "adobe-summit-sales-toolkit",
+    title: "Cross-Device Sales Experience: Adobe Summit",
+    client: "Adobe",
+    sector: "Summit",
+    role: "Experience Designer, Cross-Device Event Applications. I designed the Screens and mobile applications, and coordinated development for the engineers by leading front-end dev efforts. I worked with three sales leads and two developers.",
+    dates: "Jan to Mar 2017",
+    featured: true,
+    order: 8,
+    proof: "+20% lead conversions, 250+ interactions, 45+ leads",
+    clearance: "public",
+    platforms: ["AEM Mobile", "AEM Screens"],
+    tags: ["Interaction design", "Prototyping"],
+    thumb: "/images/cases/adobe-summit/06-approach-summit-modal.jpg",
+    thumbAlt:
+      "Experience Driven Commerce modal from the Adobe Summit sales toolkit",
+    teaser:
+      "Sales were there for lead conversion, so I built an iPad and touchscreen experience that could show, in real time, how those two surfaces worked together for point-of-sale conversions.",
+    summary:
+      "Sales were there for lead conversion, so I built an iPad and touchscreen experience that could show, in real time, how those two surfaces worked together for point-of-sale conversions.",
+    metrics: [
+      { value: "+20%", label: "Lead conversions" },
+      { value: "250+", label: "Customer interactions" },
+      { value: "45+", label: "Sales leads during Summit" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/adobe-summit/06-approach-summit-modal.jpg",
+        alt: "Experience Driven Commerce modal from the Adobe Summit sales toolkit",
+        caption: "Commerce modal Sales could open on the booth floor",
+        width: 1600,
+        height: 900,
+      },
+      {
+        src: "/images/cases/adobe-summit/01-hero-better-digital-foundation.jpg",
+        alt: "Sales path slide reading I want to build a better digital foundation",
+        caption: "Opening card on the iPad sales path",
+        slot: "challenge",
+        width: 1600,
+        height: 889,
+      },
+      {
+        src: "/images/cases/adobe-summit/ipad-screens-interaction.jpg",
+        alt: "Three-step board of an iPad sales path driving a touchscreen, then a point-of-sale offer",
+        caption: "iPad and Screens in sync, from the sales path to point of sale",
+        slot: "approach",
+        board: true,
+        width: 1600,
+        height: 1100,
+      },
+      {
+        src: "/images/cases/adobe-summit/05-approach-management-building-blocks.jpg",
+        alt: "Mobile experience management building blocks slide shown on the Screens monitor",
+        caption: "Building blocks card shown on the Screens monitor",
+        board: true,
+        width: 1025,
+        height: 772,
+      },
+      {
+        src: "/images/cases/adobe-summit/07-lockup-aem-screens.jpg",
+        alt: "Adobe logo over an iPad and printed cards for AEM Screens",
+        caption: "AEM Screens, the touchscreen half of the toolkit",
+        width: 1600,
+        height: 900,
+      },
+    ],
+    outcomes: [
+      "The toolkit contributed to a 20% increase in lead conversions, and to 250+ customer interactions and 45+ sales leads during the Summit program. After the show, the same instance onboarded 20+ new reps and traveled to regional demos.",
+    ],
+    context:
+      "Sales were there for lead conversion, so I built an iPad and touchscreen experience that could show, in real time, how those two surfaces worked together for point-of-sale conversions.",
+    problem:
+      "At Adobe Summit, Sales' focus was lead conversion. They needed a way, on the booth floor, to show the value of AEM Mobile and AEM Screens for point-of-sale conversions, not just to talk through a product list.\n\nIf the two surfaces could not be seen working together, the pitch stayed abstract, and a lead-conversion conversation had nothing live to stand on.",
+    opportunity:
+      "For the Summit booth I designed an integrated mobile (iPad) and Screens (touchscreen monitor) experience. I designed the Screens and mobile applications, and I coordinated development for the engineers by leading front-end dev efforts.\n\nSales could show customers, in real time, how those two experiences interacted with each other, and how the technology supported point-of-sale conversions. The same instance was reused after the show for sales onboarding and regional demos, including 20+ new reps in one instance.",
+    constraint:
+      "The work had to hold up in a booth conversation, across an iPad and a touchscreen monitor, in the January to March 2017 window. I designed the applications and led the front-end development effort with two developers, alongside three sales leads. It was an Adobe internal sales tool, built to help Sales convert leads by making the product value visible in the moment.",
+    approach: [
+      "Designed an integrated iPad and Screens experience so Sales could show the two surfaces working together in real time.",
+      "Led front-end development with two developers, alongside three sales leads.",
+      "Reused the same instance after the show for sales onboarding and regional demos, including 20+ new reps.",
+    ],
+    reflection:
+      "If the two surfaces could not be seen working together, the pitch stayed abstract, and a lead-conversion conversation had nothing live to stand on.",
+  },
+  {
+    slug: "facebook-apps-adobe-social",
+    title: "Localized Campaign Apps: ESPN X Games on Facebook",
+    client: "Adobe",
+    sector: "ESPN X Games",
+    role: "Front-end / App Builder, Context Optional and Adobe Social. I documented template builds, trained others to ship them, and worked the first Audience apps for ESPN X Games.",
+    dates: "2011 to 2013",
+    featured: false,
+    order: 9,
+    proof: "+30% engagement across four cities, eight apps",
+    clearance: "public",
+    platforms: ["Facebook apps", "Adobe Social"],
+    tags: ["Front-end", "Product delivery"],
+    thumb: "/images/cases/facebook-apps/xgames-language-switcher.jpg",
+    thumbAlt:
+      "Four ESPN X Games city apps, each with a native language and an English version",
+    teaser:
+      "Audience detection failed on launch day, so we shipped eight apps instead of four.",
+    summary:
+      "Audience detection failed on launch day, so we shipped eight apps instead of four.",
+    metrics: [
+      { value: "+30%", label: "Engagement on the Audience apps" },
+      {
+        value: "4 cities",
+        label: "Tignes, Foz do Iguaçu, Barcelona, Munich",
+      },
+      { value: "8 apps", label: "Native language and English in each city" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/facebook-apps/01-hero-adobe-espn-x-games-lockup.jpg",
+        alt: "Adobe, ESPN, and X Games logos over a dimmed Facebook app",
+        caption: "Adobe, ESPN, and X Games",
+        width: 1600,
+        height: 900,
+      },
+      {
+        src: "/images/cases/facebook-apps/xgames-language-switcher.jpg",
+        alt: "Four ESPN X Games city apps, each with a native language and an English version",
+        caption:
+          "Four city apps became eight, with a manual switch between native language and English",
+        slot: "challenge",
+        board: true,
+        width: 1600,
+        height: 1100,
+      },
+      {
+        src: "/images/cases/facebook-apps/photo-contest-builder-clean.jpg",
+        alt: "Five-step photo contest template from setup through a declared winner",
+        caption: "Photo Contest Builder template, from setup to a declared winner",
+        slot: "approach",
+        board: true,
+        width: 1600,
+        height: 1100,
+      },
+      {
+        src: "/images/cases/facebook-apps/04-approach-facebook-application-gallery.jpg",
+        alt: "Adobe Social Facebook application solutions gallery",
+        caption: "Application gallery for contests, sweepstakes, quizzes, and the rest",
+        portrait: true,
+        width: 810,
+        height: 1233,
       },
       {
         src: "/images/cases/espn/espn-xgames-munich-localization-de-en.jpg",
         alt: "Side-by-side German and English ESPN X Games Munich Facebook apps",
-        caption: "Labeled: Munich localization — DE / EN side-by-side",
-      },
-      {
-        src: "/images/cases/espn/espn-xgames-barcelona-app-ui.jpg",
-        alt: "ESPN X Games Barcelona Facebook app UI",
-        caption: "Labeled: Barcelona — video, headlines, gallery, social bar",
-        portrait: true,
+        caption: "Munich, German and English side by side",
       },
       {
         src: "/images/cases/espn/espn-xgames-tignes-app-ui.jpg",
         alt: "ESPN X Games Tignes Facebook app UI in French",
-        caption: "Labeled: Tignes — French-localized winter event app",
+        caption: "Tignes, French winter event app",
+        portrait: true,
+      },
+      {
+        src: "/images/cases/espn/espn-xgames-barcelona-app-ui.jpg",
+        alt: "ESPN X Games Barcelona Facebook app UI",
+        caption: "Barcelona, video, headlines, and gallery",
         portrait: true,
       },
       {
         src: "/images/cases/espn/espn-xgames-foz-do-iguacu-app-ui.jpg",
         alt: "ESPN X Games Foz do Iguaçu Facebook app UI in Portuguese",
-        caption: "Labeled: Foz do Iguaçu — Portuguese-localized event app",
+        caption: "Foz do Iguaçu, Portuguese event app",
         portrait: true,
       },
       {
         src: "/images/cases/espn/espn-xgames-munich-app-ui-de.jpg",
         alt: "ESPN X Games Munich Facebook app UI in German",
-        caption: "Labeled: Munich — German-localized summer event app",
+        caption: "Munich, German summer event app",
         portrait: true,
       },
       {
-        src: "/images/cases/espn/espn-xgames-barcelona-facebook-tab.jpg",
-        alt: "ESPN X Games Barcelona Facebook tab with live video and headlines",
-        caption: "Labeled: Barcelona Facebook tab — live event hub in-platform",
-      },
-      {
-        src: "/images/cases/espn/espn-xgames-tignes-facebook-tab.jpg",
-        alt: "ESPN X Games Tignes Facebook tab in French",
-        caption: "Labeled: Tignes Facebook tab — French winter event experience",
-        portrait: true,
-      },
-      {
-        src: "/images/cases/espn/espn-xgames-foz-do-iguacu-facebook-tab.jpg",
-        alt: "ESPN X Games Foz do Iguaçu Facebook tab in Portuguese",
-        caption: "Labeled: Foz Facebook tab — Portuguese event experience",
-        portrait: true,
+        src: "/images/cases/facebook-apps/10-xgames-enablement-training.jpg",
+        alt: "Title slide for X Games international event Facebook application training",
+        caption: "Training materials for the X Games Facebook applications",
+        board: true,
+        width: 1600,
+        height: 1200,
       },
     ],
-    pullQuote:
-      "Live events teach ruthless prioritization—the audience doesn’t wait.",
     outcomes: [
-      "Localized engagement across international event sites",
-      "Platform-native patterns for fan interaction",
-      "Cross-team delivery under immovable event deadlines",
+      "ESPN X Games Audience apps increased engagement by 30%, across four cities (Tignes, Foz do Iguaçu, Barcelona, Munich), with a manual switch between native language and English in each one.",
     ],
     context:
-      "Global sports events needed local-language social experiences tied to live content.",
+      "Audience detection failed on launch day, so we shipped eight apps instead of four.",
+    problem:
+      "Audience detection failed on launch day. The new Audience technology for Adobe Social was meant to display a user's language or native country on its own, but it had only been tested over VPN, never at global scale. At launch it did not detect as expected, and ESPN X Games still had four cities with immovable dates.",
+    opportunity:
+      "Instead of four apps, we made eight. For each of the four locations, people could manually switch between the native-language experience and English. The launch fix had to be something a fan could use in the moment, not a promise that detection would catch up.\n\nThe Social App Builder templates and the application gallery were how the wider catalog of Facebook campaign apps (contests, sweepstakes, quizzes, and the rest) got stood up. ESPN was the flagship. That catalog is the secondary story.",
+    constraint:
+      "Audience had never been proven at global scale, only over VPN. When detection failed at launch, we still had to give people a way to see each city in a native language or in English. The event windows were fixed. The original wireframe had already assumed the user would be served a native language, or English if the language was not detected. That assumption did not hold on the day.",
     approach: [
-      "Designed for Facebook-native interaction models",
-      "Localized content and UX for each host city",
-      "Shipped under immovable event deadlines",
+      "Shipped eight apps instead of four, with a manual switch between the native language and English for each city.",
+      "Documented Social App Builder templates and trained others to ship them.",
+      "Treated ESPN X Games as the flagship, and the application gallery as the secondary story.",
     ],
     reflection:
-      "Live events teach ruthless prioritization—the audience doesn’t wait for a perfect backlog.",
+      "The launch fix had to be something a fan could use in the moment, not a promise that detection would catch up.",
+  },
+  {
+    slug: "darden-olive-garden-ordering",
+    title: "A/B Testing with Adobe Target: Olive Garden Online Ordering",
+    client: "Darden",
+    sector: "Olive Garden",
+    role: "UX Designer, Adobe consulting. Presales heuristic review and live testing for Darden / Olive Garden.",
+    dates: "September 2017",
+    featured: false,
+    order: 10,
+    proof: "Darden shipped the winner. Order Now back on top.",
+    clearance: "public",
+    platforms: ["Adobe Target", "Olive Garden ordering"],
+    tags: ["Experimentation", "Conversion UX"],
+    thumb: "/images/cases/darden/01-hero-online-ordering-accessibility.jpg",
+    thumbAlt:
+      "Olive Garden phone showing a gift-card campaign above the ordering menu",
+    teaser:
+      "A summer gift-card campaign was outranking Order Now, so we live-tested the designs in Adobe Target, and Darden's own audience rules decided which one to use.",
+    summary:
+      "A summer gift-card campaign was outranking Order Now, so we live-tested the designs in Adobe Target, and Darden's own audience rules decided which one to use.",
+    metrics: [
+      { value: "Target", label: "Live test with audience rules from Darden" },
+      { value: "Shipped", label: "Darden used the winning design" },
+      { value: "Order Now", label: "Regained the primary spot" },
+    ],
+    artifacts: [
+      {
+        src: "/images/cases/darden/01-hero-online-ordering-accessibility.jpg",
+        alt: "Olive Garden phone showing a gift-card campaign above the ordering menu",
+        caption: "Gift-card campaign above the menu, before Order Now was restored",
+        width: 720,
+        height: 405,
+      },
+      {
+        src: "/images/cases/darden/02-challenge-presales-heuristic-review.jpg",
+        alt: "Presales heuristic review of Olive Garden mobile navigation, with the gift-card campaign above Order Now",
+        caption: "Presales review: the summer campaign pushed Order Now down the menu",
+        slot: "challenge",
+        width: 720,
+        height: 405,
+      },
+      {
+        src: "/images/cases/darden/target-ab-test-illustrative.jpg",
+        alt: "Illustrative Adobe Target A/B test of Olive Garden ordering. Gift-card campaign first versus Order Now first. Actual client results are confidential.",
+        caption: "Illustrative data. Actual client results are confidential.",
+        slot: "approach",
+        board: true,
+        width: 1600,
+        height: 1100,
+      },
+      {
+        src: "/images/cases/darden/04-approach-high-resolution-compositions.jpg",
+        alt: "Olive Garden mobile compositions comparing gift-card and Order Now hierarchy",
+        caption:
+          "Same visual weight on both variations. Only the hierarchy changes.",
+        width: 720,
+        height: 405,
+      },
+    ],
+    outcomes: [
+      "Darden shipped the winning design. In that variation, Order Now regained the primary spot over the gift-card campaign.",
+    ],
+    context:
+      "A summer gift-card campaign was outranking Order Now, so we live-tested the designs in Adobe Target, and Darden's own audience rules decided which one to use.",
+    problem:
+      "Olive Garden's mobile site was spending its best screen on a summer gift-card campaign, and Order Now was losing the hierarchy fight.\n\nGuests who came to order were being asked to hunt for the thing the site existed to do.",
+    opportunity:
+      "We used Adobe Target, then called Test and Target, to live-test the experiences with different demographics at the same time. Darden provided the audience constraints (geography, individual criteria, and other elements) that defined the test groups.\n\nThe test results decided which design to use. Darden shipped the winning design. In that variation, Order Now regained the primary spot over the gift-card campaign.",
+    constraint:
+      "The audience rules were Darden's, not ours. We were testing inside an existing campaign system, not starting from a blank site. Geography, individual criteria, and the other elements they gave us were what defined the test groups, and those results, not a preferred comp on its own, decided the design that shipped.\n\nThe test variations were deliberately given the same visual weight so the results would not be skewed. We wanted to gain customer preference without tipping the scales by changing the visual weight of the components.\n\nThe actual test results are confidential. This case does not include specific figures.",
+    approach: [
+      "Live-tested the experiences in Adobe Target, with audience rules Darden provided.",
+      "Gave the variations the same visual weight so the results would not be skewed.",
+      "Shipped the variation the results selected, with Order Now in the primary spot.",
+    ],
+    reflection:
+      "The test results decided which design to use. Darden shipped the winning design.",
   },
 ];
+
+/** Old public slugs that should resolve to the current case. */
+export const caseRedirects: Record<string, string> = {
+  "espn-x-games-apps": "facebook-apps-adobe-social",
+};
 
 export function getFeaturedCases() {
   return cases

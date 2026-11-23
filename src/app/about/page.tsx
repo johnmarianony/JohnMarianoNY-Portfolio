@@ -25,6 +25,12 @@ export default function AboutPage() {
           clearance.
         </p>
         <p>
+          From 2011 to 2018 I worked at Context Optional and Adobe, building
+          Facebook marketing apps, cutting Social onboarding from six months to
+          two weeks, designing the interactive sales toolkit for Adobe Summit,
+          and advising Darden on online ordering accessibility.
+        </p>
+        <p>
           I’m a storyteller and mentor as much as a strategist—most proud when
           junior designers leave a project more fluent in constraint than when
           they arrived.

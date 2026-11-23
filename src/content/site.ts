@@ -55,5 +55,7 @@ export const site = {
     "state-total-experience",
     "dow-platform-modernization",
     "star-ccm-az-workflow",
+    "adobe-social-onboarding",
+    "adobe-summit-sales-toolkit",
   ],
 } as const;
