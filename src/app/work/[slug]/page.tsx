@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CasePostcard } from "@/components/case-postcard";
 import { StatBlocks } from "@/components/stat-blocks";
 import {
   getAllCases,
   getCaseBySlug,
   processSteps,
   type CaseArtifact,
+  type CasePostcard as CasePostcardData,
 } from "@/content/cases";
 import { site } from "@/content/site";
 
@@ -93,10 +95,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const study = getCaseBySlug(slug);
   if (!study) return { title: "Case study" };
+  const share = study.posterThumb;
   return {
     title: study.title,
     description: study.summary,
+    ...(share
+      ? {
+          openGraph: {
+            images: [
+              {
+                url: share,
+                alt: study.thumbAlt,
+                width: 1600,
+                height: 1100,
+              },
+            ],
+          },
+          twitter: {
+            card: "summary_large_image",
+            images: [share],
+          },
+        }
+      : {}),
   };
+}
+
+function PostcardSet({
+  cards,
+}: {
+  cards: { card: CasePostcardData; index: number }[];
+}) {
+  if (cards.length === 0) return null;
+  return cards.map(({ card, index }) => (
+    <CasePostcard
+      key={card.src}
+      card={card}
+      side={index % 2 === 0 ? "left" : "right"}
+      eager={index === 0}
+    />
+  ));
 }
 
 export default async function CasePage({ params }: Props) {
@@ -105,19 +142,35 @@ export default async function CasePage({ params }: Props) {
   if (!study) notFound();
 
   const artifacts = study.artifacts ?? [];
+  const postcards = (study.postcards ?? []).map((card, index) => ({
+    card,
+    index,
+  }));
+  const postcardLayout = postcards.some(
+    (item) => item.card.anchor === "outcome",
+  );
   const hasStats = Boolean(study.stats?.length);
   const metrics = hasStats ? [] : (study.metrics ?? []);
-  const hero = artifacts[0];
+  const inStory = (index: number) => postcardLayout || index > 0;
+  const hero = postcardLayout ? undefined : artifacts[0];
   const challengeArts = artifacts.filter(
-    (art, index) => index > 0 && art.slot === "challenge",
+    (art, index) => inStory(index) && art.slot === "challenge",
   );
   const approachArts = artifacts.filter(
-    (art, index) => index > 0 && art.slot === "approach",
+    (art, index) => inStory(index) && art.slot === "approach",
+  );
+  const outcomeArts = artifacts.filter(
+    (art, index) => inStory(index) && art.slot === "outcome",
   );
   const galleryArts = artifacts.filter(
     (art, index) =>
-      index > 0 && art.slot !== "challenge" && art.slot !== "approach",
+      inStory(index) &&
+      art.slot !== "challenge" &&
+      art.slot !== "approach" &&
+      art.slot !== "outcome",
   );
+  const postcardsFor = (anchor: CasePostcardData["anchor"]) =>
+    postcards.filter((item) => item.card.anchor === anchor);
 
   const storyAfterContext = (
     <>
@@ -139,6 +192,8 @@ export default async function CasePage({ params }: Props) {
           ))}
         </ul>
       </section>
+
+      <PostcardSet cards={postcardsFor("approach")} />
 
       {approachArts.map((art) => (
         <CaseFigure key={art.src} art={art} />
@@ -215,6 +270,10 @@ export default async function CasePage({ params }: Props) {
         </section>
       ) : null}
 
+      {postcardLayout && hasStats && study.stats ? (
+        <StatBlocks stats={study.stats} />
+      ) : null}
+
       <div className="container">
         <section className="case-process" aria-label="How the work moved">
           <p className="section__eyebrow">How it moved</p>
@@ -234,20 +293,22 @@ export default async function CasePage({ params }: Props) {
         </section>
 
         <article
-          className={`case-article${hasStats ? " case-article--split" : ""}`}
+          className={`case-article${hasStats && !postcardLayout ? " case-article--split" : ""}`}
         >
-          <section className="case-section">
-            <h2>Outcomes</h2>
-            <ul>
-              {study.outcomes.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
+          {postcardLayout ? null : (
+            <section className="case-section">
+              <h2>Outcomes</h2>
+              <ul>
+                {study.outcomes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          )}
 
-          {hero ? (
+          {!postcardLayout && hero ? (
             <CaseFigure art={hero} preload />
-          ) : study.thumb ? (
+          ) : !postcardLayout && study.thumb ? (
             <figure className="case-figure">
               <div className="case-figure__frame">
                 <Image
@@ -274,13 +335,92 @@ export default async function CasePage({ params }: Props) {
             />
           </section>
 
-          {hasStats ? null : storyAfterContext}
+          {postcardLayout ? <PostcardSet cards={postcardsFor("context")} /> : null}
+          {postcardLayout ? <PostcardSet cards={postcardsFor("problem")} /> : null}
+
+          {postcardLayout ? (
+            <>
+              {challengeArts.map((art) => (
+                <CaseFigure key={art.src} art={art} />
+              ))}
+
+              {study.pullQuote ? (
+                <blockquote className="case-quote">
+                  <p>{study.pullQuote}</p>
+                </blockquote>
+              ) : null}
+
+              <section className="case-section">
+                <h2>Approach</h2>
+                <ul>
+                  {study.approach.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <PostcardSet cards={postcardsFor("approach")} />
+
+              {approachArts.map((art) => (
+                <CaseFigure key={art.src} art={art} />
+              ))}
+
+              <PostcardSet cards={postcardsFor("outcome")} />
+
+              {outcomeArts.map((art) => (
+                <CaseFigure key={art.src} art={art} />
+              ))}
+
+              <section className="case-section">
+                <h2>Outcomes</h2>
+                <ul>
+                  {study.outcomes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+
+              {galleryArts.length > 0 ? (
+                <section className="case-gallery" aria-label="Project artifacts">
+                  <h2 className="case-gallery__title">Artifacts</h2>
+                  <div className="case-gallery__grid">
+                    {galleryArts.map((art) => (
+                      <CaseFigure key={art.src} art={art} gallery />
+                    ))}
+                  </div>
+                </section>
+              ) : null}
+
+              <section className="case-section">
+                <h2>Reflection</h2>
+                <p>{study.reflection}</p>
+              </section>
+
+              <section className="case-section case-section--next">
+                <h2>Next</h2>
+                <p>
+                  Want the deeper walkthrough or related artifacts?{" "}
+                  <a href={`mailto:${site.email}`}>Email {site.email}</a> or{" "}
+                  <Link href="/contact">use the contact page</Link>.
+                </p>
+                <p className="case-back">
+                  <Link href="/work" className="btn btn--ghost">
+                    ← All work
+                  </Link>
+                </p>
+              </section>
+            </>
+          ) : hasStats ? null : (
+            storyAfterContext
+          )}
         </article>
       </div>
 
-      {hasStats && study.stats ? <StatBlocks stats={study.stats} /> : null}
+      {!postcardLayout && hasStats && study.stats ? (
+        <StatBlocks stats={study.stats} />
+      ) : null}
 
-      {hasStats ? (
+      {!postcardLayout && hasStats ? (
         <div className="container">
           <article className="case-article">{storyAfterContext}</article>
         </div>

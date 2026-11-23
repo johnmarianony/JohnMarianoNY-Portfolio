@@ -1,3 +1,21 @@
+export type CasePostcard = {
+  src: string;
+  alt: string;
+  caption: string;
+  /**
+   * Section the postcard should appear in, or immediately after.
+   * "problem"  = after Context + CaseBeats
+   * "approach" = inside Approach, after the bullets
+   * "outcome"  = immediately before the Outcomes list
+   * "context"  = after the Context paragraph, before CaseBeats
+   */
+  anchor: "context" | "problem" | "approach" | "outcome";
+  width?: number;
+  height?: number;
+  /** Optional explicit tilt in degrees, e.g. -1.6 or 1.8. Alternate if omitted. */
+  tilt?: number;
+};
+
 export type CaseArtifact = {
   src: string;
   alt: string;
@@ -9,10 +27,11 @@ export type CaseArtifact = {
   width?: number;
   height?: number;
   /**
-   * Mid-story slot. Index 0 is always the hero.
+   * Mid-story slot. Index 0 is the hero, unless the case uses an outcome
+   * postcard and skips the in-page hero figure.
    * Unset artifacts after the hero stay in the end gallery.
    */
-  slot?: "challenge" | "approach";
+  slot?: "challenge" | "approach" | "outcome";
 };
 
 export type CaseMetric = {
@@ -63,6 +82,8 @@ export type CaseStudy = {
    * numbers are not repeated in the static hero band.
    */
   stats?: CaseStat[];
+  /** Story-beat postcards. Different chrome from `artifacts`. */
+  postcards?: CasePostcard[];
   artifacts?: CaseArtifact[];
   pullQuote?: string;
   outcomes: string[];
@@ -505,12 +526,13 @@ export const cases: CaseStudy[] = [
       },
       {
         src: "/images/cases/star-ccm-design-practice/practice-feature-overgrowth-vs-consolidation.jpg",
-        alt: "Comparison of feature overgrowth against a consolidated workflow.",
+        alt: "Comparison of feature overgrowth against a consolidated workflow, with a compact Java client Simulation tree as evidence.",
         caption:
           "Feature overgrowth versus consolidation. The dense tree we inherited, and the simpler path we were aiming for.",
         slot: "approach",
-        width: 1024,
-        height: 867,
+        board: true,
+        width: 1600,
+        height: 1100,
       },
     ],
     pullQuote:
@@ -550,9 +572,11 @@ export const cases: CaseStudy[] = [
     platforms: ["Simcenter STAR-CCM+"],
     tags: ["Facilitation", "Strategy"],
     thumb:
-      "/images/cases/star-ccm-discovery-workshop/workshop-W6-major-concepts.jpg",
+      "/images/cases/star-ccm-discovery-workshop/workshop-comic-four-phases.jpg",
+    posterThumb:
+      "/images/cases/star-ccm-discovery-workshop/workshop-comic-four-phases.jpg",
     thumbAlt:
-      "Workshop wall of major concepts from the STAR-CCM+ discovery session.",
+      "Illustrated four-panel of the STAR-CCM+ discovery workshop, from department presentations through breakouts and discussion to the A to Z workflow on a toy-car model.",
     summary:
       "I had to invent our discovery workshop in my first month, in a room with the major development teams and project management, and that session set the approach we followed for the next three years.",
     teaser:
@@ -569,67 +593,81 @@ export const cases: CaseStudy[] = [
         progress: 0.9,
       },
     ],
-    artifacts: [
+    postcards: [
       {
-        src: "/images/cases/star-ccm-discovery-workshop/workshop-W6-major-concepts.jpg",
-        alt: "Workshop wall covered in major-concept notes from the STAR-CCM+ discovery session.",
-        caption: "Workshop wall: major concepts the room aligned on.",
-        width: 4032,
-        height: 3024,
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-comic-panel-a-presents-needs.jpg",
+        alt: "Illustration of two HCI leads taking notes in the foreground while department leaders present needs and pain points at a workshop whiteboard.",
+        caption:
+          "Department leaders presented their needs and pain points for a next-gen GUI. I watched and took notes.",
+        anchor: "problem",
+        width: 1280,
+        height: 720,
+        tilt: -1.6,
       },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-comic-panel-b-breakouts.jpg",
+        alt: "Illustration of cross-functional breakout teams presenting ideal next-gen solutions at a whiteboard, with two HCI leads observing and taking notes.",
+        caption:
+          "Cross-functional breakouts put their ideal next-gen solutions on the wall. I moved between the groups and kept taking notes.",
+        anchor: "approach",
+        width: 1280,
+        height: 720,
+        tilt: 1.8,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-comic-panel-c-discussion.jpg",
+        alt: "Illustration of the full workshop group discussing breakout ideas, with two HCI leads standing at the front taking notes.",
+        caption: "The room came back together to talk through the breakout ideas.",
+        anchor: "approach",
+        width: 1280,
+        height: 720,
+        tilt: -1.75,
+      },
+      {
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-comic-panel-d-finale-az.jpg",
+        alt: "Illustration of two HCI leads presenting next steps at a whiteboard that shows a toy-car model and an A to Z workflow.",
+        caption:
+          "We shared next steps at the end. That is where the A to Z workflow on the toy-car model was born.",
+        anchor: "outcome",
+        width: 1280,
+        height: 720,
+        tilt: 1.5,
+      },
+    ],
+    artifacts: [
       {
         src: "/images/cases/star-ccm-discovery-workshop/workshop-C7-guidance-automation-wall.jpg",
         alt: "Workshop whiteboard with handwritten Guidance, Automation, and Templating notes from a STAR-CCM+ session.",
         caption:
           "Workshop wall: Guidance, Automation, and Templating, before the path had a name.",
         slot: "challenge",
-        width: 4032,
-        height: 3024,
+        width: 2400,
+        height: 1800,
       },
       {
-        src: "/images/cases/star-ccm-discovery-workshop/workshop-W1-preprocess-notes.jpg",
-        alt: "Workshop wall of preprocess notes.",
-        caption: "Preprocess notes from the workshop wall.",
-        width: 4032,
-        height: 3024,
-      },
-      {
-        src: "/images/cases/star-ccm-discovery-workshop/workshop-W2-breakout-wall.jpg",
-        alt: "Cropped workshop breakout wall with pipeline and process sketches.",
-        caption: "Breakout wall: pipeline and process sketches from the session.",
-        width: 3460,
-        height: 3024,
-      },
-      {
-        src: "/images/cases/star-ccm-discovery-workshop/workshop-W3-encapsulating-model.jpg",
-        alt: "Workshop wall notes on encapsulating the model.",
-        caption: "Workshop wall: encapsulating the model.",
-        width: 4032,
-        height: 3024,
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-output-ideas-to-az.jpg",
+        alt: "Diagram from more than 120 workshop ideas through three design iterations to four actionable steps and the A to Z workflow on a toy-car model.",
+        caption:
+          "From more than 120 ideas to four actionable steps, and the A to Z path on the toy-car model.",
+        slot: "outcome",
+        board: true,
+        width: 1600,
+        height: 1100,
       },
       {
         src: "/images/cases/star-ccm-discovery-workshop/workshop-W5-filtered-view-approach.jpg",
         alt: "Upright workshop sheet titled Filtered View approach.",
         caption: "Filtered View approach, captured from the workshop wall.",
         portrait: true,
-        width: 3024,
-        height: 4032,
-      },
-      {
-        src: "/images/cases/star-ccm-discovery-workshop/workshop-W8-room-sketch.jpg",
-        alt: "Hand-drawn sketch of the workshop room layout.",
-        caption: "Room sketch of the workshop setup.",
-        portrait: true,
-        width: 1650,
+        width: 1800,
         height: 2400,
       },
       {
-        src: "/images/cases/star-ccm-discovery-workshop/workshop-W-austin-room-sketch-preso.jpg",
-        alt: "Workshop room sketch used in a session readout.",
-        caption: "Workshop room sketch from the session readout.",
-        portrait: true,
-        width: 1650,
-        height: 2400,
+        src: "/images/cases/star-ccm-discovery-workshop/workshop-W6-major-concepts.jpg",
+        alt: "Workshop wall covered in major-concept notes from the STAR-CCM+ discovery session.",
+        caption: "Workshop wall: major concepts the room aligned on.",
+        width: 2400,
+        height: 1800,
       },
     ],
     pullQuote:
@@ -682,6 +720,16 @@ export const cases: CaseStudy[] = [
         height: 720,
       },
       {
+        src: "/images/cases/star-ccm-az-workflow/az-before-java-tree.jpg",
+        alt: "Before-and-after board showing the Java client Simulation tree and volume mesh of the toy-car model beside the Next Gen custom tree and guidance menu.",
+        caption:
+          "The Java client Simulation tree on the toy-car model, and the Next Gen direction we took.",
+        slot: "challenge",
+        board: true,
+        width: 1600,
+        height: 1100,
+      },
+      {
         src: "/images/cases/star-ccm-az-workflow/az-C11-triggered-by-right-click.jpg",
         alt: "Legacy STAR-CCM+ Java client with a directory tree and a scalar field dialog triggered by right click.",
         caption:
@@ -691,13 +739,14 @@ export const cases: CaseStudy[] = [
         height: 699,
       },
       {
-        src: "/images/cases/star-ccm-az-workflow/az-A1-templates.jpg",
-        alt: "Simcenter STAR-CCM+ Views screen showing a drag monitor plot as a Simulation Templates concept.",
+        src: "/images/cases/star-ccm-az-workflow/az-templates-reusable-views.jpg",
+        alt: "Simulation Templates rail of reusable plots, layouts, and scenes, applied to the toy-car model.",
         caption:
-          "Simulation Templates, shared workflow best practices you can reuse.",
+          "Templates, reusable views you can apply to a model instead of rebuilding them by hand.",
         slot: "approach",
-        width: 1920,
-        height: 1080,
+        board: true,
+        width: 1600,
+        height: 1100,
       },
       {
         src: "/images/cases/star-ccm-az-workflow/az-A4-custom-tree-walls.jpg",
@@ -761,29 +810,32 @@ export const cases: CaseStudy[] = [
     artifacts: [
       {
         src: "/images/cases/star-ccm-cloud-payg/cloud-credits-time.jpg",
-        alt: "Diagram of prepaid cloud credits allocated to users and a team over a time window.",
+        alt: "Diagram of prepaid cloud credits allocated to users and a team, then burned on the job over a time window.",
         caption:
           "Prepaid credits, often on a 12-month window, allocated to users and teams from an account pool.",
-        width: 720,
-        height: 540,
+        board: true,
+        width: 1600,
+        height: 1100,
       },
       {
-        src: "/images/cases/star-ccm-cloud-payg/cloud-poc-submit-credits.jpg",
-        alt: "Cropped STAR-CCM+ cloud job submission screen showing credit balance and burn rate, with desktop chrome removed.",
+        src: "/images/cases/star-ccm-cloud-payg/cloud-job-manager-stop-button.jpg",
+        alt: "Designed illustration of a STAR-CCM+ Job Manager stop path, with halt, inspect, and reset, using generic job names.",
         caption:
-          "Submitting a cloud job, with balance and burn rate visible before the run starts.",
+          "Job Manager stop path, so a run already in flight could be halted.",
         slot: "approach",
-        width: 1920,
-        height: 785,
+        board: true,
+        width: 1600,
+        height: 1100,
       },
       {
         src: "/images/cases/star-ccm-cloud-payg/cloud-poc-monitor-credits.jpg",
-        alt: "Cropped STAR-CCM+ cloud job monitor showing credit burn during a run, with desktop chrome removed.",
+        alt: "Designed board of a STAR-CCM+ Power On Cloud job monitor, with user credit balance beside mid-run progress plots.",
         caption:
-          "Monitoring a run, and whether there are enough credits to reach convergence.",
+          "Monitoring a run, with remaining credits next to the plots that show whether there are enough to reach convergence.",
         slot: "approach",
-        width: 1920,
-        height: 785,
+        board: true,
+        width: 1600,
+        height: 1100,
       },
       {
         src: "/images/cases/star-ccm-cloud-payg/cloud-web-monitoring-client.jpg",
@@ -792,14 +844,6 @@ export const cases: CaseStudy[] = [
           "Web Monitoring Client prototype. The concepts landed in the Power On Cloud offering.",
         width: 1920,
         height: 1080,
-      },
-      {
-        src: "/images/cases/star-ccm-cloud-payg/cloud-job-manager-stop-button.jpg",
-        alt: "STAR-CCM+ Job Manager stop-button research finding, with the internal hostname cropped out of the browser chrome.",
-        caption:
-          "Job Manager stop path, so a run already in flight could be halted.",
-        width: 1920,
-        height: 941,
       },
     ],
     pullQuote: "A weekend cloud run could go wrong with no way to stop it.",
