@@ -60,14 +60,14 @@ function CaseFigure({
 }) {
   return (
     <figure
-      className={`case-figure${gallery ? " case-figure--gallery" : ""}${art.portrait ? " case-figure--portrait" : ""}`}
+      className={`case-figure${gallery ? " case-figure--gallery" : ""}${art.portrait ? " case-figure--portrait" : ""}${art.board ? " case-figure--board" : ""}`}
     >
       <div className="case-figure__frame">
         <Image
           src={art.src}
           alt={art.alt}
-          width={art.portrait ? 820 : 1120}
-          height={art.portrait ? 1106 : 630}
+          width={art.width ?? (art.portrait ? 820 : 1120)}
+          height={art.height ?? (art.portrait ? 1106 : 630)}
           sizes={
             gallery
               ? art.portrait
@@ -125,9 +125,17 @@ export default async function CasePage({ params }: Props) {
             {study.client} · {study.sector}
           </p>
           <h1>{study.title}</h1>
+          {study.tags.length > 0 ? (
+            <p className="case-hero__tags">
+              {study.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </p>
+          ) : null}
           <p className="case-hero__proof">{study.proof}</p>
+          <p className="case-hero__role">{study.role}</p>
           <p className="case-hero__meta">
-            {study.role} · {study.dates}
+            {study.dates}
             {study.clearance === "sterilized"
               ? " · Public details sterilized for clearance"
               : null}

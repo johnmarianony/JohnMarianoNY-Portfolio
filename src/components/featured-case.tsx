@@ -3,7 +3,6 @@ import Link from "next/link";
 import type { CaseStudy } from "@/content/cases";
 
 export function FeaturedCase({ study }: { study: CaseStudy }) {
-  const tags = [study.client, study.sector, ...study.tags.slice(0, 2)];
   const media = study.posterThumb ?? study.thumb;
 
   return (
@@ -36,7 +35,7 @@ export function FeaturedCase({ study }: { study: CaseStudy }) {
             <Link href={`/work/${study.slug}`}>{study.title}</Link>
           </h3>
           <p className="featured-case__tags">
-            {tags.map((tag) => (
+            {study.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </p>

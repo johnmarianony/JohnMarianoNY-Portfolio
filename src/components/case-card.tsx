@@ -30,8 +30,9 @@ export function CaseCard({ study }: { study: CaseStudy }) {
       <div className="case-card__body">
         <h3 className="case-card__title">{study.title}</h3>
         <p className="case-card__tags">
-          <span>{study.client}</span>
-          <span>{study.sector}</span>
+          {study.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
         </p>
         <p className="case-card__summary">{cardBlurb(study)}</p>
         <p className="case-card__proof">{study.proof}</p>

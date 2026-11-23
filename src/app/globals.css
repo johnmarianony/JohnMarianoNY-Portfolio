@@ -1225,6 +1225,10 @@ main:focus {
   .comic-sheet .case-card:nth-child(5) {
     grid-column: span 2;
   }
+
+  .comic-sheet .case-card:nth-child(n + 6) {
+    grid-column: span 3;
+  }
 }
 
 .case-card {
@@ -1454,11 +1458,32 @@ main:focus {
 .case-hero h1 {
   font-family: var(--font-display), serif;
   font-size: clamp(2.15rem, 4.5vw, 3.35rem);
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.7rem;
   letter-spacing: -0.03em;
   font-weight: 700;
-  max-width: 18ch;
+  max-width: 22ch;
   line-height: 1.08;
+}
+
+.case-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  margin: 0 0 0.85rem;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.case-hero__role {
+  margin: 0 0 0.65rem;
+  max-width: 42rem;
+  color: var(--fg-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
 }
 
 .case-hero__proof {
@@ -1670,6 +1695,16 @@ main:focus {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.case-figure--board .case-figure__frame {
+  aspect-ratio: auto;
+  height: auto;
+}
+
+.case-figure--board .case-figure__img {
+  object-fit: contain;
+  height: auto;
 }
 
 .case-figure figcaption {
