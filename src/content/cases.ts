@@ -143,26 +143,26 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/dow-platform-migration-mvp-5.jpg",
         alt: "Consolidation sketch of tangled legacy channels becoming request, approval, and knowledge paths on one record",
         caption:
-          "Legacy to Mission Service Center — eight channels become three paths on one record",
+          "Legacy to Mission Service Center, eight channels become three paths on one record",
         slot: "challenge",
       },
       {
         src: "/images/cases/dow-platform-migration-mvp-4.jpg",
         alt: "Value by migration-risk board marking what shipped in the MVP and what was deferred with a trigger",
         caption:
-          "Value × risk — what moved first, and a not-yet list with a trigger on each deferral",
+          "Value × risk, what moved first, and a not-yet list with a trigger on each deferral",
         slot: "approach",
       },
     ],
     pullQuote:
-      "The win wasn’t a launch screenshot—it was a contract-shaped outcome built under constraint.",
+      "The win wasn’t a launch screenshot, it was a contract-shaped outcome built under constraint.",
     outcomes: [
       "Design and requirements contributed to an MVP that supported an $820M, 5-year award",
       "Platform migration framing clarified scope under delivery pressure",
-      "Sterilized public narrative—deeper walkthrough available on request",
+      "Sterilized public narrative, deeper walkthrough available on request",
     ],
     context:
-      "A high-stakes War Department platform modernization effort required a credible MVP path—design and requirements tight enough to de-risk migration, clear enough for executive decision-making.",
+      "A high-stakes War Department platform modernization effort required a credible MVP path, design and requirements tight enough to de-risk migration, clear enough for executive decision-making.",
     problem:
       "The migration was already about three months behind. Legacy workflows were tangled, and the customer risk was not a pretty homepage. It was picking the wrong work first and burning the follow-on.",
     opportunity:
@@ -175,14 +175,14 @@ export const cases: CaseStudy[] = [
       "Kept artifacts clearance-safe for public storytelling",
     ],
     reflection:
-      "The win wasn’t a launch screenshot—it was a contract-shaped outcome built from disciplined platform design under constraint. Full narrative expanding as sterilized details are cleared.",
+      "The win wasn’t a launch screenshot, it was a contract-shaped outcome built from disciplined platform design under constraint. Full narrative expanding as sterilized details are cleared.",
   },
   {
     slug: "intel-portal-audit",
     title: "Heuristic Audit: Federal Mission Portal",
     client: "U.S. Government (cleared engagement)",
     sector: "Federal / Intelligence",
-    role: "UX lead — heuristic audit",
+    role: "UX lead · heuristic audit",
     dates: "Two-month engagement",
     featured: true,
     order: 2,
@@ -193,9 +193,9 @@ export const cases: CaseStudy[] = [
     thumb: "/images/cases/intel-portal-audit.jpg",
     thumbAlt: "Sterilized heuristic audit findings board",
     teaser:
-      "Eight-week heuristic audit of a classified self-service portal—quick wins for adoption plus a two-year modernization roadmap.",
+      "Eight-week heuristic audit of a classified self-service portal, quick wins for adoption plus a two-year modernization roadmap.",
     summary:
-      "Eight-week heuristic audit of a classified self-service portal—quick wins for adoption plus a two-year modernization roadmap.",
+      "Eight-week heuristic audit of a classified self-service portal, quick wins for adoption plus a two-year modernization roadmap.",
     metrics: [
       { value: "8 weeks", label: "Heuristic audit engagement" },
       { value: "2 years", label: "Modernization roadmap horizon" },
@@ -205,7 +205,7 @@ export const cases: CaseStudy[] = [
       {
         src: "/images/cases/intel-portal-audit.jpg",
         alt: "Sterilized heuristic audit findings board",
-        caption: "Findings synthesis — severity without exposing the system",
+        caption: "Findings synthesis, severity without exposing the system",
       },
       {
         src: "/images/cases/intel-portal-audit-2.jpg",
@@ -216,26 +216,26 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/intel-portal-audit-3.jpg",
         alt: "Six-step task walkthrough with severity tags, showing critical steps that end in a phone call",
         caption:
-          "Severity-tagged walkthrough — the critical steps fail, and people finish by phone",
+          "Severity-tagged walkthrough, the critical steps fail, and people finish by phone",
         slot: "challenge",
       },
       {
         src: "/images/cases/intel-portal-audit-4.jpg",
         alt: "Decision board splitting quick wins from structural bets against call-center volume",
         caption:
-          "VIP call-center workaround — two tracks, one goal: move volume off the phones",
+          "VIP call-center workaround, two tracks, one goal: move volume off the phones",
         slot: "approach",
       },
     ],
     pullQuote:
-      "Great UX isn’t about perfect freedom—it’s about strategic influence.",
+      "Great UX isn’t about perfect freedom, it’s about strategic influence.",
     outcomes: [
       "Quick-win recommendations to improve adoption across the agency",
       "Two-year modernization roadmap grounded in observed UX debt",
       "Clear separation of near-term fixes vs structural platform work",
     ],
     context:
-      "A deployed self-service portal needed an honest read on usability and adoption—without theater, and within clearance constraints.",
+      "A deployed self-service portal needed an honest read on usability and adoption, without theater, and within clearance constraints.",
     problem:
       "Everyone finished critical and noncritical work by phone. The call center was so easy and so efficient that the portal looked like the bottleneck and picked up unflattering nicknames, even though that phone path carried a steep cost.",
     opportunity:
@@ -248,7 +248,7 @@ export const cases: CaseStudy[] = [
       "Briefed stakeholders on adoption risks and sequencing",
     ],
     reflection:
-      "Great UX isn’t about perfect freedom—it’s about strategic influence. An eight-week lens can still shape years of modernization.",
+      "Great UX isn’t about perfect freedom, it’s about strategic influence. An eight-week lens can still shape years of modernization.",
   },
   {
     slug: "doi-platform-constraints",
@@ -257,8 +257,8 @@ export const cases: CaseStudy[] = [
     sector: "Federal",
     role: "UX Design Lead",
     dates: "2024–2025",
-    featured: true,
-    order: 3,
+    featured: false,
+    order: 7,
     proof: "Policy → platform-aligned UX; assets reused; contract extended",
     clearance: "sterilized",
     platforms: ["Power Platform", "USWDS"],
@@ -266,9 +266,9 @@ export const cases: CaseStudy[] = [
     thumb: "/images/cases/doi-platform-constraints.jpg",
     thumbAlt: "Sterilized federal constraint wireframe sheets",
     teaser:
-      "Translated federal policy into design constraints—aligning bureaus, mentoring juniors, and leaving assets that got reused.",
+      "Translated federal policy into design constraints, aligning bureaus, mentoring juniors, and leaving assets that got reused.",
     summary:
-      "Enabled platform alignment across federal bureaus through research, mentoring, and wireframe-based strategy—translating federal policy into actionable design constraints.",
+      "Enabled platform alignment across federal bureaus through research, mentoring, and wireframe-based strategy, translating federal policy into actionable design constraints.",
     metrics: [
       { value: "Policy → UX", label: "Constraints made actionable" },
       { value: "Reused", label: "Wireframes across DOI efforts" },
@@ -289,19 +289,19 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/doi-platform-constraints-4.jpg",
         alt: "Dark capability catalog sorting features into native, workaround, and off-limits",
         caption:
-          "Capability catalog — native, workaround, and off-limits before any polish",
+          "Capability catalog, native, workaround, and off-limits before any polish",
         slot: "challenge",
       },
       {
         src: "/images/cases/doi-platform-constraints-3.jpg",
         alt: "Dark annotated wire catalog of three shared flows, each marked policy, platform, and pattern",
         caption:
-          "Annotated wire catalog — every screen traces a policy line and a platform limit",
+          "Annotated wire catalog, every screen traces a policy line and a platform limit",
         slot: "approach",
       },
     ],
     pullQuote:
-      "Constraint isn’t the enemy of craft—it’s the brief.",
+      "Constraint isn’t the enemy of craft, it’s the brief.",
     outcomes: [
       "Wireframe strategy reused across DOI efforts",
       "Junior designers mentored into constraint-fluent practice",
@@ -321,7 +321,7 @@ export const cases: CaseStudy[] = [
       "Mentored designers through ambiguous federal delivery",
     ],
     reflection:
-      "Constraint isn’t the enemy of craft—it’s the brief. Influence shows up in what gets reused after you leave.",
+      "Constraint isn’t the enemy of craft, it’s the brief. Influence shows up in what gets reused after you leave.",
   },
   {
     slug: "state-total-experience",
@@ -330,8 +330,8 @@ export const cases: CaseStudy[] = [
     sector: "Federal",
     role: "UX strategy lead / team lead",
     dates: "2024",
-    featured: true,
-    order: 4,
+    featured: false,
+    order: 8,
     proof: "Quiet impact: research & framework left behind when launch wasn’t ready",
     clearance: "sterilized",
     platforms: ["Total Experience", "Multi-platform evaluation"],
@@ -339,9 +339,9 @@ export const cases: CaseStudy[] = [
     thumb: "/images/cases/state-total-experience.jpg",
     thumbAlt: "Sterilized Total Experience ecosystem map",
     teaser:
-      "Led Total Experience through fog and election clocks—quiet impact when launch wasn’t ready.",
+      "Led Total Experience through fog and election clocks, quiet impact when launch wasn’t ready.",
     summary:
-      "Led Total Experience through fog, election clocks, and no chosen platform—quiet impact: research and framework left behind when launch wasn’t ready.",
+      "Led Total Experience through fog, election clocks, and no chosen platform, quiet impact: research and framework left behind when launch wasn’t ready.",
     metrics: [
       { value: "TX", label: "Total Experience vision" },
       { value: "Fog", label: "No stack; shifting leadership" },
@@ -362,26 +362,26 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/state-total-experience-3.jpg",
         alt: "Ecosystem map of one employee journey across people, workplace, and service desks, with handoff breaks",
         caption:
-          "Ecosystem handoff map — one journey, and the breaks are in the handoffs",
+          "Ecosystem handoff map, one journey, and the breaks are in the handoffs",
         slot: "challenge",
       },
       {
         src: "/images/cases/state-total-experience-4.jpg",
         alt: "Non-launch board showing a frozen go-live and the criteria, roadmap, and owner left for the next team",
         caption:
-          "Non-launch pivot — go-live left the table; the handoff is what the next team can carry",
+          "Non-launch pivot, go-live left the table; the handoff is what the next team can carry",
         slot: "approach",
       },
     ],
     pullQuote:
-      "This wasn’t just designing screens—it was designing ecosystems.",
+      "This wasn’t just designing screens, it was designing ecosystems.",
     outcomes: [
       "Unifying vision across HR, admin, and service delivery",
       "Reusable framework influencing later platform decisions",
       "Mentored a team of three through ambiguous client leadership",
     ],
     context:
-      "No pre-selected tech stack, shifting client leadership, and an inauguration clock. Ambiguity wasn’t a phase—it was the operating environment.",
+      "No pre-selected tech stack, shifting client leadership, and an inauguration clock. Ambiguity wasn’t a phase, it was the operating environment.",
     problem:
       "The client had not picked a platform, leadership kept changing, and a hard political deadline was coming. Nobody could design the \"real\" product yet, but the work still had to move.",
     opportunity:
@@ -391,10 +391,10 @@ export const cases: CaseStudy[] = [
     approach: [
       "Weekly trust-building with the primary stakeholder",
       "Close mentorship for junior designers",
-      "Outcomes over deliverables—value leadership could carry forward",
+      "Outcomes over deliverables, value leadership could carry forward",
     ],
     reflection:
-      "This wasn’t just designing screens—it was designing ecosystems. Success can be quiet impact when launch isn’t ready.",
+      "This wasn’t just designing screens, it was designing ecosystems. Success can be quiet impact when launch isn’t ready.",
   },
   {
     slug: "dow-platform-modernization",
@@ -404,7 +404,7 @@ export const cases: CaseStudy[] = [
     role: "UX research & design",
     dates: "Prior engagement",
     featured: true,
-    order: 5,
+    order: 3,
     proof: "+65% satisfaction · 500+ engineering hours saved",
     clearance: "sterilized",
     platforms: ["Intelligence / mission platform"],
@@ -415,7 +415,7 @@ export const cases: CaseStudy[] = [
     teaser:
       "Field research and dual-path UX that raised satisfaction and recovered 500+ engineering hours.",
     summary:
-      "Modernized a fragmented mission platform through field research, journey mapping, and dual-path UX strategy—raising satisfaction and recovering engineering time.",
+      "Modernized a fragmented mission platform through field research, journey mapping, and dual-path UX strategy, raising satisfaction and recovering engineering time.",
     metrics: [
       { value: "+65%", label: "User satisfaction lift" },
       { value: "500+", label: "Engineering hours saved" },
@@ -425,7 +425,7 @@ export const cases: CaseStudy[] = [
       {
         src: "/images/cases/dow-platform-modernization.jpg",
         alt: "Sterilized dual-path journey modernization diagram",
-        caption: "Dual-path UX — power users and modern journeys together",
+        caption: "Dual-path UX, power users and modern journeys together",
       },
       {
         src: "/images/cases/dow-platform-modernization-2.jpg",
@@ -436,14 +436,14 @@ export const cases: CaseStudy[] = [
         src: "/images/cases/dow-platform-modernization-4.jpg",
         alt: "Field journey of one task crossing five apps, marking handoffs and re-entry points",
         caption:
-          "Field journey — one task, five apps, and where experts lose their place",
+          "Field journey, one task, five apps, and where experts lose their place",
         slot: "challenge",
       },
       {
         src: "/images/cases/dow-platform-modernization-5.jpg",
         alt: "Heat matrix of five apps against shared services, with overlap turning into conflict",
         caption:
-          "Heated overlap matrix — five apps rebuilding the same services, and where they collide",
+          "Heated overlap matrix, five apps rebuilding the same services, and where they collide",
         slot: "approach",
       },
     ],
@@ -468,7 +468,7 @@ export const cases: CaseStudy[] = [
       "Dual-path UX to land change without stranding experts",
     ],
     reflection:
-      "Modernization sticks when research earns the right to change workflows—not when a redesign is declared.",
+      "Modernization sticks when research earns the right to change workflows, not when a redesign is declared.",
   },
   {
     slug: "star-ccm-design-practice",
@@ -478,7 +478,7 @@ export const cases: CaseStudy[] = [
     role: "First HCI design lead for STAR-CCM+, then acting manager of the department for 18+ months. I reported directly to senior management and the director. I led a small HCI team, kept the research moving, and I was promoted in 2020.",
     dates: "March 2019 to January 2022",
     featured: true,
-    order: 6,
+    order: 4,
     proof: "Direct customer access, a monumental cultural shift",
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
@@ -566,7 +566,7 @@ export const cases: CaseStudy[] = [
     role: "I designed and facilitated the workshop as the new HCI lead, in a room of more than 30 departmental leaders and program managers from the major development teams and project management.",
     dates: "3 days",
     featured: true,
-    order: 7,
+    order: 5,
     proof: "90% positive feedback, and a three-year approach",
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
@@ -700,7 +700,7 @@ export const cases: CaseStudy[] = [
     role: "Lead UX research, strategy, and design. I walked the A to Z path on a real model, often by shoulder-surfing expert users who were new to the company, and I turned that path into a shared language for product and engineering.",
     dates: "March 2019 to January 2020",
     featured: false,
-    order: 10,
+    order: 9,
     proof: "First clear A to Z workflow map where none had been defined",
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
@@ -786,7 +786,7 @@ export const cases: CaseStudy[] = [
     role: "Lead UX research, strategy, and design. My research was integral to developing the cloud pay-as-you-go project, including Web Monitoring concepts that landed in our Power On Cloud offering, and a Job Manager stop path for runs that were already in flight.",
     dates: "2019 to 2022",
     featured: false,
-    order: 11,
+    order: 10,
     proof: "50% faster time-to-market",
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
@@ -875,7 +875,7 @@ export const cases: CaseStudy[] = [
     role: "Business Consultant, Adobe Social, and the lead of three onshore consultants. The team had a manager, the three of us onshore, and eight offshore technical consultants who set up the configurations from the requirements we gathered. I was aligned with the offshore lead. I mentored the other onshore consultants, ran standups, and assigned work. I took the most complicated setups, the largest customers, and the at-risk contracts, and I stepped in when other engagements started to go sideways. When the manager left the position, I stepped into that gap. I was not the product owner.",
     dates: "Dec 2012 to Jan 2015",
     featured: true,
-    order: 8,
+    order: 6,
     proof: "6 months to 2 weeks, and 25% higher adoption",
     clearance: "public",
     platforms: ["Adobe Social"],
@@ -936,8 +936,8 @@ export const cases: CaseStudy[] = [
     sector: "Summit",
     role: "Experience Designer, Cross-Device Event Applications. I designed the Screens and mobile applications, and coordinated development for the engineers by leading front-end dev efforts. I worked with three sales leads and two developers.",
     dates: "Jan to Mar 2017",
-    featured: true,
-    order: 9,
+    featured: false,
+    order: 11,
     proof: "+20% lead conversions, 250+ interactions, 45+ leads",
     clearance: "public",
     platforms: ["AEM Mobile", "AEM Screens"],
@@ -1022,7 +1022,7 @@ export const cases: CaseStudy[] = [
     role: "Front-end / App Builder, Context Optional and Adobe Social. I documented template builds, trained others to ship them, and worked the first Audience apps for ESPN X Games.",
     dates: "2011 to 2013",
     featured: false,
-    order: 9,
+    order: 12,
     proof: "+30% engagement across four cities, eight apps",
     clearance: "public",
     platforms: ["Facebook apps", "Adobe Social"],
@@ -1142,7 +1142,7 @@ export const cases: CaseStudy[] = [
     role: "UX Designer, Adobe consulting. Presales heuristic review and live testing for Darden / Olive Garden.",
     dates: "September 2017",
     featured: false,
-    order: 12,
+    order: 13,
     proof: "Darden shipped the winner. Order Now back on top.",
     clearance: "public",
     platforms: ["Adobe Target", "Olive Garden ordering"],
@@ -1231,4 +1231,14 @@ export function getCaseBySlug(slug: string) {
 
 export function getAllCases() {
   return [...cases].sort((a, b) => a.order - b.order);
+}
+
+export function getCaseNeighbors(slug: string) {
+  const ordered = getAllCases();
+  const index = ordered.findIndex((item) => item.slug === slug);
+  if (index === -1) return { previous: undefined, next: undefined };
+  return {
+    previous: index > 0 ? ordered[index - 1] : undefined,
+    next: index < ordered.length - 1 ? ordered[index + 1] : undefined,
+  };
 }

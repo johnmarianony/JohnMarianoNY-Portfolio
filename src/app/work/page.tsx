@@ -1,33 +1,34 @@
 import type { Metadata } from "next";
-import { CaseCard } from "@/components/case-card";
+import { CaseArchive, CaseCard } from "@/components/case-card";
 import { getAllCases, getFeaturedCases } from "@/content/cases";
 
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected platform experience and UX strategy case studies—federal, War Department, and enterprise.",
+    "Selected platform experience and UX strategy case studies, federal, War Department, and enterprise.",
 };
 
 export default function WorkPage() {
   const featured = getFeaturedCases();
-  const archive = getAllCases().filter((c) => !c.featured);
+  const archive = getAllCases().filter((study) => !study.featured);
 
   return (
-    <div className="container">
+    <div className="container work-index">
       <header className="page-hero">
-        <h1>Work</h1>
+        <p className="label">Work</p>
+        <h1>Selected work</h1>
         <p>
           Featured engagements first. Archive pieces stay available without
           crowding the hiring skim.
         </p>
       </header>
 
-      <section className="section" style={{ paddingTop: "1rem" }} aria-labelledby="featured-heading">
-        <p className="section__eyebrow">Featured</p>
-        <h2 id="featured-heading" className="section__title">
-          Featured engagements
+      <section aria-labelledby="featured-heading">
+        <p className="label">Featured</p>
+        <h2 id="featured-heading" className="section__title" style={{ fontSize: "var(--text-display-m)", marginTop: 14 }}>
+          Six featured engagements
         </h2>
-        <div className="case-grid case-grid--gallery">
+        <div className="grid2">
           {featured.map((study) => (
             <CaseCard key={study.slug} study={study} />
           ))}
@@ -35,15 +36,13 @@ export default function WorkPage() {
       </section>
 
       {archive.length > 0 ? (
-        <section className="section" style={{ paddingTop: 0 }}>
-          <p className="section__eyebrow">Archive</p>
-          <h2 className="section__title">Additional work</h2>
-          <div className="case-grid">
-            {archive.map((study) => (
-              <CaseCard key={study.slug} study={study} />
-            ))}
+        <div className="archive">
+          <div>
+            <p className="label">Archive</p>
+            <h3>Seven more case studies</h3>
           </div>
-        </section>
+          <CaseArchive studies={archive} />
+        </div>
       ) : null}
     </div>
   );

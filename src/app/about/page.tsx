@@ -17,7 +17,7 @@ export default function AboutPage() {
 
       <div className="stack stack--measure">
         <p>
-          I’m John Mariano—a platform experience strategist and designer with
+          I’m John Mariano, a platform experience strategist and designer with
           20+ years turning ambiguous multi-app ecosystems into clearer
           delivery. At Accenture Federal Services I lead UX on large-scale
           government platforms where content strategy, service design, and
@@ -38,12 +38,12 @@ export default function AboutPage() {
           shape the cloud pay-as-you-go path.
         </p>
         <p>
-          I’m a storyteller and mentor as much as a strategist—most proud when
+          I’m a storyteller and mentor as much as a strategist, most proud when
           junior designers leave a project more fluent in constraint than when
           they arrived.
         </p>
         <p>
-          I use AI as a craft amplifier with a published ethical line—human-led,
+          I use AI as a craft amplifier with a published ethical line, human-led,
           purpose-driven. I write about that practice on{" "}
           <a
             href={site.social.substack}

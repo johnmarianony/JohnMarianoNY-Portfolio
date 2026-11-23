@@ -2,75 +2,66 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/content/site";
 
+function Headline({ text }: { text: string }) {
+  const phrase = "clarity to complexity";
+  const index = text.toLowerCase().indexOf(phrase);
+  if (index === -1) return text;
+  return (
+    <>
+      {text.slice(0, index)}
+      <em>{text.slice(index, index + phrase.length)}</em>
+      {text.slice(index + phrase.length)}
+    </>
+  );
+}
+
 export function Hero() {
   return (
-    <section className="hero hero--splash">
-      <div className="hero__plane" aria-hidden="true">
-        <Image
-          src="/images/hero/platform-atmosphere.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="hero__image"
-        />
-        <div className="hero__benday" />
-        <div className="hero__scrim" />
-        <div className="hero__ink" />
-      </div>
-
-      <div className="container hero__content">
-        <div className="hero__masthead">
-          <div className="hero__splash-panel">
-            <p className="sr-only">{site.name} — platform experience strategist</p>
-            <p className="hero__panel-kicker" aria-hidden="true">
-              Issue · Cover · 01
-            </p>
-            <h1 className="hero__brand">
-              <span className="hero__brand-mark" aria-hidden="true" />
-              <span className="hero__brand-line">John</span>
-              <span className="hero__brand-line hero__brand-line--name">
-                Mariano
-              </span>
+    <>
+      <section className="hero">
+        <div className="wrap">
+          <div>
+            <p className="label">{site.eyebrow}</p>
+            <h1 className="serif">
+              <Headline text={site.headline} />
             </h1>
-            <p className="hero__headline">{site.headline}</p>
-            <p className="hero__support">{site.support}</p>
-            <div className="hero__actions">
-              <Link href={site.cta.primary.href} className="btn btn--primary">
+            <p className="pos">{site.positioning}</p>
+            <p className="lead-line">{site.leadLine}</p>
+            <div className="btns">
+              <Link href={site.cta.primary.href} className="btn primary">
                 {site.cta.primary.label}
               </Link>
-              <Link href={site.cta.secondary.href} className="btn btn--ghost">
+              <Link href={site.cta.secondary.href} className="btn ghost">
                 {site.cta.secondary.label}
               </Link>
             </div>
           </div>
-
-          <figure className="hero__figure">
-            <Image
-              src="/images/hero/john-hero-figure.png"
-              alt="Ink-and-marker caricature of John Mariano"
-              width={720}
-              height={960}
-              sizes="(max-width: 900px) 55vw, min(38vw, 420px)"
-              className="hero__figure-img"
-              priority
-              unoptimized
-            />
+          <figure className="post">
+            <div className="frame">
+              <Image
+                src="/images/hero/john-hero-figure.png"
+                alt="Ink-and-marker caricature of John Mariano"
+                fill
+                sizes="(max-width: 600px) 80vw, 380px"
+                style={{ objectFit: "cover", objectPosition: "top" }}
+                preload
+              />
+            </div>
+            <figcaption>{site.support}</figcaption>
           </figure>
         </div>
-
-        <section className="hero__proofs" aria-label="Selected proof points">
-          {site.proofs.map((proof, i) => (
-            <div key={proof.value} className="proof proof--panel">
-              <p className="proof__index" aria-hidden="true">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <p className="proof__value">{proof.value}</p>
-              <p className="proof__label">{proof.label}</p>
+      </section>
+      <section className="band" aria-label="Selected proof points">
+        <div className="wrap">
+          {site.proofs.map((proof, index) => (
+            <div key={proof.value} className="proof">
+              <span className="n">{String(index + 1).padStart(2, "0")}</span>
+              <b>{proof.value}</b>
+              <span className="proof__label">{proof.label}</span>
             </div>
           ))}
-        </section>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }
