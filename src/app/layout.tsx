@@ -34,9 +34,7 @@ export const metadata: Metadata = {
     description: site.metaDescription,
     type: "website",
     locale: "en_US",
-  },
-  alternates: {
-    canonical: "/",
+    url: "/",
   },
 };
 

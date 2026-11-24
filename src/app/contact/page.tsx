@@ -4,6 +4,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact John Mariano about platform experience and UX strategy roles.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

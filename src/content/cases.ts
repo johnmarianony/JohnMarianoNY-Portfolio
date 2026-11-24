@@ -106,7 +106,7 @@ export const cases: CaseStudy[] = [
   {
     slug: "dow-platform-migration-mvp",
     title: "Platform Migration MVP: Federal Defense Organization",
-    client: "War Department (DOW)",
+    client: "Federal Defense Organization",
     sector: "Federal",
     role: "UX / platform design & requirements (delivery team)",
     dates: "2025–2026",
@@ -126,7 +126,7 @@ export const cases: CaseStudy[] = [
     metrics: [
       { value: "$820M", label: "5-year contract the MVP helped win" },
       { value: "MVP", label: "Platform design & migration path" },
-      { value: "DOW", label: "War Department delivery team" },
+      { value: "Federal", label: "Federal Defense Organization delivery team" },
     ],
     artifacts: [
       {
@@ -162,7 +162,7 @@ export const cases: CaseStudy[] = [
       "Sterilized public narrative, deeper walkthrough available on request",
     ],
     context:
-      "A high-stakes War Department platform modernization effort required a credible MVP path, design and requirements tight enough to de-risk migration, clear enough for executive decision-making.",
+      "A high-stakes Federal Defense Organization platform modernization effort required a credible MVP path, design and requirements tight enough to de-risk migration, clear enough for executive decision-making.",
     problem:
       "The migration was already about three months behind. Legacy workflows were tangled, and the customer risk was not a pretty homepage. It was picking the wrong work first and burning the follow-on.",
     opportunity:
@@ -181,7 +181,7 @@ export const cases: CaseStudy[] = [
     slug: "intel-portal-audit",
     title: "Heuristic Audit: Federal Mission Portal",
     client: "U.S. Government (cleared engagement)",
-    sector: "Federal / Intelligence",
+    sector: "Federal",
     role: "UX lead · heuristic audit",
     dates: "Two-month engagement",
     featured: true,
@@ -253,7 +253,7 @@ export const cases: CaseStudy[] = [
   {
     slug: "doi-platform-constraints",
     title: "Constrained Platform Design: Federal Agency",
-    client: "Department of the Interior",
+    client: "Federal Agency",
     sector: "Federal",
     role: "UX Design Lead",
     dates: "2024–2025",
@@ -271,7 +271,7 @@ export const cases: CaseStudy[] = [
       "Enabled platform alignment across federal bureaus through research, mentoring, and wireframe-based strategy, translating federal policy into actionable design constraints.",
     metrics: [
       { value: "Policy → UX", label: "Constraints made actionable" },
-      { value: "Reused", label: "Wireframes across DOI efforts" },
+      { value: "Reused", label: "Wireframes across Federal Agency efforts" },
       { value: "Extended", label: "Contract on alignment strength" },
     ],
     artifacts: [
@@ -303,7 +303,7 @@ export const cases: CaseStudy[] = [
     pullQuote:
       "Constraint isn’t the enemy of craft, it’s the brief.",
     outcomes: [
-      "Wireframe strategy reused across DOI efforts",
+      "Wireframe strategy reused across Federal Agency efforts",
       "Junior designers mentored into constraint-fluent practice",
       "Contract extended on the strength of platform alignment work",
     ],
@@ -326,7 +326,7 @@ export const cases: CaseStudy[] = [
   {
     slug: "state-total-experience",
     title: "Total Experience Strategy: Federal Agency",
-    client: "U.S. Department of State",
+    client: "Federal Agency",
     sector: "Federal",
     role: "UX strategy lead / team lead",
     dates: "2024",
@@ -399,7 +399,7 @@ export const cases: CaseStudy[] = [
   {
     slug: "dow-platform-modernization",
     title: "Mission Platform Suite: Federal Defense Organization",
-    client: "War Department (DOW)",
+    client: "Federal Defense Organization",
     sector: "Federal",
     role: "UX research & design",
     dates: "Prior engagement",
@@ -407,7 +407,7 @@ export const cases: CaseStudy[] = [
     order: 3,
     proof: "+65% satisfaction · 500+ engineering hours saved",
     clearance: "sterilized",
-    platforms: ["Intelligence / mission platform"],
+    platforms: ["Mission platform"],
     tags: ["Platform", "Research"],
     dowAccent: true,
     thumb: "/images/cases/dow-platform-modernization.jpg",

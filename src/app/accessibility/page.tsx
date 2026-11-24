@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Accessibility",
   description:
     "Accessibility statement for John Mariano’s portfolio, Section 508 / WCAG commitment and how to report issues.",
+  alternates: { canonical: "/accessibility" },
 };
 
 export default function AccessibilityPage() {

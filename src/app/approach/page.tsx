@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Approach",
   description:
     "How John Mariano leads platform experience under constraint, methods, mentorship, and human-led AI craft.",
+  alternates: { canonical: "/approach" },
 };
 
 export default function ApproachPage() {

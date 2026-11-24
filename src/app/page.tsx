@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseArchive, CaseCard } from "@/components/case-card";
 import { FeaturedCase } from "@/components/featured-case";
@@ -29,6 +30,10 @@ const groups = [
   },
 ] as const;
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function HomePage() {
   const featured = getFeaturedCases();
   const archive = getAllCases().filter((study) => !study.featured);
@@ -45,8 +50,8 @@ export default function HomePage() {
               <h2>Experience marks the spot</h2>
             </div>
             <p>
-              Six featured engagements, image-first and outcome-led. War Department
-              work first; sterilized artifacts in place of cleared screens.
+              Six featured engagements, image-first and outcome-led. Federal Defense
+              Organization work first; sterilized artifacts in place of cleared screens.
             </p>
           </div>
 

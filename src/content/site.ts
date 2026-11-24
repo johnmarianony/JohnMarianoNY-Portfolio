@@ -20,11 +20,11 @@ export const site = {
   proofs: [
     {
       value: "$820M · 5-year",
-      label: "War Department platform migration MVP that helped win the contract",
+      label: "Federal Defense Organization platform migration MVP that helped win the contract",
     },
     {
       value: "+65% satisfaction",
-      label: "500+ engineering hours saved on DOW platform modernization",
+      label: "500+ engineering hours saved on Federal Defense Organization platform modernization",
     },
     {
       value: "8 weeks → 2 years",
@@ -39,7 +39,7 @@ export const site = {
     {
       title: "Designing Through Ambiguity",
       url: "https://johnmarianony.substack.com/p/designing-through-ambiguity-leading",
-      blurb: "Leading Total Experience at State: fog, election clocks, quiet impact.",
+      blurb: "Leading Total Experience at a Federal Agency: fog, election clocks, quiet impact.",
     },
     {
       title: "My Line in the Sand",
