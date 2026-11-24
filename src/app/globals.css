@@ -605,7 +605,7 @@ main:focus {
 
 .card .img img {
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 
 .card__placeholder {
@@ -1382,7 +1382,7 @@ main:focus {
   width: 200px;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 
 .nc .nc__media {
@@ -1395,7 +1395,7 @@ main:focus {
 
 .nc .nc__media img {
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 
 .nc a.r {
