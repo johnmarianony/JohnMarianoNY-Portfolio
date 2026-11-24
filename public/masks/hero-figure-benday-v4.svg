@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" preserveAspectRatio="none">
+  <!-- Dissolve only at the squared-off bottom edge of the bust -->
+  <defs>
+    <linearGradient id="solidFade" gradientUnits="userSpaceOnUse" x1="0" y1="860" x2="0" y2="920">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="bd1" width="7" height="7" patternUnits="userSpaceOnUse">
+      <circle cx="3.5" cy="3.5" r="2.45" fill="#fff"/>
+    </pattern>
+    <pattern id="bd2" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.15" fill="#fff"/>
+    </pattern>
+    <pattern id="bd3" width="9.5" height="9.5" patternUnits="userSpaceOnUse">
+      <circle cx="4.75" cy="4.75" r="1.75" fill="#fff"/>
+    </pattern>
+    <pattern id="bd4" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="1.35" fill="#fff"/>
+    </pattern>
+    <pattern id="bd5" width="13" height="13" patternUnits="userSpaceOnUse">
+      <circle cx="6.5" cy="6.5" r="0.95" fill="#fff"/>
+    </pattern>
+  </defs>
+  <!-- Solid through the full squared shoulder/chest crop -->
+  <rect x="0" y="0" width="720" height="880" fill="#fff"/>
+  <rect x="0" y="860" width="720" height="60" fill="url(#solidFade)"/>
+  <!-- Short Ben-Day dissolve replacing the hard bottom edge -->
+  <rect x="0" y="855" width="720" height="30" fill="url(#bd1)"/>
+  <rect x="0" y="875" width="720" height="25" fill="url(#bd2)" opacity="0.8"/>
+  <rect x="0" y="892" width="720" height="22" fill="url(#bd3)" opacity="0.5"/>
+  <rect x="0" y="906" width="720" height="22" fill="url(#bd4)" opacity="0.25"/>
+  <rect x="0" y="920" width="720" height="40" fill="url(#bd5)" opacity="0.08"/>
+</svg>
