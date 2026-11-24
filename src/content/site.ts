@@ -19,12 +19,12 @@ export const site = {
   },
   proofs: [
     {
-      value: "$800M · 5+ years",
-      label: "Federal defense platform migration MVP that led to the contract",
+      value: "$820M · 5-year",
+      label: "War Department platform migration MVP that helped win the contract",
     },
     {
       value: "+65% satisfaction",
-      label: "500+ engineering hours saved on a mission-critical defense platform suite",
+      label: "500+ engineering hours saved on DOW platform modernization",
     },
     {
       value: "8 weeks → 2 years",

@@ -86,12 +86,6 @@ export type CaseStudy = {
   postcards?: CasePostcard[];
   artifacts?: CaseArtifact[];
   pullQuote?: string;
-  /** Role attribution for pullQuote, shown under the quote. */
-  pullQuoteCite?: string;
-  /** Lead-in above the outcomes list, when the locked copy has one. */
-  outcomesIntro?: string;
-  /** Engagement team. Shown under the case hero when set. */
-  team?: string;
   outcomes: string[];
   context: string;
   /** Labeled beats under Context. Omit when a case does not use this frame. */
@@ -114,46 +108,36 @@ export const cases: CaseStudy[] = [
     title: "Platform Migration MVP: Federal Defense Organization",
     client: "War Department (DOW)",
     sector: "Federal",
-    role: "Lead Designer & Lead Business Analyst",
+    role: "UX / platform design & requirements (delivery team)",
     dates: "2025–2026",
     featured: true,
     order: 1,
-    proof: "$800M · five-plus-year contract",
+    proof: "$820M · 5-year contract",
     clearance: "sterilized",
     platforms: ["Platform migration", "MVP delivery"],
     tags: ["Requirements", "Delivery"],
     dowAccent: true,
-    thumb: "/images/cases/dow-platform-migration-mvp/artifact-3.jpg",
-    thumbAlt: "Dark-mode ITSM employee portal homepage for a mission service center",
-    team:
-      "Me, alongside solution architects, engineers, and program leads",
+    thumb: "/images/cases/dow-platform-migration-mvp.jpg",
+    thumbAlt: "Sterilized platform migration architecture diagram",
     teaser:
-      "Lead designer and lead BA for a migration MVP that started three months behind and led to an $800 million, five-plus-year contract.",
+      "Design and requirements for a platform migration MVP that helped win an $820M, five-year contract.",
     summary:
-      "A high-stakes federal defense modernization needed a credible path off its legacy systems. I joined as both the lead designer and the lead BA for the migration MVP. When I started, the project was three months behind schedule.",
+      "Integral to a delivery team shaping design and requirements for a platform design and migration MVP that helped win an $820M, five-year contract.",
     metrics: [
-      { value: "$800M", label: "Five-plus-year contract to continue development" },
-      { value: "3 months", label: "Schedule deficit recovered on the MVP" },
-      { value: "MVP", label: "Overdelivered, then carried onto the main contract" },
+      { value: "$820M", label: "5-year contract the MVP helped win" },
+      { value: "MVP", label: "Platform design & migration path" },
+      { value: "DOW", label: "War Department delivery team" },
     ],
     artifacts: [
       {
-        src: "/images/cases/dow-platform-migration-mvp/artifact-3.jpg",
-        alt: "Dark-mode ITSM employee portal homepage for a mission service center",
-        caption:
-          "Day-one employee portal — search, catalog, requests, and status on the migrated platform",
+        src: "/images/cases/dow-platform-migration-mvp.jpg",
+        alt: "Sterilized platform migration architecture diagram",
+        caption: "Target architecture framing for the migration MVP",
       },
       {
-        src: "/images/cases/dow-platform-migration-mvp/artifact-1.jpg",
-        alt: "Dark-mode MVP traceability board with mission-value and migration-risk chips",
-        caption:
-          "Need → requirement → MVP feature, with the numbers leadership used to say yes",
-      },
-      {
-        src: "/images/cases/dow-platform-migration-mvp/artifact-2.jpg",
-        alt: "Dark-mode day-one flow screens next to an MVP one-pager",
-        caption:
-          "Four day-one screens beside the Scope / Sequence / Risk one-pager — including what we deliberately left out",
+        src: "/images/cases/dow-platform-migration-mvp-2.jpg",
+        alt: "Sterilized before-to-after platform consolidation diagram",
+        caption: "From tangled legacy nodes to a clearer target platform",
       },
       {
         src: "/images/cases/dow-platform-migration-mvp-5.jpg",
@@ -186,12 +170,9 @@ export const cases: CaseStudy[] = [
     constraint:
       "We were moving into a standard ITSM-class platform, not a custom build. That meant using what the platform already offered for tickets, catalogs, and day-one service paths. Design stayed dark and 508-friendly so it would clear a federal review, not win an awards deck.",
     approach: [
-      "As lead designer and lead BA, I owned both the experience and the requirements behind it.",
-      "Framed the target architecture and mapped how tangled legacy workflows would consolidate into a clearer platform.",
-      "Ranked workflows by mission value and migration risk to decide what moved first, and just as clearly, what didn’t move yet.",
-      "Built requirements traceability from user needs to requirements to MVP features.",
-      "Designed low-fidelity day-one flows so leadership could see what users would experience at launch.",
-      "Summarized scope, sequence, and risk on a single page for executives.",
+      "Partnered inside the delivery team on platform design and requirements",
+      "Framed migration MVP outcomes for leadership and engineering alignment",
+      "Kept artifacts clearance-safe for public storytelling",
     ],
     reflection:
       "The win wasn’t a launch screenshot, it was a contract-shaped outcome built from disciplined platform design under constraint. Full narrative expanding as sterilized details are cleared.",
@@ -205,7 +186,7 @@ export const cases: CaseStudy[] = [
     dates: "Two-month engagement",
     featured: true,
     order: 2,
-    proof: "8 weeks → 2-year roadmap",
+    proof: "8-week audit → 2-year modernization roadmap",
     clearance: "sterilized",
     platforms: ["Self-service portal"],
     tags: ["Research", "Service design"],
@@ -216,9 +197,9 @@ export const cases: CaseStudy[] = [
     summary:
       "Eight-week heuristic audit of a classified self-service portal, quick wins for adoption plus a two-year modernization roadmap.",
     metrics: [
-      { value: "8 weeks", label: "Audit delivered" },
-      { value: "2 years", label: "Modernization roadmap from observed UX debt" },
-      { value: "Quick wins", label: "Adoption work sequenced ahead of structural change" },
+      { value: "8 weeks", label: "Heuristic audit engagement" },
+      { value: "2 years", label: "Modernization roadmap horizon" },
+      { value: "Adoption", label: "Quick wins sequenced first" },
     ],
     artifacts: [
       {
@@ -227,10 +208,9 @@ export const cases: CaseStudy[] = [
         caption: "Findings synthesis, severity without exposing the system",
       },
       {
-        src: "/images/cases/intel-portal-audit/artifact-2.jpg",
-        alt: "Compiled executive readout board with adoption, quick wins, and roadmap pieces",
-        caption:
-          "Executive readout: adoption pattern, quick wins vs structural bets, and a two-year roadmap",
+        src: "/images/cases/intel-portal-audit-2.jpg",
+        alt: "Sterilized quick-wins to multi-year roadmap timeline",
+        caption: "Quick wins now, structural bets across a two-year arc",
       },
       {
         src: "/images/cases/intel-portal-audit-3.jpg",
@@ -250,10 +230,9 @@ export const cases: CaseStudy[] = [
     pullQuote:
       "Great UX isn’t about perfect freedom, it’s about strategic influence.",
     outcomes: [
-      "Delivered the audit in 8 weeks.",
-      "Built a two-year modernization roadmap grounded in observed UX debt.",
-      "Put the adoption-focused quick wins first, so the organization could start rebuilding user trust and shifting volume off the call center.",
-      "Recommended a rebranding initiative: next to the VIP call-center path, the portal had gained a reputation as a bottleneck.",
+      "Quick-win recommendations to improve adoption across the agency",
+      "Two-year modernization roadmap grounded in observed UX debt",
+      "Clear separation of near-term fixes vs structural platform work",
     ],
     context:
       "A deployed self-service portal needed an honest read on usability and adoption, without theater, and within clearance constraints.",
@@ -264,12 +243,9 @@ export const cases: CaseStudy[] = [
     constraint:
       "A cleared on-prem self-service portal competing with a high-SLA call center. Severity and nicknames stay composite. No system or vendor names.",
     approach: [
-      "Worked in tandem with my director on the audit. Because I held the clearance, I was the one who could audit the platform and its workflows on premises.",
-      "Audited the portal on site, walking through the most important user tasks end to end so every finding was tied to real work rather than isolated screens.",
-      "Took notes by hand and made rough drawings that redacted any cleared information but still showed my team the current platform configuration and where the workflows had pain points and bottlenecks.",
-      "Ran heuristic evaluations against those flows and scored each issue by severity and frequency.",
-      "Split the findings into two tracks: quick wins (labels, wayfinding, error recovery, status feedback) and structural work (content, information architecture, platform, governance).",
-      "Shared findings with the government’s team and the subcontracting team in plain language, and wrote each recommendation as a decision they could own and sequence without us.",
+      "Heuristic evaluation against real task flows",
+      "Prioritized findings into quick wins and multi-year bets",
+      "Briefed stakeholders on adoption risks and sequencing",
     ],
     reflection:
       "Great UX isn’t about perfect freedom, it’s about strategic influence. An eight-week lens can still shape years of modernization.",
@@ -294,22 +270,20 @@ export const cases: CaseStudy[] = [
     summary:
       "Enabled platform alignment across federal bureaus through research, mentoring, and wireframe-based strategy, translating federal policy into actionable design constraints.",
     metrics: [
-      { value: "Policy", label: "Style guide and requirements made actionable" },
-      { value: "Reused", label: "Wireframes across efforts in the program" },
-      { value: "Extended", label: "Contract on the strength of the alignment work" },
+      { value: "Policy → UX", label: "Constraints made actionable" },
+      { value: "Reused", label: "Wireframes across DOI efforts" },
+      { value: "Extended", label: "Contract on alignment strength" },
     ],
     artifacts: [
       {
-        src: "/images/cases/doi-platform-constraints/artifact-1.jpg",
-        alt: "Side-by-side bureau back-office and portal screens reflecting two unnamed platform looks",
-        caption:
-          "Two related bureau projects on one shared platform — back-office workflows beside a public-facing portal",
+        src: "/images/cases/doi-platform-constraints.jpg",
+        alt: "Sterilized federal constraint wireframe sheets",
+        caption: "Wireframe strategy under shared platform rules",
       },
       {
-        src: "/images/cases/doi-platform-constraints/artifact-2.jpg",
-        alt: "Compilation board showing four constraint sources flowing into Must, Should, and Can’t",
-        caption:
-          "Four sources feeding Must / Should / Can’t — customer requirements, platform limits, the federal style guide, and bureau branding",
+        src: "/images/cases/doi-platform-constraints-2.jpg",
+        alt: "Sterilized mentorship and constraint workshop board",
+        caption: "Workshop boards that made policy legible for designers",
       },
       {
         src: "/images/cases/doi-platform-constraints-4.jpg",
@@ -329,10 +303,9 @@ export const cases: CaseStudy[] = [
     pullQuote:
       "Constraint isn’t the enemy of craft, it’s the brief.",
     outcomes: [
-      "Made policy and the updated style guide actionable as design constraints.",
-      "My wireframes were reused across efforts in the program.",
-      "Junior designers grew into confident, constraint-aware practitioners.",
-      "The contract was extended on the strength of the alignment work.",
+      "Wireframe strategy reused across DOI efforts",
+      "Junior designers mentored into constraint-fluent practice",
+      "Contract extended on the strength of platform alignment work",
     ],
     context:
       "Multiple bureaus, shared platforms, and policy constraints that make “UX theater” expensive. The job was unification without pretending freedom that didn’t exist.",
@@ -343,13 +316,9 @@ export const cases: CaseStudy[] = [
     constraint:
       "Shared low-code backends for internal users only. One program also needed a public-facing front end on a separate portal class, so what could ship native differed by audience, not just by bureau. Catalog first: Native / Workaround / Off-limits.",
     approach: [
-      "Interpreted the recently updated federal style guide, decided how it should apply inside the platform, and showed teams how to use it.",
-      "Translated policy into designable rules, sorting each requirement into “must,” “should,” or “the platform can’t do this.”",
-      "Mapped what the low-code platform supported natively, what needed a workaround, and what was off-limits.",
-      "Built a reusable, annotated wireframe kit on the federal design system. The margin notes explained why each pattern worked the way it did.",
-      "Ran workshops where designers practiced reading policy as a design brief.",
-      "Mentored junior designers who were new to federal work, using a simple review checklist they also used to critique each other’s work.",
-      "Kept patterns simple, since citizen developers would maintain many of these screens after launch.",
+      "Translated policy into design constraints teams could use",
+      "Wireframe-led strategy for cross-bureau alignment",
+      "Mentored designers through ambiguous federal delivery",
     ],
     reflection:
       "Constraint isn’t the enemy of craft, it’s the brief. Influence shows up in what gets reused after you leave.",
@@ -359,7 +328,7 @@ export const cases: CaseStudy[] = [
     title: "Total Experience Strategy: Federal Agency",
     client: "U.S. Department of State",
     sector: "Federal",
-    role: "UX Strategy Lead / Team Lead",
+    role: "UX strategy lead / team lead",
     dates: "2024",
     featured: false,
     order: 8,
@@ -374,22 +343,20 @@ export const cases: CaseStudy[] = [
     summary:
       "Led Total Experience through fog, election clocks, and no chosen platform, quiet impact: research and framework left behind when launch wasn’t ready.",
     metrics: [
-      { value: "15 → 2", label: "Platforms researched against government requirements" },
-      { value: "2+ years", label: "Roadmap leadership could carry forward" },
-      { value: "TX", label: "Vision across HR, admin, and service delivery" },
+      { value: "TX", label: "Total Experience vision" },
+      { value: "Fog", label: "No stack; shifting leadership" },
+      { value: "Quiet", label: "Impact without a launch" },
     ],
     artifacts: [
       {
-        src: "/images/cases/state-total-experience/artifact-1.jpg",
-        alt: "Anonymized ITSM platform comparison matrix with Suites A–F",
-        caption:
-          "Buyers’ guide: Suites A–F scored against FedRAMP, cost, licenses, AI chatbots, and key features",
+        src: "/images/cases/state-total-experience.jpg",
+        alt: "Sterilized Total Experience ecosystem map",
+        caption: "HR, admin, and service delivery as one ecosystem",
       },
       {
-        src: "/images/cases/state-total-experience/artifact-2.jpg",
-        alt: "Energetic two-year Total Experience modernization roadmap infographic",
-        caption:
-          "Two-year modernization roadmap — platform decision in three weeks, then discovery through scale",
+        src: "/images/cases/state-total-experience-2.jpg",
+        alt: "Sterilized ambiguity-to-clarity strategy board",
+        caption: "From ambiguity fog to a reusable decision framework",
       },
       {
         src: "/images/cases/state-total-experience-3.jpg",
@@ -409,11 +376,9 @@ export const cases: CaseStudy[] = [
     pullQuote:
       "This wasn’t just designing screens, it was designing ecosystems.",
     outcomes: [
-      "A roadmap covering more than two years.",
-      "A platform matrix and recommendation grounded in the government’s requirements.",
-      "A unifying Total Experience vision across HR, admin, and service delivery.",
-      "A client point of contact who was better prepared for his expanded role.",
-      "A team that grew through a genuinely ambiguous engagement.",
+      "Unifying vision across HR, admin, and service delivery",
+      "Reusable framework influencing later platform decisions",
+      "Mentored a team of three through ambiguous client leadership",
     ],
     context:
       "No pre-selected tech stack, shifting client leadership, and an inauguration clock. Ambiguity wasn’t a phase, it was the operating environment.",
@@ -436,8 +401,8 @@ export const cases: CaseStudy[] = [
     title: "Mission Platform Suite: Federal Defense Organization",
     client: "War Department (DOW)",
     sector: "Federal",
-    role: "UX Research & Design",
-    dates: "2 years",
+    role: "UX research & design",
+    dates: "Prior engagement",
     featured: true,
     order: 3,
     proof: "+65% satisfaction · 500+ engineering hours saved",
@@ -445,19 +410,16 @@ export const cases: CaseStudy[] = [
     platforms: ["Intelligence / mission platform"],
     tags: ["Platform", "Research"],
     dowAccent: true,
-    thumb: "/images/cases/dow-platform-modernization/artifact-3.jpg",
-    thumbAlt:
-      "Map-first suite shell with terrain map, app switcher, drive flyout, and messenger chats",
-    team:
-      "Me, working with engineering and product leads and the development teams for applications across the suite",
+    thumb: "/images/cases/dow-platform-modernization.jpg",
+    thumbAlt: "Sterilized dual-path journey modernization diagram",
     teaser:
-      "Two years of field research and design to streamline a mission-critical defense platform suite without slowing the experts who use it.",
+      "Field research and dual-path UX that raised satisfaction and recovered 500+ engineering hours.",
     summary:
       "Modernized a fragmented mission platform through field research, journey mapping, and dual-path UX strategy, raising satisfaction and recovering engineering time.",
     metrics: [
-      { value: "+65%", label: "User satisfaction" },
-      { value: "500+", label: "Engineering hours saved by reducing rework" },
-      { value: "2 years", label: "Field research and design across the suite" },
+      { value: "+65%", label: "User satisfaction lift" },
+      { value: "500+", label: "Engineering hours saved" },
+      { value: "Dual-path", label: "Experts and modern flows" },
     ],
     artifacts: [
       {
@@ -466,16 +428,9 @@ export const cases: CaseStudy[] = [
         caption: "Dual-path UX, power users and modern journeys together",
       },
       {
-        src: "/images/cases/dow-platform-modernization/artifact-1.jpg",
-        alt: "Dark navy collision map of four suite apps with handoffs and re-entry markers",
-        caption:
-          "One mission task across four apps — handoffs, re-entry heat, and the conflicts operators carried in their heads",
-      },
-      {
-        src: "/images/cases/dow-platform-modernization/artifact-2.jpg",
-        alt: "Dual-path briefing board where expert and guided rails converge on one data model",
-        caption:
-          "Dual path over one data model — dense expert grid and guided steps that write the same record",
+        src: "/images/cases/dow-platform-modernization-2.jpg",
+        alt: "Sterilized dual-path journey merge map",
+        caption: "Field pins that earned the right to change the workflow",
       },
       {
         src: "/images/cases/dow-platform-modernization-4.jpg",
@@ -493,12 +448,11 @@ export const cases: CaseStudy[] = [
       },
     ],
     pullQuote:
-      "John has been our biggest champion for UX best practices. He always goes above and beyond. His ideas and effort are always appreciated by the design team and leadership.",
-    pullQuoteCite: "Creative Team Manager",
+      "Modernization sticks when research earns the right to change workflows.",
     outcomes: [
-      "+65% user satisfaction.",
-      "500+ engineering hours saved by reducing rework.",
-      "A shared plan for streamlining the suite across development teams.",
+      "+65% user satisfaction",
+      "500+ engineering hours saved",
+      "Dual-path UX that respected power users and modern workflows",
     ],
     context:
       "Disconnected tools, operational pressure, and modernization mandates that couldn’t wait for a greenfield fantasy.",
@@ -509,11 +463,9 @@ export const cases: CaseStudy[] = [
     constraint:
       "A suite of mission apps without a shared development line. Overlap had to be designed around. No product or vendor names on the public story.",
     approach: [
-      "Ran field research and in-context journey mapping, documenting every handoff and re-entry point in a single task.",
-      "Mapped where applications overlapped or conflicted, giving the teams a shared view of the suite as one ecosystem.",
-      "Worked with engineering and product leads to shape a streamlining plan the development teams could act on incrementally.",
-      "Designed a dual-path experience: a dense, efficient path for experts and a guided path for newer users.",
-      "Treated expert speed as a hard requirement and protected shortcuts, density, and bulk actions.",
+      "Field research and journey mapping in context",
+      "Reframed tools into a unified ecosystem narrative",
+      "Dual-path UX to land change without stranding experts",
     ],
     reflection:
       "Modernization sticks when research earns the right to change workflows, not when a redesign is declared.",
