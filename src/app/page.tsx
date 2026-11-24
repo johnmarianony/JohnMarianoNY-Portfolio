@@ -1,69 +1,154 @@
 import Link from "next/link";
-import { CaseCard } from "@/components/case-card";
+import { CaseArchive, CaseCard } from "@/components/case-card";
+import { FeaturedCase } from "@/components/featured-case";
 import { Hero } from "@/components/hero";
-import { getFeaturedCases } from "@/content/cases";
+import { getAllCases, getFeaturedCases } from "@/content/cases";
 import { site } from "@/content/site";
+
+const groups = [
+  {
+    label: "Federal platforms",
+    detail: "Accenture Federal · public details sterilized for clearance",
+    start: 0,
+    end: 3,
+    lead: true,
+  },
+  {
+    label: "Enterprise engineering software",
+    detail: "Siemens STAR-CCM+ · March 2019 to January 2022",
+    start: 3,
+    end: 5,
+    lead: false,
+  },
+  {
+    label: "Enterprise SaaS",
+    detail: "Adobe",
+    start: 5,
+    end: 6,
+    lead: true,
+  },
+] as const;
 
 export default function HomePage() {
   const featured = getFeaturedCases();
+  const archive = getAllCases().filter((study) => !study.featured);
 
   return (
     <>
       <Hero />
 
-      <section className="section">
-        <div className="container">
-          <p className="section__eyebrow">Selected work</p>
-          <h2 className="section__title">Experience marks the spot</h2>
-          <p className="section__lede">
-            Six featured engagements—image-first, outcome-led. Federal work
-            first; sterilized artifacts in place of cleared screens.
-          </p>
-          <div className="case-grid case-grid--gallery">
-            {featured.map((study) => (
-              <CaseCard key={study.slug} study={study} />
-            ))}
+      <section className="sec" id="selected-work">
+        <div className="wrap">
+          <div className="sec-head">
+            <div>
+              <p className="label">Selected work</p>
+              <h2>Experience marks the spot</h2>
+            </div>
+            <p>
+              Six featured engagements, image-first and outcome-led. War Department
+              work first; sterilized artifacts in place of cleared screens.
+            </p>
+          </div>
+
+          {groups.map((group) => {
+            const items = featured.slice(group.start, group.end);
+            if (items.length === 0) return null;
+            const lead = group.lead ? items[0] : undefined;
+            const grid = group.lead ? items.slice(1) : items;
+            return (
+              <div className="group" key={group.label}>
+                <div className="era">
+                  <span className="label">{group.label}</span>
+                  <span className="c">{group.detail}</span>
+                </div>
+                {lead ? <FeaturedCase study={lead} /> : null}
+                {grid.length > 0 ? (
+                  <div className="grid2">
+                    {grid.map((study) => (
+                      <CaseCard key={study.slug} study={study} />
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+          {featured.length > 6 ? (
+            <div className="grid2">
+              {featured.slice(6).map((study) => (
+                <CaseCard key={study.slug} study={study} />
+              ))}
+            </div>
+          ) : null}
+
+          <div className="archive">
+            <div>
+              <p className="label">Archive</p>
+              <h3>Seven more case studies</h3>
+              <Link href="/work" className="link">
+                All 13 case studies →
+              </Link>
+            </div>
+            <CaseArchive studies={archive} />
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <p className="section__eyebrow">Writing</p>
-          <h2 className="section__title">From My Neural Graffiti</h2>
-          <p className="section__lede">
-            Platform leadership and AI craft on Substack—linked out so the
-            portfolio stays a hiring skim, not a blog.
-          </p>
-          <div className="writing-list">
-            {site.featuredPosts.map((post) => (
+      <section className="sec writing">
+        <div className="wrap">
+          <div className="sec-head">
+            <div>
+              <p className="label">Writing</p>
+              <h2>From My Neural Graffiti</h2>
+            </div>
+            <p>
+              Platform leadership and AI craft on Substack, linked out so the
+              portfolio stays a hiring skim, not a blog.
+            </p>
+          </div>
+          <div className="posts">
+            {site.featuredPosts.map((post, index) => (
               <a
                 key={post.url}
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="writing-item"
+                className="wpost"
               >
+                <span className="n" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <h3>
-                  {post.title} <span aria-hidden="true">↗</span>
+                  {post.title}
+                  <span className="sr-only"> (opens in new tab)</span>
                 </h3>
                 <p>{post.blurb}</p>
+                <p className="src">
+                  Read on Substack <span aria-hidden="true">↗</span>
+                </p>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <h2 className="section__title">Let’s talk platforms</h2>
-          <p className="section__lede" style={{ marginBottom: "1.5rem" }}>
-            Open to conversations about platform experience, federal delivery,
-            and modernization under constraint.
-          </p>
-          <Link href="/contact" className="btn btn--primary">
-            Contact John
-          </Link>
+      <section className="sec close">
+        <div className="wrap">
+          <div>
+            <p className="label">Contact</p>
+            <h2>Let’s talk platforms</h2>
+            <p>
+              Open to conversations about platform experience, federal delivery,
+              and modernization under constraint.
+            </p>
+          </div>
+          <div className="acts">
+            <Link href="/contact" className="btn primary">
+              Contact John
+            </Link>
+            <a className="mail" href={`mailto:${site.email}`}>
+              {site.email}
+            </a>
+          </div>
         </div>
       </section>
     </>
