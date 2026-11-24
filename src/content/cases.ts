@@ -117,8 +117,9 @@ export const cases: CaseStudy[] = [
     platforms: ["Platform migration", "MVP delivery"],
     tags: ["Requirements", "Delivery"],
     dowAccent: true,
-    thumb: "/images/cases/dow-platform-migration-mvp.jpg",
-    thumbAlt: "Sterilized platform migration architecture diagram",
+    thumb: "/images/cases/artifacts/platform-migration-mvp-artifact.webp",
+    thumbAlt:
+      "Paper matrix taped to a wall, sorting what moved first from what was deliberately deferred",
     teaser:
       "Design and requirements for a platform migration MVP that helped win an $820M, five-year contract.",
     summary:
@@ -130,9 +131,11 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/dow-platform-migration-mvp.jpg",
-        alt: "Sterilized platform migration architecture diagram",
-        caption: "Target architecture framing for the migration MVP",
+        src: "/images/cases/artifacts/platform-migration-mvp-artifact.webp",
+        alt: "Paper matrix taped to a wall, sorting what moved first from what was deliberately deferred",
+        caption: "What moved first, and what was deliberately left for later",
+        width: 1920,
+        height: 1080,
       },
       {
         src: "/images/cases/dow-platform-migration-mvp-2.jpg",
@@ -190,8 +193,9 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Self-service portal"],
     tags: ["Research", "Service design"],
-    thumb: "/images/cases/intel-portal-audit.jpg",
-    thumbAlt: "Sterilized heuristic audit findings board",
+    thumb: "/images/cases/artifacts/heuristic-audit-artifact.webp",
+    thumbAlt:
+      "Hand-marked heuristic audit printout on a wood desk, with red-pen exit points and black redaction bars",
     teaser:
       "Eight-week heuristic audit of a classified self-service portal, quick wins for adoption plus a two-year modernization roadmap.",
     summary:
@@ -203,9 +207,11 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/intel-portal-audit.jpg",
-        alt: "Sterilized heuristic audit findings board",
-        caption: "Findings synthesis, severity without exposing the system",
+        src: "/images/cases/artifacts/heuristic-audit-artifact.webp",
+        alt: "Hand-marked heuristic audit printout on a wood desk, with red-pen exit points and black redaction bars",
+        caption: "Severity-tagged walkthrough, the critical steps fail and people finish by phone",
+        width: 1920,
+        height: 1080,
       },
       {
         src: "/images/cases/intel-portal-audit-2.jpg",
@@ -263,8 +269,9 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Power Platform", "USWDS"],
     tags: ["Platform", "Mentorship"],
-    thumb: "/images/cases/doi-platform-constraints.jpg",
-    thumbAlt: "Sterilized federal constraint wireframe sheets",
+    thumb: "/images/cases/artifacts/constrained-platform-artifact.webp",
+    thumbAlt:
+      "Annotated wireframe kit clipped to a counter, sorted into native, workaround, and off-limits",
     teaser:
       "Translated federal policy into design constraints, aligning bureaus, mentoring juniors, and leaving assets that got reused.",
     summary:
@@ -276,9 +283,11 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/doi-platform-constraints.jpg",
-        alt: "Sterilized federal constraint wireframe sheets",
-        caption: "Wireframe strategy under shared platform rules",
+        src: "/images/cases/artifacts/constrained-platform-artifact.webp",
+        alt: "Annotated wireframe kit clipped to a counter, sorted into native, workaround, and off-limits",
+        caption: "Annotated wireframe kit, native, workaround, and off-limits before any polish",
+        width: 1920,
+        height: 1080,
       },
       {
         src: "/images/cases/doi-platform-constraints-2.jpg",
@@ -336,8 +345,9 @@ export const cases: CaseStudy[] = [
     clearance: "sterilized",
     platforms: ["Total Experience", "Multi-platform evaluation"],
     tags: ["Strategy", "Leadership"],
-    thumb: "/images/cases/state-total-experience.jpg",
-    thumbAlt: "Sterilized Total Experience ecosystem map",
+    thumb: "/images/cases/artifacts/total-experience-artifact.webp",
+    thumbAlt:
+      "Taped printout mapping HR, admin, and service as one system, with the breaks in the handoffs",
     teaser:
       "Led Total Experience through fog and election clocks, quiet impact when launch wasn’t ready.",
     summary:
@@ -349,9 +359,11 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/state-total-experience.jpg",
-        alt: "Sterilized Total Experience ecosystem map",
-        caption: "HR, admin, and service delivery as one ecosystem",
+        src: "/images/cases/artifacts/total-experience-artifact.webp",
+        alt: "Taped printout mapping HR, admin, and service as one system, with the breaks in the handoffs",
+        caption: "HR, admin, and service as one system, with the breaks in the handoffs",
+        width: 1920,
+        height: 1080,
       },
       {
         src: "/images/cases/state-total-experience-2.jpg",
@@ -410,8 +422,9 @@ export const cases: CaseStudy[] = [
     platforms: ["Mission platform"],
     tags: ["Platform", "Research"],
     dowAccent: true,
-    thumb: "/images/cases/dow-platform-modernization.jpg",
-    thumbAlt: "Sterilized dual-path journey modernization diagram",
+    thumb: "/images/cases/artifacts/mission-platform-suite-artifact.webp",
+    thumbAlt:
+      "Whiteboard of one field task across five apps, with colored notes and red handoff lines",
     teaser:
       "Field research and dual-path UX that raised satisfaction and recovered 500+ engineering hours.",
     summary:
@@ -423,9 +436,11 @@ export const cases: CaseStudy[] = [
     ],
     artifacts: [
       {
-        src: "/images/cases/dow-platform-modernization.jpg",
-        alt: "Sterilized dual-path journey modernization diagram",
-        caption: "Dual-path UX, power users and modern journeys together",
+        src: "/images/cases/artifacts/mission-platform-suite-artifact.webp",
+        alt: "Whiteboard of one field task across five apps, with colored notes and red handoff lines",
+        caption: "One field task across five apps, and where experts lose their place",
+        width: 1920,
+        height: 1080,
       },
       {
         src: "/images/cases/dow-platform-modernization-2.jpg",
@@ -705,19 +720,20 @@ export const cases: CaseStudy[] = [
     clearance: "public",
     platforms: ["Simcenter STAR-CCM+"],
     tags: ["UX research", "Process"],
-    thumb: "/images/cases/star-ccm-az-workflow-panel.jpg",
-    thumbAlt: "Sterilized Simcenter STAR-CCM+ A to Z workflow splash panel.",
+    thumb: "/images/cases/artifacts/star-ccm-az-artifact.webp",
+    thumbAlt:
+      "Kraft-paper A to Z workflow map taped to concrete, from geometry through reporting",
     summary:
       "Nobody had mapped how people actually ran STAR-CCM+ from start to finish, so I walked a real model A to Z, often by shoulder-surfing expert users who were new to the company, because a cultural barrier kept me from reaching actual customers.",
     teaser:
       "Nobody had mapped how people actually ran STAR-CCM+ from start to finish, so I walked a real model A to Z, often by shoulder-surfing expert users who were new to the company, because a cultural barrier kept me from reaching actual customers.",
     artifacts: [
       {
-        src: "/images/cases/star-ccm-az-workflow-panel.jpg",
-        alt: "Sterilized Simcenter STAR-CCM+ A to Z workflow splash panel.",
-        caption: "Sterilized splash, the undefined path mapped A to Z.",
-        width: 1280,
-        height: 720,
+        src: "/images/cases/artifacts/star-ccm-az-artifact.webp",
+        alt: "Kraft-paper A to Z workflow map taped to concrete, from geometry through reporting",
+        caption: "A to Z workflow map, geometry through reporting",
+        width: 1920,
+        height: 1080,
       },
       {
         src: "/images/cases/star-ccm-az-workflow/az-before-java-tree.jpg",

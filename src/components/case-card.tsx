@@ -28,7 +28,7 @@ export function CaseCard({
                 ? "(max-width: 600px) 100vw, 640px"
                 : "(max-width: 600px) 100vw, 50vw"
             }
-            style={{ objectFit: "cover", objectPosition: "top" }}
+            style={{ objectFit: "cover", objectPosition: "center" }}
           />
         ) : (
           <div className="card__placeholder" aria-hidden="true" />
