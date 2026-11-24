@@ -464,12 +464,15 @@ main:focus {
 }
 
 .hero .post .frame {
-  height: 440px;
+  height: auto;
+  background: transparent;
 }
 
 .hero .post .frame img {
-  object-position: top;
-  background: #000;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  background: transparent;
 }
 
 .hero .post figcaption {
@@ -1648,10 +1651,6 @@ main:focus {
   .btn--primary,
   .btn--ghost {
     text-align: center;
-  }
-
-  .hero .post .frame {
-    height: 330px;
   }
 
   .band .wrap,
