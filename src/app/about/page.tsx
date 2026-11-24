@@ -131,7 +131,7 @@ export default function AboutPage() {
             src="/images/about/john-mariano-headshot.jpg"
             alt="Portrait of John Mariano"
             width={1024}
-            height={1536}
+            height={1365}
             sizes="(max-width: 900px) 360px, 420px"
             preload
           />
