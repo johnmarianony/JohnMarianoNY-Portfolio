@@ -39,11 +39,12 @@ export function Hero() {
           <figure className="post">
             <div className="frame">
               <Image
-                src="/images/hero/john-hero-figure.png"
-                alt="Ink-and-marker caricature of John Mariano"
-                fill
-                sizes="(max-width: 600px) 80vw, 380px"
-                style={{ objectFit: "cover", objectPosition: "top" }}
+                src="/images/hero/john-hero-sketch.webp"
+                alt="Hand-drawn ink sketch of John Mariano at his desk"
+                width={1080}
+                height={1440}
+                sizes="(max-width: 800px) 380px, 380px"
+                style={{ objectFit: "cover", objectPosition: "center" }}
                 preload
               />
             </div>
