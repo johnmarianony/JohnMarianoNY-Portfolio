@@ -156,24 +156,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const study = getCaseBySlug(slug);
   if (!study) return { title: "Case study" };
-  const share = study.posterThumb;
+  const hero = study.artifacts?.[0];
+  const share = hero?.src ?? study.posterThumb ?? study.thumb;
+  const path = `/work/${study.slug}`;
   return {
     title: study.title,
     description: study.summary,
-    ...(share
-      ? {
-          openGraph: {
+    alternates: { canonical: path },
+    openGraph: {
+      title: study.title,
+      description: study.summary,
+      url: path,
+      ...(share
+        ? {
             images: [
               {
                 url: share,
-                alt: study.thumbAlt,
-                width: 1600,
-                height: 1100,
+                alt: hero?.alt ?? study.thumbAlt ?? study.title,
+                width: hero?.width ?? 1600,
+                height: hero?.height ?? 1100,
               },
             ],
-          },
+          }
+        : {}),
+    },
+    ...(share
+      ? {
           twitter: {
-            card: "summary_large_image",
+            card: "summary_large_image" as const,
+            title: study.title,
+            description: study.summary,
             images: [share],
           },
         }

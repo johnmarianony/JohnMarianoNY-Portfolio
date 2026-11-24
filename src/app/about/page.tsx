@@ -6,6 +6,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "About",
   description: site.positioning,
+  alternates: { canonical: "/about" },
 };
 
 const principles = [
@@ -29,7 +30,7 @@ const principles = [
   },
   {
     title: "Ship the first win so the larger contract can follow",
-    body: "On a War Department platform migration that was already about three months behind, I partnered inside the delivery team on design and requirements for an MVP. That path helped win an $820M, five-year contract.",
+    body: "On a Federal Defense Organization platform migration that was already about three months behind, I partnered inside the delivery team on design and requirements for an MVP. That path helped win an $820M, five-year contract.",
     href: "/work/dow-platform-migration-mvp",
     link: "Platform Migration MVP: Federal Defense Organization",
   },
